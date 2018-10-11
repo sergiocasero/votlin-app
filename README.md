@@ -1,6 +1,6 @@
 # Votlin App
 
-This is baseed on the official KotlinConf App
+This project is based on the official KotlinConf App -> https://github.com/JetBrains/kotlinconf-app
 
 ### Server
 
