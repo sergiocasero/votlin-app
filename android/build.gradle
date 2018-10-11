@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        maven { url "http://kotlin.bintray.com/kotlin-dev" }
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_android_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+dependencies {
+}

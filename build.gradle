@@ -1,0 +1,31 @@
+allprojects {
+    buildscript {
+        repositories {
+            maven { url "http://kotlin.bintray.com/kotlin-eap" }
+            maven { url "http://kotlin.bintray.com/kotlin-dev" }
+            maven { url "https://kotlin.bintray.com/kotlinx" }
+            maven { url 'https://dl.bintray.com/jetbrains/kotlin-native-dependencies' }
+
+            google()
+            jcenter()
+        }
+        dependencies {
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+            classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+            classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.37"
+        }
+    }
+    repositories {
+        maven { url "http://kotlin.bintray.com/kotlin-eap" }
+        maven { url "http://kotlin.bintray.com/kotlin-dev" }
+        maven { url "https://kotlin.bintray.com/kotlinx" }
+        maven { url "https://dl.bintray.com/kotlin/ktor" }
+        maven { url "https://dl.bintray.com/sargunster/maven" }
+        maven { url "https://dl.bintray.com/kotlin/squash" }
+        maven { url "http://dl.bintray.com/kotlin/kotlin-js-wrappers" }
+        maven { url = 'https://dl.bintray.com/russhwolf/multiplatform-settings' }
+
+        google()
+        jcenter()
+    }
+}
