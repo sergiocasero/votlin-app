@@ -1,6 +1,5 @@
 package org.jetbrains.kotlinconf
 
-import com.votlin.parseDate
 import io.ktor.util.date.*
 import kotlin.test.*
 

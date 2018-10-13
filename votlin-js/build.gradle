@@ -39,6 +39,8 @@ kotlinFrontend {
 }
 
 dependencies {
+    // compile project(":common-js")
+
     compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
     compile("org.jetbrains.kotlinx:kotlinx-html-js:0.6.11") { force = true }
     compile "org.jetbrains:kotlin-react:16.5.2-pre.55-kotlin-1.2.71"

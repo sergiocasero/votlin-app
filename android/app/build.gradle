@@ -9,6 +9,7 @@ buildscript {
 
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-platform-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlinx-serialization'
 apply plugin: 'kotlin-kapt'
@@ -20,24 +21,17 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         multiDexEnabled true
-        versionCode 10
-        versionName '1.0.9'
+        versionCode 1
+        versionName '0.0.1'
         testInstrumentationRunner 'android.support.test.runner.AndroidJUnitRunner'
     }
     buildTypes {
-        debug {}
-        release {}
-    }
-
-    flavorDimensions "server"
-    productFlavors {
-        local {
-            buildConfigField("String", "API_URL", "\"https://api.kotlinconf.com\"")
-            dimension "server"
+        debug {
+            debuggable true
+            minifyEnabled false
         }
-        prod {
-            buildConfigField("String", "API_URL", "\"https://api.kotlinconf.com\"")
-            dimension "server"
+        release {
+            debuggable false
         }
     }
 
@@ -50,6 +44,7 @@ android {
 
 dependencies {
     implementation project(':common')
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:multidex:1.0.3'
     // On 28 up to 28.0.0-rc2 there is a problem with image display on FAB.

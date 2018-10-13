@@ -1,22 +1,11 @@
-pluginManagement {
-    resolutionStrategy {
-        eachPlugin {
-            if (requested.id.id == "kotlin-platform-js") {
-                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
-            }
-        }
-    }
-}
 rootProject.name = 'votlin-app'
 
 enableFeaturePreview('GRADLE_METADATA')
 
 include 'backend'
 include 'common'
-include 'votlin-js'
 
 if (INCLUDE_ANDROID == "true") {
     include 'android', 'android:app'
 }
-include 'web'
 
