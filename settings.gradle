@@ -4,6 +4,7 @@ enableFeaturePreview('GRADLE_METADATA')
 
 include 'backend'
 include 'common'
+include 'votlin-js'
 
 if (INCLUDE_ANDROID == "true") {
     include 'android', 'android:app'
