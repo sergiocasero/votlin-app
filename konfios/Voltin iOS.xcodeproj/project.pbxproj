@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD2BF8872172A4CE00569594 /* konfios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF8862172A4CE00569594 /* konfios.framework */; };
+		AD2BF8882172A4CE00569594 /* konfios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF8862172A4CE00569594 /* konfios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C216B5A764CA917901BF /* Main.storyboard */; };
 		FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C8B2E1E40338EB1E970F /* ViewController.swift */; };
 		FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */; };
@@ -25,7 +27,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		AD2BF8892172A4CE00569594 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AD2BF8882172A4CE00569594 /* konfios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		AD2BF8842172A4A900569594 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = main; path = ../build/lib/main; sourceTree = "<group>"; };
+		AD2BF8862172A4CE00569594 /* konfios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = konfios.framework; path = ../build/lib/main/debug/ios_x64/konfios.framework; sourceTree = "<group>"; };
 		FDF0C5A3036E7C18FD2CDC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF0C719AF39F94CD218310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDF0C860FF0DFB7F53651A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2BF8872172A4CE00569594 /* konfios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD2BF8832172A4A900569594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD2BF8842172A4A900569594 /* main */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FDF0C3F1D2E234C5E933404C /* Voltin iOSTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +95,11 @@
 		FDF0C47CD12999B9CADDE8F1 = {
 			isa = PBXGroup;
 			children = (
+				AD2BF8862172A4CE00569594 /* konfios.framework */,
 				FDF0CB0BB473E7CCC8AF3818 /* Products */,
 				FDF0CC5D9D04110FBE45F7F7 /* Voltin iOS */,
 				FDF0C3F1D2E234C5E933404C /* Voltin iOSTests */,
+				AD2BF8832172A4A900569594 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDF0CDDF9ABACA103851BBDB /* Build configuration list for PBXNativeTarget "Voltin iOS" */;
 			buildPhases = (
+				AD2BF88A2172A63400569594 /* Compile Kotlin Framework */,
 				FDF0C9424BDA757E466F2E16 /* Sources */,
 				FDF0C6F050263937C695973C /* Frameworks */,
 				FDF0C326CF7B578E583BF46C /* Resources */,
+				AD2BF8892172A4CE00569594 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,6 +210,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD2BF88A2172A63400569594 /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export JAVA_HOME=`/usr/libexec/java_home -v 1.8`\n\ncase \"$PLATFORM_NAME\" in\niphoneos)\nTARGET=ios_arm64\nTASK=compileDebugIos_arm64KotlinNative\n;;\niphonesimulator)\nTARGET=ios_x64\nTASK=compileDebugIos_x64KotlinNative\n;;\n*)\necho \"Unknown platform: $PLATFORN_NAME\"\nexit 1\n;;\nesac\n\npwd\necho \"$TARGET\"\n\nmkdir -p \"$SRCROOT/build/konan/bin/\"\nrm -rf \"$SRCROOT/build/konan/bin/xcode\"\ncp -r \"$SRCROOT/build/lib/main/debug/$TARGET\" \"$SRCROOT/build/konan/bin/xcode\"\n\ncd ..\n\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" \"$TASK\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDF0C32903657399B2A97FD5 /* Sources */ = {
@@ -246,6 +294,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)-framework/build/konan/bin/ios_x64",
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/konan/bin/xcode/ios_x64",
+					"$(PROJECT_DIR)/build/konan/bin/xcode",
+				);
 				INFOPLIST_FILE = "Voltin iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.votlin.Voltin-iOS";
@@ -273,6 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)-framework/build/konan/bin/ios_x64",
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/konan/bin/xcode/ios_x64",
+					"$(PROJECT_DIR)/build/konan/bin/xcode",
+				);
 				INFOPLIST_FILE = "Voltin iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.votlin.Voltin-iOS";
@@ -330,8 +392,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -415,6 +476,7 @@
 				FDF0C07521EBD4A1FD059689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDF0CDDF9ABACA103851BBDB /* Build configuration list for PBXNativeTarget "Voltin iOS" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +485,7 @@
 				FDF0C4235F2E6E41A248F94A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
