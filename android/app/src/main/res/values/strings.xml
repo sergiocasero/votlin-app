@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KotlinConf</string>
+    <string name="app_name">Votlin</string>
     <string name="kotlin_conf_url">www.kotlinconf.com</string>
     <string name="action_info_title">Information</string>
     <string name="search_title">Search</string>
