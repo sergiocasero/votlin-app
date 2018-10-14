@@ -8,13 +8,12 @@ data class Talk(val id: Int,
                 val description: String,
                 val speakers: List<Speaker>,
                 val track: Track,
-                val datetimeStart: Long,
-                val datetimeEnd: Long)
+                val time: Time)
 
 sealed class Track {
-    data class Business(val room: String)
-    data class Development(val room: String)
-    data class Maker(val room: String)
+    data class Business(val room: String) : Track()
+    data class Development(val room: String) : Track()
+    data class Maker(val room: String) : Track()
 }
 
 data class Speaker(

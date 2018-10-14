@@ -20,7 +20,7 @@ mainClassName = 'com.votlin.backend.ServerKt'
 sourceCompatibility = 1.8
 
 dependencies {
-    implementation project(":common")
+    expectedBy project(":common")
 
     implementation "io.ktor:ktor-client-apache:$ktor_version"
     implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
