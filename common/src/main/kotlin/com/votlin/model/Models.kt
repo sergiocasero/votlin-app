@@ -10,10 +10,10 @@ data class Talk(val id: Int,
                 val track: Track,
                 val time: Time)
 
-sealed class Track {
-    data class Business(val room: String) : Track()
-    data class Development(val room: String) : Track()
-    data class Maker(val room: String) : Track()
+data class TalksResponse(val talks: List<Talk>)
+
+enum class Track {
+    BUSINESS, DEVELOPMENT, MAKER, ALL
 }
 
 data class Speaker(

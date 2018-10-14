@@ -81,7 +81,7 @@
     },
     {
       "name": "Break",
-      "id": 1,
+      "id": 5,
       "description": "",
       "track": "ALL",
       "time": {
@@ -92,7 +92,7 @@
     },
     {
       "name": "Aventuras y desventuras de una spin-off universitaria",
-      "id": 5,
+      "id": 6,
       "description": "Homeria es una spin-off surgida de la Universidad de Extremadura cuyo principal producto es una plataforma multicanal de gestión de pedidos de restaurantes de comida rápida., tramitando varios millones de pedidos al año. Actualmente gestiona el servicio de Home Delivery de Burger King en toda España. En un entorno altamente competitivo Homeria ha sabido hacerse un hueco y construir un modelo de negocio rentable y sostenible. Homeria puede considerarse una empresa de cierto éxito. Sin embargo, sus comienzos con otras ideas y productos estuvieron plagados de fracasos por diversas razones. En esta charla tratamos de describir las claves que llevaron a aquellos fracasos y también la clave para situarse ahora como la segunda plataforma en toda España que más pedidos tramita al año..",
       "track": "BUSINESS",
       "time": {
@@ -111,7 +111,7 @@
     },
     {
       "name": "Hablando de Big Data",
-      "id": 6,
+      "id": 7,
       "description": "¿Qué es realmente el Big Data? ¿Representa realmente una oportunidad en las empresas? ¿Qué impacto supone?¿La transformación digital es imprescindible?¿El trabajo humano está amenazado por la automatización?",
       "track": "BUSINESS",
       "time": {
@@ -130,7 +130,7 @@
     },
     {
       "name": "Devops: orígenes, realidades y mitos",
-      "id": 7,
+      "id": 8,
       "description": "Vamos a realizar un viaje desde los orígenes del movimiento devops, pasando por los cambios necesarios en la forma de trabajar y de pensar, hasta llegar al presente. Además veremos tópicos sobre la cultura devops y las realidades de la misma. En definitiva una búsqueda para adaptarnos e innovar a nivel social, cultural y tecnológico, para hacer nuestro trabajo más efectivo.",
       "track": "DEVELOPMENT",
       "time": {
@@ -149,7 +149,7 @@
     },
     {
       "name": "Aplicaciones multiplataforma con apache cordova",
-      "id": 8,
+      "id": 9,
       "description": "Charlas de iniciación sobre cordova. ¿Qué es cordova? ¿Para que sirve? ¿Como se instala? ¿En que lenguajes se puede programar? Ejemplo básico.",
       "track": "DEVELOPMENT",
       "time": {
@@ -168,7 +168,7 @@
     },
     {
       "name": "Charla: Presentación de asociaciones",
-      "id": 4,
+      "id": 10,
       "description": "",
       "track": "MAKER",
       "time": {
@@ -187,7 +187,7 @@
     },
     {
       "name": "Break",
-      "id": 1,
+      "id": 11,
       "description": "",
       "track": "ALL",
       "time": {
@@ -198,7 +198,7 @@
     },
     {
       "name": "¿Marxismo digital? O una nueva dialéctica digital entre capital y trabajo",
-      "id": 5,
+      "id": 12,
       "description": "",
       "track": "BUSINESS",
       "time": {
@@ -217,7 +217,7 @@
     },
     {
       "name": "Vicios y vicisitudes de vender por Internet",
-      "id": 6,
+      "id": 13,
       "description": "Acabando la segunda década del siglo XXI parece que si no tienes tu propia tienda online no molas ni un poquito. Pero Internet es una selva muy grande y conseguir salir adelante es complicado cuando tienes que competir con elefantes como Amazon, Aliexpress, Carrefour y otras tantas compañías con mucha más pasta que tú. Tras más de dos años trabajando de técnico en la mayor tienda de vino online de España tengo muchas batallitas que contar. Os enseñaré un poco la trastienda de Bodeboca, una tienda online que vende de verdad (más de 1 millón de botellas en 2017), algunos de los problemas que nos hemos encontrado, cómo los hemos resuelto y por qué hemos escogido esa solución. Es una sesión de ¿negocio? contada por un técnico... de aquí puede salir cualquier cosa, pero creo que esa cualquier cosa será interesante.",
       "track": "BUSINESS",
       "time": {
@@ -236,7 +236,7 @@
     },
     {
       "name": "Clean Code: revelando la intención del código",
-      "id": 7,
+      "id": 14,
       "description": "Me gustaría ofrecer un taller práctico en el que exponer código que está funcionando actualmente en proyectos reales con multitud de smell codes, código espagueti, duplicidades...y mostrar sugerencias o mejoras sobre el mismo. Trucos sobre refactors o como reducir deuda técnica. Hacer hincapié sobre las buenas prácticas y los beneficios que nos puede aportar. Y, sobre todo, me gustaría hacerlo de forma participativa escuchando opiniones de todos. (como es una respuesta que he visto después, en realidad, la chara es para un nivel de iniciación-intermedio).",
       "track": "DEVELOPMENT",
       "time": {
@@ -255,7 +255,7 @@
     },
     {
       "name": "Desarrollos con WordPress para todos los niveles",
-      "id": 8,
+      "id": 15,
       "description": "En la ponencia / taller mostrare como trabajar de forma optima con WordPress para evitar locking, normalizar los desarrollos y sacar el máximo partido. En la charla / taller haremos una web en vivo y en directo y para poder mostraros funcionando uno de los mejores builders que hay para WordPress: Beaver Builder.",
       "track": "DEVELOPMENT",
       "time": {
@@ -274,7 +274,7 @@
     },
     {
       "name": "Charla: presentación de proyectos",
-      "id": 4,
+      "id": 16,
       "description": "",
       "track": "MAKER",
       "time": {
@@ -293,7 +293,7 @@
     },
     {
       "name": "¿Y tú? ¿Tendrías una segunda cita con tu proveedor Cloud? ",
-      "id": 5,
+      "id": 17,
       "description": "",
       "track": "BUSINESS",
       "time": {
@@ -312,7 +312,7 @@
     },
     {
       "name": "Design Systems, el día que todo cambió.",
-      "id": 6,
+      "id": 18,
       "description": "Los sistemas de diseño cambiarán la forma de construir un producto digital. La concepción, construcción y evolución de un producto digital abandonará los silos de diseño, desarrollo o marketing para convertirse en el idioma común de una compañía. Los sistemas de diseño son una realidad en las mayores empresas digitales del mundo y serán parte fundamental en la construcción de cualquier producto digital. Conocer cómo construirlos e implementarlos es una ventaja competitiva aún poco explorada por muchas empresas en nuestro país.",
       "track": "BUSINESS",
       "time": {
@@ -331,7 +331,7 @@
     },
     {
       "name": "Testing recipes",
-      "id": 7,
+      "id": 19,
       "description": "La charla comenzará con una introducción muy rápida al testing de aplicaciones software, en ella comentaremos algunos temas básicos como la importancia del testing en el ciclo de vida del software, los distintos tipos de tests, dobles de test, etc. Posteriormente pasaremos a una segunda parte en la que nos centraremos en los tests unitarios, aquí veremos diferentes \"recetas\" que nos permitirán desarrollar una batería de tests mantenible, comentaremos algunos conceptos de clean code y buenas prácticas, y veremos la importancia de su aplicación al mundo del testing con algunos ejemplos concretos.",
       "track": "DEVELOPMENT",
       "time": {
@@ -350,7 +350,7 @@
     },
     {
       "name": "Test con DOM para “DOMMIES”",
-      "id": 7,
+      "id": 20,
       "description": "Seguro que alguna vez te has preguntado qué formas hay de hacer test contra el DOM, por ejemplo, para conseguir que tus test abarquen casi el 100% de tu aplicación, o quizás porque alguno de tus test requiere de un pequeño dato del DOM para comprobar ciertas funcionalidades. Sea como fuere, si quieres saber cómo empezar, ésta es tu charla. ¿Por qué? Porque yo también me hice esas mismas preguntas y ¡te entiendo! Personalmente me he sentido perdida con respecto a este tema a la hora de hacer test, hasta que he ido viendo un poco la luz y he conocido las opciones. Luego ya dependerá de ti si quieres aplicarlo o no, porque esa decisión sí que es personal y susceptible de ser debatida por cada uno y por cada equipo, y no es el objetivo de esta charla. Sí es objetivo de esta charla conocer algunas de las opciones que tienes. ¿Te animas?",
       "track": "DEVELOPMENT",
       "time": {
@@ -369,7 +369,7 @@
     },
     {
       "name": "Unity: vamos a crear un juego tipo plataformas",
-      "id": 8,
+      "id": 21,
       "description": "En taller aprenderemos las partes básicas del motor gráfico Unity creando un pequeño juego de plataformas en 2D. Veremos cómo implementar una UI, crear al personaje, crear las mecánicas (andar, correr, atacar y saltar) con la herramienta integrada de Unity (mecanim), creación de un nivel básico de plataformas y scripts de eventos.",
       "track": "DEVELOPMENT",
       "time": {
@@ -388,7 +388,7 @@
     },
     {
       "name": "Charla/taller: ¡Todas a codificar!",
-      "id": 4,
+      "id": 22,
       "description": "Partiendo del preocupeante descenso de mujeres que cursan una educación superior tecnológica, analizaremos el estado de la educación infantil y primaria ¿qué se está haciendo sobre pensamiento computacional? ¿qué es el pensamiento computacional? Compartiré mi experiencia de formación tecnológica con niñas y niños de infantil y primaria ¡un deleite para grandes y chicos! Reflexionaremos sobré qué podemos hacer para empoderar a las mujeres en tecnología.",
       "track": "MAKER",
       "time": {
@@ -407,7 +407,7 @@
     },
     {
       "name": "Transformación Digital ¿Realidad, moda o tontería?",
-      "id": 5,
+      "id": 23,
       "description": "Se verán las distintas aproximaciones que están teniendo empresas y organizaciones al concepto de Transformación Digital, como y a quién está afectando, cuanto tiempo más puede durar el status actual y qué se debería estar haciendo.",
       "track": "BUSINESS",
       "time": {
@@ -426,7 +426,7 @@
     },
     {
       "name": "Mover tu trabajo en la red",
-      "id": 5,
+      "id": 24,
       "description": "Charla basada en 10 años de experiencia como artista visual subiendo contenido eninternet. Trucos y consejos para mover trabajo basado en imágenes y cómo compartir contenido en las redes sociales, para intentar convertirte en influencer dentro de tu sector.",
       "track": "BUSINESS",
       "time": {
@@ -445,7 +445,7 @@
     },
     {
       "name": "El Futuro del Mercado del Arte",
-      "id": 6,
+      "id": 25,
       "description": "El mercado del arte mueve más de 50B$ anualmente, ha sido el último en entrar en el mercado online pero lo hace con fuerza generando ya más de 5.4B$, con una penetración de mercado por debajo del 10%. Se espera que en 5 años esta cifra suba al 15-20%. Tecnologías como live-bidding, que permiten la retransmisión online de subastas y la opción de pujar remotamente, software de subastas online que permiten subastar en modos \"online-only\", la aparición de plataformas online globales que permiten internacionalizar los mercados, visitas virtuales que muestran las exposiciones de galerías en 360º, nuevas empresas 100% online que comienzan a actuar como players del mercado del arte sin experiencia previa, artistas que venden desde sus páginas webs o cuentas de Instagram, plataformas que proponen usar el blockchain para vender o pagar con criptomonedas, nuevos clientes milleannials. El mundo del arte, el segundo negocio más antiguo del mundo se está enfrentando a cambios inimaginables hace 5 años. ¿Queréis conocer el presente y futuro de este mundo de galerías y subastas?",
       "track": "BUSINESS",
       "time": {
@@ -464,7 +464,7 @@
     },
     {
       "name": "Tendencias en desarrollo mobile. Una visión desde el Silicon Valley",
-      "id": 7,
+      "id": 26,
       "description": "El desarrollo móvil se ha establecido como un \"must\" para toda startup. A la vez ha pasado por una temporada tormentosa, con cambios de lenguaje y herramientas en iOS y Android. La charla se centrará en aquellas tecnologías y herramientas que están despuntando en el Silicon Valley y que pronto se harán estándar en el resto del mundo.",
       "track": "DEVELOPMENT",
       "time": {
@@ -483,7 +483,7 @@
     },
     {
       "name": "Git: From Zero to Hero (iniciacion)",
-      "id": 8,
+      "id": 27,
       "description": "Taller sobre Git desde el nivel más básico hasta un nivel más avanzado. Se enseñaran los conceptos básicos para empezar a trabajar con dicha tecnología, como funciona dicha tecnología y técnicas de trabajo.",
       "track": "DEVELOPMENT",
       "time": {
@@ -502,7 +502,7 @@
     },
     {
       "name": "Taller Internet de las Cosas",
-      "id": 4,
+      "id": 28,
       "description": "Pondremos a la gente a trabajar para realizar un dispositivo IoT capaz de conectarse a la nube para enviar/recibir datos gracias a los dispositivos hardware disponibles en el Smart Open Lab.",
       "track": "MAKER",
       "time": {
@@ -521,7 +521,7 @@
     },
     {
       "name": "Soluciones digitales alrededor movilidad, IoT, AI y Blockchain",
-      "id": 5,
+      "id": 29,
       "description": "En mi rol de Director del Mobile Competence Center que la empresa Worldline (grupo Atos) tiene en España (con nueva sede en Cáceres a partir de septiembre/octubre) y miembro de la Comunidad Científica de Atos a nivel global, el objetivo de esta ponencia sería dar a conocer las principales tecnologías y soluciones en las que estamos trabajando en temas como movilidad, IoT, Inteligencia Artificial y Blockchain. Se mostrarían algunos ejemplos prácticos en diferentes sectores y se explicarían los modelos de negocio utilizados en cada caso.",
       "track": "BUSINESS",
       "time": {
@@ -540,7 +540,7 @@
     },
     {
       "name": "Presentación Digital innovation Hub Extremadura",
-      "id": 6,
+      "id": 30,
       "description": "",
       "track": "BUSINESS",
       "time": {
@@ -551,7 +551,7 @@
     },
     {
       "name": "Patrones de Arquitectura en Android",
-      "id": 7,
+      "id": 31,
       "description": "Charla introductoria a los patrones de arquitectura para el desarrollo de aplicaciones Android. Partiendo de una breve introducción conceptual a los patrones de arquitectura, se presentará la biblioteca Android Architecture Components.",
       "track": "DEVELOPMENT",
       "time": {
@@ -570,7 +570,7 @@
     },
     {
       "name": "Introducción a la programación para NO programadores",
-      "id": 8,
+      "id": 32,
       "description": "Dirigido a personas que no saben programar, una introducción amena a la importancia del software en el mundo moderno, y al trabajo de los programadores.",
       "track": "DEVELOPMENT",
       "time": {
@@ -589,7 +589,7 @@
     },
     {
       "name": "Use git like a pro (avanzado)",
-      "id": 8,
+      "id": 33,
       "description": "",
       "track": "DEVELOPMENT",
       "time": {
@@ -608,7 +608,7 @@
     },
     {
       "name": "Taller Diseño 3D",
-      "id": 4,
+      "id": 34,
       "description": "La sesión consistirá en un taller introductorio sobre fundamentos de diseño 3D. La herramienta utilizada será Autodesk Inventor Profesional 2018 (gratuíto con fines académicos y para espacios tipo fablab). Se describirán métodos de diseño de partes y definición de ensamblados. Además se describirán varias aplicaciones reales de diseño 3D a formas funcionales que posteriormente se han fabricado usando impresoras 3D, fresadoras, corte con láser, etc.",
       "track": "MAKER",
       "time": {
@@ -627,7 +627,7 @@
     },
     {
       "name": "Crowd pitch - Presentacion Express de Proyectos TIC",
-      "id": 8,
+      "id": 35,
       "description": "",
       "track": "BUSINESS",
       "time": {
@@ -638,7 +638,7 @@
     },
     {
       "name": "Lambda, S3, DynamoDB. Bienvenido al mundo serverless de AWS",
-      "id": 8,
+      "id": 36,
       "description": "Gracias a las tecnologías y tendencias actuales es cada vez más frecuente encontrarnos desarrollos de software donde la arquitectura del sistema necesita ser muy dinámica, flexible y potente, además, seamos sinceros, a los developers no nos gusta eso de tener que montar servidores, configurar y el mantenimiento que todo eso luego conlleva. Contaremos a través de un ejemplo práctico cómo con AWS podemos aproximarnos al mundo serverless de un modo sencillo y eficiente para poder centrarnos en desarrollar aquellas características que aportan valor a nuestro negocio a un coste verdaderamente competitivo.",
       "track": "DEVELOPMENT",
       "time": {
@@ -657,7 +657,7 @@
     },
     {
       "name": "Kotlin. un lenguaje para dominarlos a todos",
-      "id": 4,
+      "id": 37,
       "description": "En esta charla veremos como, con poquísimo dinero, podemos automatizar nuestra casa por completo, de una forma rapidísima y entretenida... Para los dispositivos, el ESP12, para el teléfono, Android, para el backend.. PHP!! y para culminarlo todo... Asistentes de voz! (Habrá demo y todo 🙂 )",
       "track": "DEVELOPMENT",
       "time": {

@@ -33,6 +33,7 @@ dependencies {
     implementation "io.ktor:ktor-client-apache:$ktor_version"
     implementation "org.jetbrains.squash:squash:$squash_version"
     implementation "org.jetbrains.squash:squash-h2:$squash_version"
+    implementation "io.ktor:ktor-jackson:$ktor_version"
     implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '2.7.2'
 
