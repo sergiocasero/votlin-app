@@ -56,6 +56,8 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     kapt 'android.arch.lifecycle:compiler:1.1.1'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation  "com.github.salomonbrys.kodein:kodein:4.1.0"
+    implementation  "com.github.salomonbrys.kodein:kodein-android:4.1.0"
     implementation "org.jetbrains.anko:anko-appcompat-v7-commons:$anko_version"
     implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
     implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
