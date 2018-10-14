@@ -7,7 +7,7 @@ data class Talk(val id: Int,
                 val name: String,
                 val description: String,
                 val speakers: List<Speaker>,
-                val track: Track,
+                val track: Track?,
                 val datetimeStart: Long,
                 val datetimeEnd: Long)
 

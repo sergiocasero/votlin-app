@@ -9,31 +9,45 @@
 import UIKit
 import ios
 
-class ViewController: UIViewController, PresenterView {
+class TalksViewController: UIViewController, TalksView {
     
-    private lazy var presenter: Shared = {
-        Shared(
-            view: self,
-            platform: "iOS"
+    private lazy var presenter: TalksPresenter = {
+        TalksPresenter(
+            errorHandler: IosErrorHandler(),
+            view: self
         )
     }()
     
-    @IBOutlet weak var textv: UITextView!
-    
     override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-        presenter.doShomething()
+        // Do any additional setup after loading the view, typically from a nib.
+        presenter.initialize()
     }
 
 
     override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be recreated.
     }
     
-    func showText(text: String) {
-        textv.text = text
+    func showProgress() {
+        //TODO: Show progress
+    }
+    
+    func hideProgress() {
+        //TODO: Hide progress
+    }
+    
+    func showError(error: String) {
+        //TODO: Show Error
+    }
+    
+    func showMessage(message: String) {
+        //TODO: Hide Error
+    }
+    
+    func showTalks(talks: [Talk]) {
+        // TODO: Show talks
     }
 
 

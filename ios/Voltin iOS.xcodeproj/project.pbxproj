@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD04EBB22173492000F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBB12173492000F02D8E /* ios.framework */; };
-		AD04EBB42173493400F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBB32173493400F02D8E /* ios.framework */; };
-		AD04EBB52173493400F02D8E /* ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBB32173493400F02D8E /* ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AD04EBBC21736AE700F02D8E /* IosErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */; };
+		AD04EBC1217386AB00F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBB32173493400F02D8E /* ios.framework */; };
+		AD04EBC8217386DA00F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBC7217386DA00F02D8E /* ios.framework */; };
+		AD04EBC9217386DA00F02D8E /* ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBC7217386DA00F02D8E /* ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C216B5A764CA917901BF /* Main.storyboard */; };
 		FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C8B2E1E40338EB1E970F /* ViewController.swift */; };
 		FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */; };
@@ -29,13 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AD04EBB62173493400F02D8E /* Embed Frameworks */ = {
+		AD04EBCA217386DA00F02D8E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AD04EBB52173493400F02D8E /* ios.framework in Embed Frameworks */,
+				AD04EBC9217386DA00F02D8E /* ios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,6 +46,10 @@
 /* Begin PBXFileReference section */
 		AD04EBB12173492000F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/konan/bin/xcode/ios.framework; sourceTree = "<group>"; };
 		AD04EBB32173493400F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/lib/main/debug/ios_x64/ios.framework; sourceTree = "<group>"; };
+		AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosErrorHandler.swift; sourceTree = "<group>"; };
+		AD04EBC2217386B400F02D8E /* xcode */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcode; path = build/konan/bin/xcode; sourceTree = "<group>"; };
+		AD04EBC4217386BF00F02D8E /* konan */ = {isa = PBXFileReference; lastKnownFileType = folder; name = konan; path = build/konan; sourceTree = "<group>"; };
+		AD04EBC7217386DA00F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/konan/bin/xcode/ios.framework; sourceTree = "<group>"; };
 		AD2BF8842172A4A900569594 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = main; path = ../build/lib/main; sourceTree = "<group>"; };
 		FDF0C5A3036E7C18FD2CDC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF0C719AF39F94CD218310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD04EBB42173493400F02D8E /* ios.framework in Frameworks */,
-				AD04EBB22173492000F02D8E /* ios.framework in Frameworks */,
+				AD04EBC8217386DA00F02D8E /* ios.framework in Frameworks */,
+				AD04EBC1217386AB00F02D8E /* ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 		AD2BF8832172A4A900569594 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD04EBC4217386BF00F02D8E /* konan */,
+				AD04EBC2217386B400F02D8E /* xcode */,
 				AD04EBB12173492000F02D8E /* ios.framework */,
 				AD2BF8842172A4A900569594 /* main */,
 			);
@@ -100,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				AD04EBB32173493400F02D8E /* ios.framework */,
+				AD04EBC7217386DA00F02D8E /* ios.framework */,
 				FDF0CB0BB473E7CCC8AF3818 /* Products */,
 				FDF0CC5D9D04110FBE45F7F7 /* Voltin iOS */,
 				FDF0C3F1D2E234C5E933404C /* Voltin iOSTests */,
@@ -125,6 +133,7 @@
 				FDF0C719AF39F94CD218310B /* AppDelegate.swift */,
 				FDF0C216B5A764CA917901BF /* Main.storyboard */,
 				FDF0C8B2E1E40338EB1E970F /* ViewController.swift */,
+				AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */,
 			);
 			path = "Voltin iOS";
 			sourceTree = "<group>";
@@ -158,7 +167,7 @@
 				FDF0C9424BDA757E466F2E16 /* Sources */,
 				FDF0C6F050263937C695973C /* Frameworks */,
 				FDF0C326CF7B578E583BF46C /* Resources */,
-				AD04EBB62173493400F02D8E /* Embed Frameworks */,
+				AD04EBCA217386DA00F02D8E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -246,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDF0C6CD4D1F54B3AFD48235 /* AppDelegate.swift in Sources */,
+				AD04EBBC21736AE700F02D8E /* IosErrorHandler.swift in Sources */,
 				FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
