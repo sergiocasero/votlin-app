@@ -1,4 +1,4 @@
-package org.jetbrains.kotlinconf
+package com.votlin.android
 
 import org.junit.Test
 
