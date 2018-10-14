@@ -55,7 +55,7 @@ the contents should be `sdk.dir=/Users/<your username>/Library/Android/sdk`. On 
  - Thanks to @Kotlin team, take a look to KotlinConf app -> https://github.com/JetBrains/kotlinconf-app
  - Thanks to @MarcinMaskala, He has 2 multiplatform repos that are really helpful -> https://github.com/MarcinMoskala
  - Thanks to @wiyarmir, he has also a multiplatform project that could help you -> https://github.com/wiyarmir
- - Thanks to @VictorFrias for the Votlin logo! Looks really nice! :) -> https://www.linkedin.com/in/victorfriasv
+ - Thanks to @victorfriasv for the Votlin logo! Looks really nice! :) -> https://www.linkedin.com/in/victorfriasv
  
  ### License
  
