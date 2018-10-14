@@ -16,7 +16,7 @@ class TalksPresenter(errorHandler: ErrorHandler, view: TalksView):
                         speakers = listOf(),
                         datetimeStart = 123123,
                         datetimeEnd = 123123,
-                        track = null
+                        track = Track.Development("Room Test")
         )))
     }
 
