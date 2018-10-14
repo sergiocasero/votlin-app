@@ -1,26 +1,25 @@
 package com.votlin.android.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.view.View
+import com.votlin.android.R
+import com.votlin.presentation.PresenterView
 import com.votlin.presentation.Shared
-import org.jetbrains.anko.AnkoContext
-import org.jetbrains.anko.linearLayout
-import org.jetbrains.anko.textView
+import kotlinx.android.synthetic.main.main_activity.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PresenterView {
+
+    private val presenter = Shared(this, "Android")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(createView(AnkoContext.create(this)))
+        setContentView(R.layout.main_activity)
+        presenter.doShomething()
     }
 
-    private fun createView(ui: AnkoContext<Context>): View = with(ui) {
-        linearLayout {
-            textView {
-                text = Shared().text
-            }
-        }
+    override fun showText(text: String) {
+        this.text.text = text
     }
+
+
 }
