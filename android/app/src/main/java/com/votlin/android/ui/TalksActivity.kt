@@ -1,5 +1,7 @@
 package com.votlin.android.ui
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
@@ -11,14 +13,19 @@ import com.votlin.client.presentation.TalksPresenter
 import com.votlin.client.presentation.TalksView
 import com.votlin.model.Talk
 
-class MainActivity : RootActivity<TalksView>(),TalksView {
+class TalksActivity : RootActivity<TalksView>(),TalksView {
+
+    companion object {
+        fun getCallingIntent(context: Context) = Intent(context, TalksActivity::class.java)
+    }
+
     override val presenter: TalksPresenter by instance()
 
    override val layoutResourceId: Int = R.layout.activity_talks
     override val activityModule: Kodein.Module = Kodein.Module{
         bind<TalksPresenter>() with provider {
             TalksPresenter(errorHandler = AndroidErrorHandler(),
-                    view =this@MainActivity)
+                    view =this@TalksActivity)
         }
     }
 

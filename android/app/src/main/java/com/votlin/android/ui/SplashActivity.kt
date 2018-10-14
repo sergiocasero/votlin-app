@@ -8,6 +8,7 @@ import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.extensions.toast
+import com.votlin.android.navigator.navigateToTalksActivity
 import com.votlin.client.presentation.SplashPresenter
 import com.votlin.client.presentation.SplashView
 
@@ -49,8 +50,8 @@ class SplashActivity: RootActivity<SplashView>(), SplashView {
     }
 
     override fun goToTalksScreen() {
-        // Nothing to do yet
-        toast("JEJE")
+        navigateToTalksActivity(context = this)
+        finish()
     }
 
     override fun showLoadingProgress(delayMillis: Long) {
