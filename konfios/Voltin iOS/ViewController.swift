@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import konfios
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var textv: UITextView!
+    
+    public lazy var shared = { Shared() }()
 
     override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+        textv.text = shared.text
     }
 
 

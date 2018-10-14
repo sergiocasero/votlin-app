@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD2BF88F2172BF7C00569594 /* konfios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF88D2172BF5900569594 /* konfios.framework */; };
+		AD2BF8902172C6E500569594 /* konfios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF88D2172BF5900569594 /* konfios.framework */; };
+		AD2BF8912172C6E500569594 /* konfios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF88D2172BF5900569594 /* konfios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C216B5A764CA917901BF /* Main.storyboard */; };
 		FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C8B2E1E40338EB1E970F /* ViewController.swift */; };
 		FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */; };
@@ -25,6 +27,20 @@
 			remoteInfo = "Voltin iOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD2BF8922172C6E600569594 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AD2BF8912172C6E500569594 /* konfios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD2BF8842172A4A900569594 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = main; path = ../build/lib/main; sourceTree = "<group>"; };
@@ -47,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2BF8902172C6E500569594 /* konfios.framework in Frameworks */,
 				AD2BF88F2172BF7C00569594 /* konfios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +158,7 @@
 				FDF0C9424BDA757E466F2E16 /* Sources */,
 				FDF0C6F050263937C695973C /* Frameworks */,
 				FDF0C326CF7B578E583BF46C /* Resources */,
+				AD2BF8922172C6E600569594 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
