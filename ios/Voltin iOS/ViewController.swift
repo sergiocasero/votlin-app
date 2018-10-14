@@ -9,7 +9,7 @@
 import UIKit
 import ios
 
-class TalksViewController: UIViewController, TalksView {
+class ViewController: UIViewController, TalksView {
     
     private lazy var presenter: TalksPresenter = {
         TalksPresenter(
@@ -17,6 +17,8 @@ class TalksViewController: UIViewController, TalksView {
             view: self
         )
     }()
+    
+    @IBOutlet weak var textv: UITextView!
     
     override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,6 +50,8 @@ class TalksViewController: UIViewController, TalksView {
     
     func showTalks(talks: [Talk]) {
         // TODO: Show talks
+        let talkInfo = "Name: " + talks[0].name + ", datetimeStart: " + String(talks[0].datetimeStart)
+        textv.text = talkInfo
     }
 
 

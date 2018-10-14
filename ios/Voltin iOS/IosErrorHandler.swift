@@ -9,7 +9,7 @@
 import Foundation
 import ios
 
-class IosErrorHandler: ErrorHandler {
+class IosErrorHandler: NSObject, ErrorHandler {
     func convert(error: ios.Error) -> String {
         return ""
     }
