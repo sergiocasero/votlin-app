@@ -22,3 +22,5 @@ data class Speaker(
         val name: String,
         val bio: String,
         val photoUrl: String)
+
+data class Rate(val id: Int, val value: Int)
