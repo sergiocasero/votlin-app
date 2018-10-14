@@ -1,9 +1,14 @@
 package com.votlin.presentation
 
 //data class Shared(val text: String = "HELLO ${Platform.name}! :)")
-class Shared {
+class Shared(
+        private val view: PresenterView,
+        private val platform: String
+) {
 
-    val text: String = "Hello Multiplatform! :)"
+    fun doShomething(){
+        view.showText("Hello $platform!")
+    }
 
 }
 

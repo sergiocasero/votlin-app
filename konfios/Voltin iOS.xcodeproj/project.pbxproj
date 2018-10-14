@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD2BF88F2172BF7C00569594 /* konfios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF88D2172BF5900569594 /* konfios.framework */; };
+		AD04EBAF2173223300F02D8E /* konfios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBAE2173223300F02D8E /* konfios.framework */; };
+		AD04EBB02173223300F02D8E /* konfios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBAE2173223300F02D8E /* konfios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD2BF8902172C6E500569594 /* konfios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF88D2172BF5900569594 /* konfios.framework */; };
-		AD2BF8912172C6E500569594 /* konfios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD2BF88D2172BF5900569594 /* konfios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C216B5A764CA917901BF /* Main.storyboard */; };
 		FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C8B2E1E40338EB1E970F /* ViewController.swift */; };
 		FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */; };
@@ -35,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AD2BF8912172C6E500569594 /* konfios.framework in Embed Frameworks */,
+				AD04EBB02173223300F02D8E /* konfios.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AD04EBAE2173223300F02D8E /* konfios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = konfios.framework; path = build/lib/main/debug/ios_x64/konfios.framework; sourceTree = "<group>"; };
 		AD2BF8842172A4A900569594 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = main; path = ../build/lib/main; sourceTree = "<group>"; };
 		AD2BF8862172A4CE00569594 /* konfios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = konfios.framework; path = ../build/lib/main/debug/ios_x64/konfios.framework; sourceTree = "<group>"; };
 		AD2BF88D2172BF5900569594 /* konfios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = konfios.framework; path = build/konan/bin/xcode/konfios.framework; sourceTree = "<group>"; };
@@ -64,7 +65,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2BF8902172C6E500569594 /* konfios.framework in Frameworks */,
-				AD2BF88F2172BF7C00569594 /* konfios.framework in Frameworks */,
+				AD04EBAF2173223300F02D8E /* konfios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				AD2BF8862172A4CE00569594 /* konfios.framework */,
+				AD04EBAE2173223300F02D8E /* konfios.framework */,
 				FDF0CB0BB473E7CCC8AF3818 /* Products */,
 				FDF0CC5D9D04110FBE45F7F7 /* Voltin iOS */,
 				FDF0C3F1D2E234C5E933404C /* Voltin iOSTests */,
@@ -304,6 +306,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/konan/bin/xcode/ios_x64",
 					"$(PROJECT_DIR)/build/konan/bin/xcode",
+					"$(PROJECT_DIR)/build/lib/main/debug/ios_x64",
 				);
 				INFOPLIST_FILE = "Voltin iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -338,6 +341,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/konan/bin/xcode/ios_x64",
 					"$(PROJECT_DIR)/build/konan/bin/xcode",
+					"$(PROJECT_DIR)/build/lib/main/debug/ios_x64",
 				);
 				INFOPLIST_FILE = "Voltin iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

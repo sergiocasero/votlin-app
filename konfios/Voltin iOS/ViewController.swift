@@ -9,17 +9,21 @@
 import UIKit
 import konfios
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, PresenterView {
     
+    private lazy var presenter: Shared = {
+        Shared(
+            view: self,
+            platform: "iOS"
+        )
+    }()
     
     @IBOutlet weak var textv: UITextView!
     
-    public lazy var shared = { Shared() }()
-
     override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-        textv.text = shared.text
+        presenter.doShomething()
     }
 
 
@@ -27,7 +31,10 @@ class ViewController: UIViewController {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
     }
-
+    
+    func showText(text: String) {
+        textv.text = text
+    }
 
 
 }
