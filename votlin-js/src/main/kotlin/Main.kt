@@ -1,11 +1,9 @@
-import com.votlin.presentation.PresenterView
-import com.votlin.presentation.Shared
 import react.dom.div
 import react.dom.render
 import kotlin.browser.document
 import kotlin.browser.window
 
-fun main(args: Array<String>){
+fun main(args: Array<String>) {
 
     //val firstSharedClass = Shared()
 

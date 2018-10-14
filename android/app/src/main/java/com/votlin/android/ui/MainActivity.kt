@@ -3,8 +3,8 @@ package com.votlin.android.ui
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.votlin.android.R
-import com.votlin.presentation.PresenterView
-import com.votlin.presentation.Shared
+import com.votlin.client.presentation.PresenterView
+import com.votlin.client.presentation.Shared
 import kotlinx.android.synthetic.main.main_activity.*
 
 class MainActivity : AppCompatActivity(), PresenterView {
