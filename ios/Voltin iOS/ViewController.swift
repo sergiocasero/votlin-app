@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import konfios
+import ios
 
 class ViewController: UIViewController, PresenterView {
     
