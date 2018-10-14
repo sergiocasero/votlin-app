@@ -1,17 +1,6 @@
 package com.votlin.backend
 
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.features.*
-import io.ktor.http.*
-import io.ktor.http.content.*
-import io.ktor.request.*
-import io.ktor.response.*
-import io.ktor.routing.*
-import io.ktor.util.*
-import io.ktor.websocket.*
-
-fun Application.main() {
+/*fun Application.main() {
     val config = environment.config
     val serviceConfig = config.config("service")
     val mode = serviceConfig.property("environment").getString()
@@ -88,4 +77,4 @@ fun Route.authenticate() {
     }
 }
 
-class KotlinConfPrincipal(val token: String) : Principal
+class KotlinConfPrincipal(val token: String) : Principal*/
