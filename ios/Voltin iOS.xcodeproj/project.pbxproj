@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AD04EBBC21736AE700F02D8E /* IosErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */; };
+		AD04EBC1217386AB00F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBB32173493400F02D8E /* ios.framework */; };
+		AD04EBC8217386DA00F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBC7217386DA00F02D8E /* ios.framework */; };
+		AD04EBC9217386DA00F02D8E /* ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBC7217386DA00F02D8E /* ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C216B5A764CA917901BF /* Main.storyboard */; };
+		FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C8B2E1E40338EB1E970F /* ViewController.swift */; };
+		FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */; };
+		FDF0C6CD4D1F54B3AFD48235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C719AF39F94CD218310B /* AppDelegate.swift */; };
+		FDF0CAD50575818D998A8FC2 /* Voltin_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0CCBFA87B7BC5DF260366 /* Voltin_iOSTests.swift */; };
+		FDF0CEFACC43C2E1A0F95C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C5A3036E7C18FD2CDC76 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDF0C228F641D13BA6BBF6AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDF0C304FBDA9724EBB6DA80 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDF0CDF40A6FE611AC17AD95;
+			remoteInfo = "Voltin iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD04EBCA217386DA00F02D8E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AD04EBC9217386DA00F02D8E /* ios.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		AD04EBB12173492000F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/konan/bin/xcode/ios.framework; sourceTree = "<group>"; };
+		AD04EBB32173493400F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/lib/main/debug/ios_x64/ios.framework; sourceTree = "<group>"; };
+		AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosErrorHandler.swift; sourceTree = "<group>"; };
+		AD04EBC2217386B400F02D8E /* xcode */ = {isa = PBXFileReference; lastKnownFileType = folder; name = xcode; path = build/konan/bin/xcode; sourceTree = "<group>"; };
+		AD04EBC4217386BF00F02D8E /* konan */ = {isa = PBXFileReference; lastKnownFileType = folder; name = konan; path = build/konan; sourceTree = "<group>"; };
+		AD04EBC7217386DA00F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/konan/bin/xcode/ios.framework; sourceTree = "<group>"; };
+		AD2BF8842172A4A900569594 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = main; path = ../build/lib/main; sourceTree = "<group>"; };
+		FDF0C5A3036E7C18FD2CDC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDF0C719AF39F94CD218310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDF0C860FF0DFB7F53651A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDF0C8B2E1E40338EB1E970F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDF0C8C695E293221CCA47CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDF0C945BE03852741A88388 /* Voltin iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voltin iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF0CCBFA87B7BC5DF260366 /* Voltin_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voltin_iOSTests.swift; sourceTree = "<group>"; };
+		FDF0CD22FF6A05B4A3A89F76 /* Voltin iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voltin iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF0CF6D665513CA7D6AD596 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		FDF0CFDDEBF412BFDBEAE5FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDF0C6F050263937C695973C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD04EBC8217386DA00F02D8E /* ios.framework in Frameworks */,
+				AD04EBC1217386AB00F02D8E /* ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDF0CD61D8A78BF16CA0C63D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AD2BF8832172A4A900569594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD04EBC4217386BF00F02D8E /* konan */,
+				AD04EBC2217386B400F02D8E /* xcode */,
+				AD04EBB12173492000F02D8E /* ios.framework */,
+				AD2BF8842172A4A900569594 /* main */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDF0C3F1D2E234C5E933404C /* Voltin iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDF0CF6D665513CA7D6AD596 /* Info.plist */,
+				FDF0CCBFA87B7BC5DF260366 /* Voltin_iOSTests.swift */,
+			);
+			path = "Voltin iOSTests";
+			sourceTree = "<group>";
+		};
+		FDF0C47CD12999B9CADDE8F1 = {
+			isa = PBXGroup;
+			children = (
+				AD04EBB32173493400F02D8E /* ios.framework */,
+				AD04EBC7217386DA00F02D8E /* ios.framework */,
+				FDF0CB0BB473E7CCC8AF3818 /* Products */,
+				FDF0CC5D9D04110FBE45F7F7 /* Voltin iOS */,
+				FDF0C3F1D2E234C5E933404C /* Voltin iOSTests */,
+				AD2BF8832172A4A900569594 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FDF0CB0BB473E7CCC8AF3818 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDF0C945BE03852741A88388 /* Voltin iOS.app */,
+				FDF0CD22FF6A05B4A3A89F76 /* Voltin iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDF0CC5D9D04110FBE45F7F7 /* Voltin iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FDF0CFDDEBF412BFDBEAE5FA /* Info.plist */,
+				FDF0C5A3036E7C18FD2CDC76 /* Assets.xcassets */,
+				FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */,
+				FDF0C719AF39F94CD218310B /* AppDelegate.swift */,
+				FDF0C216B5A764CA917901BF /* Main.storyboard */,
+				FDF0C8B2E1E40338EB1E970F /* ViewController.swift */,
+				AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */,
+			);
+			path = "Voltin iOS";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDF0C20E6342D7921E5EC33E /* Voltin iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF0CCB1EBBC60282A189160 /* Build configuration list for PBXNativeTarget "Voltin iOSTests" */;
+			buildPhases = (
+				FDF0C32903657399B2A97FD5 /* Sources */,
+				FDF0CD61D8A78BF16CA0C63D /* Frameworks */,
+				FDF0C73D154A6D36D755FA87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDF0C65980785302850C8E61 /* PBXTargetDependency */,
+			);
+			name = "Voltin iOSTests";
+			productName = "Voltin iOSTests";
+			productReference = FDF0CD22FF6A05B4A3A89F76 /* Voltin iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FDF0CDF40A6FE611AC17AD95 /* Voltin iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDF0CDDF9ABACA103851BBDB /* Build configuration list for PBXNativeTarget "Voltin iOS" */;
+			buildPhases = (
+				AD2BF88A2172A63400569594 /* Compile Kotlin Framework */,
+				FDF0C9424BDA757E466F2E16 /* Sources */,
+				FDF0C6F050263937C695973C /* Frameworks */,
+				FDF0C326CF7B578E583BF46C /* Resources */,
+				AD04EBCA217386DA00F02D8E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Voltin iOS";
+			productName = "Voltin iOS";
+			productReference = FDF0C945BE03852741A88388 /* Voltin iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDF0C304FBDA9724EBB6DA80 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = votlin;
+			};
+			buildConfigurationList = FDF0CC6570E8CD60A72F76C1 /* Build configuration list for PBXProject "Voltin iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FDF0C47CD12999B9CADDE8F1;
+			productRefGroup = FDF0CB0BB473E7CCC8AF3818 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDF0CDF40A6FE611AC17AD95 /* Voltin iOS */,
+				FDF0C20E6342D7921E5EC33E /* Voltin iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDF0C326CF7B578E583BF46C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF0CEFACC43C2E1A0F95C74 /* Assets.xcassets in Resources */,
+				FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */,
+				FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDF0C73D154A6D36D755FA87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD2BF88A2172A63400569594 /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export JAVA_HOME=`/usr/libexec/java_home -v 1.8`\n\ncase \"$PLATFORM_NAME\" in\niphoneos)\nTARGET=ios_arm64\nTASK=compileDebugIos_arm64KotlinNative\n;;\niphonesimulator)\nTARGET=ios_x64\nTASK=compileDebugIos_x64KotlinNative\n;;\n*)\necho \"Unknown platform: $PLATFORN_NAME\"\nexit 1\n;;\nesac\n\npwd\necho \"$TARGET\"\n\nmkdir -p \"$SRCROOT/build/konan/bin/\"\nrm -rf \"$SRCROOT/build/konan/bin/xcode\"\ncp -r \"$SRCROOT/build/lib/main/debug/$TARGET\" \"$SRCROOT/build/konan/bin/xcode\"\n\ncd ..\n\"$SRCROOT/../gradlew\" -p \"$SRCROOT/../\" \"$TASK\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDF0C32903657399B2A97FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF0CAD50575818D998A8FC2 /* Voltin_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDF0C9424BDA757E466F2E16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDF0C6CD4D1F54B3AFD48235 /* AppDelegate.swift in Sources */,
+				AD04EBBC21736AE700F02D8E /* IosErrorHandler.swift in Sources */,
+				FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDF0C65980785302850C8E61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDF0CDF40A6FE611AC17AD95 /* Voltin iOS */;
+			targetProxy = FDF0C228F641D13BA6BBF6AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FDF0C216B5A764CA917901BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDF0C8C695E293221CCA47CB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDF0C860FF0DFB7F53651A4D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDF0C07521EBD4A1FD059689 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Voltin iOS.app/Voltin iOS";
+				INFOPLIST_FILE = "Voltin iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.votlin.Voltin-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		FDF0C0ADC5E99E05075CE335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/build/konan/bin/ios_x64",
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/konan/bin/xcode/ios_x64",
+					"$(PROJECT_DIR)/build/konan/bin/xcode",
+					"$(PROJECT_DIR)/build/lib/main/debug/ios_x64",
+				);
+				INFOPLIST_FILE = "Voltin iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.votlin.Voltin-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDF0C2462178BA90C1474B66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Voltin iOS.app/Voltin iOS";
+				INFOPLIST_FILE = "Voltin iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.votlin.Voltin-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		FDF0C4235F2E6E41A248F94A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/build/konan/bin/ios_x64",
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/konan/bin/xcode/ios_x64",
+					"$(PROJECT_DIR)/build/konan/bin/xcode",
+					"$(PROJECT_DIR)/build/lib/main/debug/ios_x64",
+				);
+				INFOPLIST_FILE = "Voltin iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.votlin.Voltin-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FDF0C656E2E67187D6D80786 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDF0C6FD5D8C2E3D84B89B70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDF0CC6570E8CD60A72F76C1 /* Build configuration list for PBXProject "Voltin iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF0C6FD5D8C2E3D84B89B70 /* Debug */,
+				FDF0C656E2E67187D6D80786 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF0CCB1EBBC60282A189160 /* Build configuration list for PBXNativeTarget "Voltin iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF0C2462178BA90C1474B66 /* Debug */,
+				FDF0C07521EBD4A1FD059689 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDF0CDDF9ABACA103851BBDB /* Build configuration list for PBXNativeTarget "Voltin iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDF0C0ADC5E99E05075CE335 /* Debug */,
+				FDF0C4235F2E6E41A248F94A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDF0C304FBDA9724EBB6DA80 /* Project object */;
+}
