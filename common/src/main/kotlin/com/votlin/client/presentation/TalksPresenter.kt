@@ -4,7 +4,7 @@ import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.model.Talk
 import com.votlin.model.Track
 
-class TalksPresenter(errorHandler: ErrorHandler, view: TalksView):
+class TalksPresenter(errorHandler: ErrorHandler, view: TalksView) :
         Presenter<TalksView>(errorHandler = errorHandler, view = view) {
 
     override fun initialize() {
@@ -17,7 +17,7 @@ class TalksPresenter(errorHandler: ErrorHandler, view: TalksView):
                         datetimeStart = 123123,
                         datetimeEnd = 123123,
                         track = Track.Development("Room Test")
-        )))
+                )))
     }
 
     override fun destroy() {
@@ -26,6 +26,6 @@ class TalksPresenter(errorHandler: ErrorHandler, view: TalksView):
 
 }
 
-interface TalksView: Presenter.View{
-    fun showTalks(talks : List<Talk>)
+interface TalksView : Presenter.View {
+    fun showTalks(talks: List<Talk>)
 }
