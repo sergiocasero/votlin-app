@@ -16,8 +16,6 @@ enum class Track {
     BUSINESS, DEVELOPMENT, MAKER, ALL
 }
 
-enum class Track { BUSINESS, DEVELOPMENT, MAKER }
-
 data class Speaker(
         val twitter: String,
         val linkedin: String,

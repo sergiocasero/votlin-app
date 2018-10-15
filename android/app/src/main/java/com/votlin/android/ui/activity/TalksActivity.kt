@@ -2,7 +2,6 @@ package com.votlin.android.ui.activity
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -10,9 +9,10 @@ import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.ui.adapter.ViewPagerAdapter
+import com.votlin.android.ui.fragment.TalksListFragment
 import com.votlin.client.presentation.TalksPresenter
 import com.votlin.client.presentation.TalksView
-import com.votlin.model.Talk
+import com.votlin.model.Track
 import kotlinx.android.synthetic.main.activity_talks.*
 
 class TalksActivity : RootActivity<TalksView>(), TalksView {
@@ -34,7 +34,10 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
 
     override fun initializeUI() {
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
-        // todo: add here talks fragments
+        viewPagerAdapter.addFragment(getString(R.string.all), TalksListFragment.newInstance(Track.ALL))
+        viewPagerAdapter.addFragment(getString(R.string.business), TalksListFragment.newInstance(Track.BUSINESS))
+        viewPagerAdapter.addFragment(getString(R.string.development), TalksListFragment.newInstance(Track.DEVELOPMENT))
+        viewPagerAdapter.addFragment(getString(R.string.maker), TalksListFragment.newInstance(Track.MAKER))
         viewPager.adapter = viewPagerAdapter
         tab.setupWithViewPager(viewPager)
     }
@@ -49,11 +52,6 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
 
     override fun hideProgress() {
         // Nothing to do yet
-    }
-
-    override fun showTalks(talks: List<Talk>) {
-        // Nothing to do yet
-        Log.i("Main activity", talks.toString())
     }
 
 }
