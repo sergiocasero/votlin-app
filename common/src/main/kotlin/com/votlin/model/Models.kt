@@ -11,11 +11,14 @@ data class Talk(val id: Int,
                 val datetimeStart: Long,
                 val datetimeEnd: Long)
 
+/*
 sealed class Track {
     data class Business(val room: String): Track()
     data class Development(val room: String): Track()
     data class Maker(val room: String): Track()
-}
+}*/
+
+enum class Track { BUSINESS, DEVELOPMENT, MAKER }
 
 data class Speaker(
         val twitter: String,
