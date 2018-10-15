@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
  * ViewExtensions.
  */
 fun ImageView.load(url: String) {
-    Glide.with(this.context)
+    Glide.with(this)
             .load(url)
             .into(this)
 }
