@@ -1,7 +1,7 @@
 package com.votlin.android.navigator
 
 import android.content.Context
-import com.votlin.android.ui.TalksActivity
+import com.votlin.android.ui.activity.TalksActivity
 
 /**
  * Navigator.

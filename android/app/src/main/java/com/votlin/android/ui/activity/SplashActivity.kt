@@ -1,4 +1,4 @@
-package com.votlin.android.ui
+package com.votlin.android.ui.activity
 
 import android.os.Handler
 import com.github.salomonbrys.kodein.Kodein
