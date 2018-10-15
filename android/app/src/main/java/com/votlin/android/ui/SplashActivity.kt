@@ -7,21 +7,20 @@ import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
-import com.votlin.android.extensions.toast
 import com.votlin.android.navigator.navigateToTalksActivity
 import com.votlin.client.presentation.SplashPresenter
 import com.votlin.client.presentation.SplashView
 
-class SplashActivity: RootActivity<SplashView>(), SplashView {
+class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override val presenter: SplashPresenter by instance()
 
     override val layoutResourceId: Int = R.layout.activity_splash
 
-    override val activityModule: Kodein.Module = Kodein.Module{
-        bind<SplashPresenter>() with provider{
-            SplashPresenter(view =  this@SplashActivity,
-            errorHandler = AndroidErrorHandler())
+    override val activityModule: Kodein.Module = Kodein.Module {
+        bind<SplashPresenter>() with provider {
+            SplashPresenter(view = this@SplashActivity,
+                    errorHandler = AndroidErrorHandler())
         }
     }
 
