@@ -9,11 +9,13 @@ import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
+import com.votlin.android.ui.adapter.ViewPagerAdapter
 import com.votlin.client.presentation.TalksPresenter
 import com.votlin.client.presentation.TalksView
 import com.votlin.model.Talk
+import kotlinx.android.synthetic.main.activity_talks.*
 
-class TalksActivity : RootActivity<TalksView>(),TalksView {
+class TalksActivity : RootActivity<TalksView>(), TalksView {
 
     companion object {
         fun getCallingIntent(context: Context) = Intent(context, TalksActivity::class.java)
@@ -21,16 +23,20 @@ class TalksActivity : RootActivity<TalksView>(),TalksView {
 
     override val presenter: TalksPresenter by instance()
 
-   override val layoutResourceId: Int = R.layout.activity_talks
-    override val activityModule: Kodein.Module = Kodein.Module{
+    override val layoutResourceId: Int = R.layout.activity_talks
+
+    override val activityModule: Kodein.Module = Kodein.Module {
         bind<TalksPresenter>() with provider {
             TalksPresenter(errorHandler = AndroidErrorHandler(),
-                    view =this@TalksActivity)
+                    view = this@TalksActivity)
         }
     }
 
     override fun initializeUI() {
-        // Nothing to do yet
+        val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+        // todo: add here talks fragments
+        viewPager.adapter = viewPagerAdapter
+        tab.setupWithViewPager(viewPager)
     }
 
     override fun registerListeners() {

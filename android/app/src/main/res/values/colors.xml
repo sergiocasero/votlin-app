@@ -10,4 +10,5 @@
     <color name="appbar_buttons_scrim_center">#10000000</color>
     <color name="appbar_buttons_scrim_end">@android:color/transparent</color>
     <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
 </resources>
