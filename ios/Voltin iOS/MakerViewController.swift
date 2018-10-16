@@ -1,5 +1,5 @@
 //
-//  BusinessViewController.swift
+//  MakerViewController.swift
 //  Voltin iOS
 //
 //  Created by Daniel Llanos Muñoz on 16/10/2018.
@@ -9,24 +9,25 @@
 import UIKit
 import ios
 
-class BusinessViewController: UIViewController {
+class MakerViewController: UIViewController {
 
-    @IBOutlet weak var businessTalksViewController: TalksListViewController!
+    @IBOutlet weak var makerTalksViewController: TalksListViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "business" {
+        if segue.identifier == "maker" {
             let connectionTalkToList = segue.destination as? TalksListViewController
-            businessTalksViewController = connectionTalkToList
-            businessTalksViewController.setTrack(track: Track.business)
+            makerTalksViewController = connectionTalkToList
+            makerTalksViewController.setTrack(track: Track.maker)
         }
     }
     
+
 }

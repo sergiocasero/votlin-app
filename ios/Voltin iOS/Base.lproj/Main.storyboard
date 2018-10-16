@@ -31,7 +31,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Business" image="business" id="8rV-mR-d9I"/>
                     <connections>
-                        <outlet property="talksViewController" destination="nNs-PV-0yn" id="xaW-iK-5lh"/>
+                        <outlet property="businessTalksViewController" destination="nNs-PV-0yn" id="b5w-vT-t1G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uN-AI-6bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,7 +41,7 @@
         <!--Development-->
         <scene sceneID="yBd-1q-ndu">
             <objects>
-                <viewController id="uLD-Yv-V9z" sceneMemberID="viewController">
+                <viewController id="uLD-Yv-V9z" customClass="DevelopmentViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xNQ-ct-dhl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="uzk-zk-4fV" kind="embed" id="iw0-Pm-y5w"/>
+                                    <segue destination="uzk-zk-4fV" kind="embed" identifier="development" id="iw0-Pm-y5w"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -59,6 +59,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Development" image="Development" id="OEH-Z8-zbx"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="developmentTalksViewController" destination="NVF-ms-4y2" id="aMa-3K-8hb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4l2-Oz-310" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,7 +70,7 @@
         <!--Maker-->
         <scene sceneID="Ldl-4L-y5I">
             <objects>
-                <viewController id="iCE-xs-xvO" sceneMemberID="viewController">
+                <viewController id="iCE-xs-xvO" customClass="MakerViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eSt-zO-dAh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +79,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="uzk-zk-4fV" kind="embed" id="qxT-hD-ufY"/>
+                                    <segue destination="uzk-zk-4fV" kind="embed" identifier="maker" id="qxT-hD-ufY"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -85,6 +88,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Maker" image="Maker" id="JDI-h3-nK0"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="makerTalksViewController" destination="gvm-b5-rN8" id="MrN-sS-c3W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R2w-gK-QHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +117,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="all" id="sfF-0Z-XzL"/>
                     <connections>
-                        <outlet property="talkListController" destination="G7l-ik-30X" id="9Ps-yA-RZI"/>
+                        <outlet property="allTalkListController" destination="G7l-ik-30X" id="sFy-cX-nb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32M-ZE-7Ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -173,6 +179,6 @@
         <image name="business" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cOV-D8-pPk"/>
+        <segue reference="qxT-hD-ufY"/>
     </inferredMetricsTieBreakers>
 </document>
