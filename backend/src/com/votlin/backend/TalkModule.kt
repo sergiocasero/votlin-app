@@ -13,26 +13,41 @@ import io.ktor.routing.get
 import io.ktor.routing.post
 import io.ktor.routing.route
 import io.ktor.routing.routing
+import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.transactions.transaction
 import java.io.File
 
-fun Application.talksModule() {
+fun Application.main() {
+    talks()
+}
+
+fun Application.talks() {
     routing {
         route("/talk") {
             val talks = getTalksFile().talks
             get { call.respond(talks) }
             get("/{id}") {
-                val id = call.parameters["id"]
+                val id = call.parameters["id"]?.toIntOrNull()
 
-                if (id?.toIntOrNull() != null) {
-                    val talk = talks.firstOrNull { talk -> talk.id == id.toInt() }
+                if (id != null) {
+                    val result = transaction { TalkDb.select { TalkDb.id eq id }.firstOrNull() }
 
-                    if (talk != null) {
+                    if (result != null) {
+
+                        val speakerIds = transaction { TalkSpeaker.select { TalkSpeaker.talkId eq id }.toList() }
+                                .map { row -> row[TalkSpeaker.speakerId] }
+
+                        val speakers = transaction { SpeakerDb.select { SpeakerDb.id inList speakerIds }.toList() }
+                                .map { row -> row.toSpeaker() }
+
+                        val talk = result.toTalk(id, speakers)
+
                         call.respond(talk)
                     } else {
-                        call.respond(HttpStatusCode.NotFound)
+                        call.respond(HttpStatusCode.NotFound, "talk with id $id not found")
                     }
                 } else {
-                    call.respond(HttpStatusCode.BadRequest)
+                    call.respond(HttpStatusCode.BadRequest, "id must be Integer")
                 }
             }
             get("/business") { call.respond(TalksResponse(talks.filter { talk -> talk.track == Track.BUSINESS })) }
@@ -41,6 +56,37 @@ fun Application.talksModule() {
             post("/rate") {
                 val rate = call.receive<Rate>()
                 call.respond(rate)
+            }
+
+            get("/parse") {
+                //
+                // transaction {
+                //     talks.forEach { talk ->
+                //         val newTalkId = TalkDb.insertAndGetId { tuple ->
+                //             tuple[name] = talk.name
+                //             tuple[description] = talk.description
+                //             tuple[start] = talk.time.start
+                //             tuple[end] = talk.time.end
+                //             tuple[track] = talk.track.toString()
+                //         }
+//
+                //         talk.speakers.forEach { speaker ->
+                //             val newSpeakerId = Speaker.insertAndGetId { tuple ->
+                //                 tuple[name] = speaker.name
+                //                 tuple[twitter] = speaker.twitter
+                //                 tuple[linkedin] = speaker.linkedin
+                //                 tuple[bio] = speaker.bio
+                //                 tuple[photoUrl] = speaker.photoUrl
+                //             }
+//
+                //             val id = TalkSpeaker.insert { tuple ->
+                //                 tuple[talkId] = newTalkId.value
+                //                 tuple[speakerId] = newSpeakerId.value
+                //             }
+                //         }
+                //     }
+                // }
+                // call.respondText("Works! :)")
             }
         }
     }

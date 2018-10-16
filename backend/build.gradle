@@ -37,6 +37,9 @@ dependencies {
     implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '2.7.2'
 
+    implementation 'org.jetbrains.exposed:exposed:0.10.5'
+    implementation "mysql:mysql-connector-java:5.1.46"
+    
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
