@@ -9,14 +9,9 @@
 import UIKit
 import ios
 
-class ViewController: UIViewController, TalksView {
+class ViewController: UIViewController, TalksListView {
     
-    private lazy var presenter: TalksPresenter = {
-        TalksPresenter(
-            errorHandler: IosErrorHandler(),
-            view: self
-        )
-    }()
+    private lazy var presenter : TalksListPresenter = TalksListPresenter(view: self, errorHandler: IosErrorHandler())
     
     @IBOutlet weak var textv: UITextView!
     
@@ -24,6 +19,7 @@ class ViewController: UIViewController, TalksView {
     super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         presenter.initialize()
+        presenter.onViewVisible()
     }
 
 
@@ -50,7 +46,19 @@ class ViewController: UIViewController, TalksView {
     
     func showTalks(talks: [Talk]) {
         // TODO: Show talks
+        var talkInfo = ""
+        for talk in talks{
+            talkInfo += "Name: " + talk.name + "\n"
+        }
+        textv.text = talkInfo
     }
-
+    
+    func getTrack() -> Track {
+        return Track.all
+    }
+    
+    func goToTalkScreen(id: Int32) {
+        
+    }
 
 }
