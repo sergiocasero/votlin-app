@@ -11,8 +11,9 @@
 		AD04EBC1217386AB00F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBB32173493400F02D8E /* ios.framework */; };
 		AD04EBC8217386DA00F02D8E /* ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBC7217386DA00F02D8E /* ios.framework */; };
 		AD04EBC9217386DA00F02D8E /* ios.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD04EBC7217386DA00F02D8E /* ios.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADCC27CF2176835D006B13EB /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCC27CE2176835D006B13EB /* AllViewController.swift */; };
+		ADCC27D1217683A0006B13EB /* TalksListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADCC27D0217683A0006B13EB /* TalksListViewController.swift */; };
 		FDF0C2329A83FDCB4493DA26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C216B5A764CA917901BF /* Main.storyboard */; };
-		FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C8B2E1E40338EB1E970F /* ViewController.swift */; };
 		FDF0C493F430107FC910E5C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */; };
 		FDF0C6CD4D1F54B3AFD48235 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0C719AF39F94CD218310B /* AppDelegate.swift */; };
 		FDF0CAD50575818D998A8FC2 /* Voltin_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF0CCBFA87B7BC5DF260366 /* Voltin_iOSTests.swift */; };
@@ -51,10 +52,11 @@
 		AD04EBC4217386BF00F02D8E /* konan */ = {isa = PBXFileReference; lastKnownFileType = folder; name = konan; path = build/konan; sourceTree = "<group>"; };
 		AD04EBC7217386DA00F02D8E /* ios.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ios.framework; path = build/konan/bin/xcode/ios.framework; sourceTree = "<group>"; };
 		AD2BF8842172A4A900569594 /* main */ = {isa = PBXFileReference; lastKnownFileType = folder; name = main; path = ../build/lib/main; sourceTree = "<group>"; };
+		ADCC27CE2176835D006B13EB /* AllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
+		ADCC27D0217683A0006B13EB /* TalksListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalksListViewController.swift; sourceTree = "<group>"; };
 		FDF0C5A3036E7C18FD2CDC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDF0C719AF39F94CD218310B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDF0C860FF0DFB7F53651A4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FDF0C8B2E1E40338EB1E970F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FDF0C8C695E293221CCA47CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDF0C945BE03852741A88388 /* Voltin iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voltin iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDF0CCBFA87B7BC5DF260366 /* Voltin_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voltin_iOSTests.swift; sourceTree = "<group>"; };
@@ -132,8 +134,9 @@
 				FDF0C618F442AFEEC7106F8C /* LaunchScreen.storyboard */,
 				FDF0C719AF39F94CD218310B /* AppDelegate.swift */,
 				FDF0C216B5A764CA917901BF /* Main.storyboard */,
-				FDF0C8B2E1E40338EB1E970F /* ViewController.swift */,
 				AD04EBBB21736AE700F02D8E /* IosErrorHandler.swift */,
+				ADCC27CE2176835D006B13EB /* AllViewController.swift */,
+				ADCC27D0217683A0006B13EB /* TalksListViewController.swift */,
 			);
 			path = "Voltin iOS";
 			sourceTree = "<group>";
@@ -254,9 +257,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADCC27CF2176835D006B13EB /* AllViewController.swift in Sources */,
 				FDF0C6CD4D1F54B3AFD48235 /* AppDelegate.swift in Sources */,
+				ADCC27D1217683A0006B13EB /* TalksListViewController.swift in Sources */,
 				AD04EBBC21736AE700F02D8E /* IosErrorHandler.swift in Sources */,
-				FDF0C37A4A685B80D28E1E05 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

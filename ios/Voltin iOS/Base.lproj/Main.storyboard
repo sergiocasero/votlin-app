@@ -90,7 +90,7 @@
         <!--All-->
         <scene sceneID="ehh-aE-B32">
             <objects>
-                <viewController id="ey6-0e-w4F" sceneMemberID="viewController">
+                <viewController id="ey6-0e-w4F" customClass="AllViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l9a-eo-xH0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +99,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="uzk-zk-4fV" kind="embed" id="zqa-3i-oun"/>
+                                    <segue destination="uzk-zk-4fV" kind="embed" identifier="all" id="zqa-3i-oun"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -107,6 +107,9 @@
                         <viewLayoutGuide key="safeArea" id="FcJ-ra-M0i"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="all" id="sfF-0Z-XzL"/>
+                    <connections>
+                        <outlet property="talkListController" destination="G7l-ik-30X" id="9Ps-yA-RZI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32M-ZE-7Ap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="-377" y="-1245"/>
         </scene>
-        <!--View Controller-->
+        <!--Talks List View Controller-->
         <scene sceneID="8T6-3l-1kz">
             <objects>
-                <viewController id="uzk-zk-4fV" sceneMemberID="viewController">
+                <viewController id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8oj-43-Lhp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -151,6 +154,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <connections>
+                        <outlet property="test" destination="bEU-uA-VHc" id="d2i-Qe-ssJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llw-ff-z2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +170,6 @@
         <image name="business" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qxT-hD-ufY"/>
+        <segue reference="zqa-3i-oun"/>
     </inferredMetricsTieBreakers>
 </document>
