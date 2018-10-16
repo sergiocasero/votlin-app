@@ -1,17 +1,48 @@
 package com.votlin.backend
 
+import com.votlin.model.Rate
+import com.votlin.model.Speaker
 import com.votlin.model.Talk
+import com.votlin.model.Track
+import io.ktor.http.HttpStatusCode
+import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
 fun getTalkById(id: Int): Talk {
-    val result = transaction { TalkDb.select { TalkDb.id eq id }.first() }
+    return transaction { TalkVo.select { TalkVo.id eq id }.first() }.toTalk(getTalkSpeakers(talkId = id))
+}
 
-    val speakerIds = transaction { TalkSpeaker.select { TalkSpeaker.talkId eq id }.toList() }
-            .map { row -> row[TalkSpeaker.speakerId] }
+fun getTalks(): List<Talk> = transaction { TalkVo.selectAll().toList() }.map {
+    it.toTalk(getTalkSpeakers(it[TalkVo.id]))
+}
 
-    val speakers = transaction { SpeakerDb.select { SpeakerDb.id inList speakerIds }.toList() }
+fun getTalkRating(talkId: Int): Double {
+    val values = transaction { RateVo.select { RateVo.talkId eq talkId }.toList() }
+            .sumBy { result -> result[RateVo.value] }
+
+    val count = transaction { RateVo.select { RateVo.talkId eq talkId }.toList() }.count()
+    return (values / count).toDouble()
+}
+
+fun getTalkSpeakers(talkId: Int): List<Speaker> {
+    val speakerIds = transaction { TalkSpeakerVo.select { TalkSpeakerVo.talkId eq talkId }.toList() }
+            .map { row -> row[TalkSpeakerVo.speakerId] }
+
+    return transaction { SpeakerVo.select { SpeakerVo.id inList speakerIds }.toList() }
             .map { row -> row.toSpeaker() }
+}
 
-    return result.toTalk(id, speakers)
+fun getTrackTalks(track: Track): List<Talk> = getTalks().filter { it.track == track }
+
+fun addTalkRating(rate: Rate): HttpStatusCode {
+    transaction {
+        RateVo.insert { rateVo ->
+            rateVo[talkId] = rate.id
+            rateVo[value] = rate.value
+        }
+    }
+
+    return HttpStatusCode.Created
 }
