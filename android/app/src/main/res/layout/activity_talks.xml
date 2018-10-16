@@ -25,12 +25,12 @@
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tab"
-                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:tabGravity="fill"
                 app:tabIndicatorColor="@color/white"
                 app:tabIndicatorHeight="2dp"
-                app:tabMode="fixed"
+                app:tabMode="scrollable"
                 app:tabSelectedTextColor="@color/white"
                 app:tabTextColor="@color/white" />
 

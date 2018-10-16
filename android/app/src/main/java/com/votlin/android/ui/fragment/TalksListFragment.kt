@@ -1,16 +1,20 @@
 package com.votlin.android.ui.fragment
 
 import android.os.Bundle
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
+import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
+import com.votlin.android.ui.adapter.TalksAdapter
 import com.votlin.client.presentation.TalksListPresenter
 import com.votlin.client.presentation.TalksListView
+import com.votlin.model.Talk
 import com.votlin.model.Track
 import kotlinx.android.synthetic.main.fragment_talks.*
 
@@ -37,14 +41,17 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         bind<TalksListPresenter>() with provider {
             TalksListPresenter(
                     view = this@TalksListFragment,
-                    errorHandler = instance())
+                    errorHandler = AndroidErrorHandler())
         }
     }
 
-    override fun initializeUI() {
-        // Nothing to do here
-    }
+    private val adapter = TalksAdapter { presenter.onTalkClicked(it) }
 
+    override fun initializeUI() {
+        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        talks.layoutManager = layoutManager
+        talks.adapter = adapter
+    }
 
     override fun registerListeners() {
         // Nothing to do here
@@ -80,8 +87,12 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         }
     }
 
-    override fun showTalks(talks: List<Track>) {
-        // todo: add talks to adapter
+    override fun showTalks(talks: List<Talk>) {
+        adapter.replace(talks.toMutableList())
+    }
+
+    override fun goToTalkScreen(id: Int) {
+        // TODO: Navigate to talk detail screen
     }
 
 }
