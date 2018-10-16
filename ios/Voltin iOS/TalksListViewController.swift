@@ -18,7 +18,6 @@ class TalksListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         test.text = track.name
-        
     }
 
     override func didReceiveMemoryWarning() {

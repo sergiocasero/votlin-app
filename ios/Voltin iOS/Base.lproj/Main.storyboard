@@ -13,7 +13,7 @@
         <!--Business-->
         <scene sceneID="mdA-VK-Ra6">
             <objects>
-                <viewController id="fPJ-bt-LNh" sceneMemberID="viewController">
+                <viewController id="fPJ-bt-LNh" customClass="BusinessViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="axi-eT-dsn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="uzk-zk-4fV" kind="embed" id="Qda-CV-M9P"/>
+                                    <segue destination="uzk-zk-4fV" kind="embed" identifier="business" id="cOV-D8-pPk"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -30,6 +30,9 @@
                         <viewLayoutGuide key="safeArea" id="gT5-AT-ZaV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Business" image="business" id="8rV-mR-d9I"/>
+                    <connections>
+                        <outlet property="talksViewController" destination="nNs-PV-0yn" id="xaW-iK-5lh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uN-AI-6bV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,6 +173,6 @@
         <image name="business" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zqa-3i-oun"/>
+        <segue reference="cOV-D8-pPk"/>
     </inferredMetricsTieBreakers>
 </document>
