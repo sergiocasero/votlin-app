@@ -50,8 +50,6 @@ class ViewController: UIViewController, TalksView {
     
     func showTalks(talks: [Talk]) {
         // TODO: Show talks
-        let talkInfo = "Name: " + talks[0].name + ", datetimeStart: " + String(talks[0].datetimeStart)
-        textv.text = talkInfo
     }
 
 
