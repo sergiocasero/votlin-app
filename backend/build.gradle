@@ -20,7 +20,7 @@ mainClassName = 'com.votlin.backend.ServerKt'
 sourceCompatibility = 1.8
 
 dependencies {
-    implementation project(":common")
+    expectedBy project(":common")
 
     implementation "io.ktor:ktor-client-apache:$ktor_version"
     implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
@@ -33,6 +33,7 @@ dependencies {
     implementation "io.ktor:ktor-client-apache:$ktor_version"
     implementation "org.jetbrains.squash:squash:$squash_version"
     implementation "org.jetbrains.squash:squash-h2:$squash_version"
+    implementation "io.ktor:ktor-jackson:$ktor_version"
     implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '2.7.2'
 
