@@ -22,13 +22,16 @@ class TalksListPresenter(view: TalksListView, errorHandler: ErrorHandler) :
     fun onViewVisible() {
         val trackValue = track
         if (trackValue != null) {
+            view.showProgress()
+            //TODO: Execute use case
             view.showTalks(mockTalks().filter { trackValue == Track.ALL || trackValue == it.track })
+            view.hideProgress()
         }
     }
 
     fun onTalkClicked(talk: Talk) = view.goToTalkScreen(talk.id)
 
-    // todo: remove this
+    // TODO: remove this
     private fun mockTalks() = listOf(
             Talk(id = 0,
                     name = "Talk 1",
