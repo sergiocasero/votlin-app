@@ -30,6 +30,7 @@ fun Application.talks() {
                 val id = call.parameters["id"]?.toIntOrNull()
 
                 if (id != null) {
+                    call.respond(getTalkById(id))
                     val result = transaction { TalkDb.select { TalkDb.id eq id }.firstOrNull() }
 
                     if (result != null) {
@@ -56,37 +57,6 @@ fun Application.talks() {
             post("/rate") {
                 val rate = call.receive<Rate>()
                 call.respond(rate)
-            }
-
-            get("/parse") {
-                //
-                // transaction {
-                //     talks.forEach { talk ->
-                //         val newTalkId = TalkDb.insertAndGetId { tuple ->
-                //             tuple[name] = talk.name
-                //             tuple[description] = talk.description
-                //             tuple[start] = talk.time.start
-                //             tuple[end] = talk.time.end
-                //             tuple[track] = talk.track.toString()
-                //         }
-//
-                //         talk.speakers.forEach { speaker ->
-                //             val newSpeakerId = Speaker.insertAndGetId { tuple ->
-                //                 tuple[name] = speaker.name
-                //                 tuple[twitter] = speaker.twitter
-                //                 tuple[linkedin] = speaker.linkedin
-                //                 tuple[bio] = speaker.bio
-                //                 tuple[photoUrl] = speaker.photoUrl
-                //             }
-//
-                //             val id = TalkSpeaker.insert { tuple ->
-                //                 tuple[talkId] = newTalkId.value
-                //                 tuple[speakerId] = newSpeakerId.value
-                //             }
-                //         }
-                //     }
-                // }
-                // call.respondText("Works! :)")
             }
         }
     }

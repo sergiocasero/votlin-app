@@ -19,6 +19,9 @@ mainClassName = 'com.votlin.backend.ServerKt'
 
 sourceCompatibility = 1.8
 
+
+
+
 dependencies {
     expectedBy project(":common")
 
@@ -39,7 +42,7 @@ dependencies {
 
     implementation 'org.jetbrains.exposed:exposed:0.10.5'
     implementation "mysql:mysql-connector-java:5.1.46"
-    
+
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
