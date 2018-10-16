@@ -9,7 +9,9 @@
 import UIKit
 import ios
 
-class TalksListViewController: UIViewController {
+class TalksListViewController: UIViewController, TalksListView {
+    
+    private lazy var presenter : TalksListPresenter = TalksListPresenter(view: self, errorHandler: IosErrorHandler())
     
     var track: Track = Track.all
     
@@ -17,7 +19,8 @@ class TalksListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        test.text = track.name
+        presenter.initialize()
+        presenter.onViewVisible()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,6 +29,38 @@ class TalksListViewController: UIViewController {
     
     func setTrack(track: Track){
         self.track = track
+    }
+    
+    func showProgress() {
+    
+    }
+    
+    func hideProgress() {
+    
+    }
+    
+    func showError(error: String) {
+    
+    }
+    
+    func showMessage(message: String) {
+        
+    }
+    
+    func getTrack() -> Track {
+        return track
+    }
+    
+    func showTalks(talks: [Talk]) {
+        var talkInfo = track.name + "\n"
+        for talk in talks {
+            talkInfo += "Name: " + talk.name + "\n"
+        }
+        test.text = talkInfo
+    }
+    
+    func goToTalkScreen(id: Int32) {
+    
     }
 
 }

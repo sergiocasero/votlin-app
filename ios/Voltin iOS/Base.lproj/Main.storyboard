@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Shared View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bEU-uA-VHc">
-                                <rect key="frame" x="67" y="213" width="240" height="128"/>
+                                <rect key="frame" x="16" y="20" width="359" height="514"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llw-ff-z2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="470"/>
+            <point key="canvasLocation" x="-378.39999999999998" y="469.56521739130437"/>
         </scene>
     </scenes>
     <resources>
