@@ -15,7 +15,7 @@ class TalksListViewController: UIViewController, UICollectionViewDataSource, UIC
     
     var track: Track = Track.all
     
-    var talks: [Talk] = [Talk(id: 1, name: "Hi", description: "Test", speakers: [], track: Track.business, time: Time(start: 12312, end: 12313)), Talk(id: 2, name: "Hi 2", description: "Test", speakers: [], track: Track.business, time: Time(start: 12312, end: 12313)), Talk(id: 3, name: "Hi 3", description: "Test", speakers: [], track: Track.business, time: Time(start: 12312, end: 12313))]
+    var talks: [Talk] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,7 @@ class TalksListViewController: UIViewController, UICollectionViewDataSource, UIC
     func setTrack(track: Track){
         self.track = track
     }
-    
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return talks.count
     }

@@ -145,10 +145,10 @@
             </objects>
             <point key="canvasLocation" x="-377" y="-1245"/>
         </scene>
-        <!--Talks List View Controller-->
+        <!--Votlin-->
         <scene sceneID="8T6-3l-1kz">
             <objects>
-                <viewController id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Votlin" id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8oj-43-Lhp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +164,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TalkCollectionViewCell" id="BTk-W6-Yp4" customClass="TalkCollectionViewCell" customModule="Voltin_iOS" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="BTk-W6-Yp4" customClass="TalkCollectionViewCell" customModule="Voltin_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -189,14 +189,14 @@
                                         </view>
                                         <size key="customSize" width="343" height="140"/>
                                         <connections>
-                                            <outlet property="talkDescription" destination="h3b-5O-zGa" id="1eI-ab-t3z"/>
-                                            <outlet property="talkName" destination="TEg-yn-3tz" id="0mN-1M-lIm"/>
+                                            <outlet property="talkDescription" destination="h3b-5O-zGa" id="9va-JJ-rtI"/>
+                                            <outlet property="talkName" destination="TEg-yn-3tz" id="3Mv-xx-pKi"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="uzk-zk-4fV" id="fcQ-qI-dYF"/>
-                                    <outlet property="delegate" destination="uzk-zk-4fV" id="acQ-yv-GNr"/>
+                                    <outlet property="dataSource" destination="uzk-zk-4fV" id="74M-9R-bpJ"/>
+                                    <outlet property="delegate" destination="uzk-zk-4fV" id="MB1-1Y-Dar"/>
                                 </connections>
                             </collectionView>
                         </subviews>

@@ -9,8 +9,7 @@
 import UIKit
 
 class TalkCollectionViewCell: UICollectionViewCell {
-    
+ 
     @IBOutlet weak var talkName: UILabel!
     @IBOutlet weak var talkDescription: UILabel!
-    
 }
