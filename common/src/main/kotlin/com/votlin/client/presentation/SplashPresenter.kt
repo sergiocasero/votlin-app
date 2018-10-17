@@ -18,7 +18,7 @@ class SplashPresenter(view: SplashView, errorHandler: ErrorHandler) :
     }
 
     fun onRunnableCallback() {
-        view.goToTalksScreen()
+        // view.goToTalksScreen()
     }
 }
 

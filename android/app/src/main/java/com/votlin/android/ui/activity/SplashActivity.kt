@@ -34,6 +34,25 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override fun initializeUI() {
         mDelayHandler = Handler()
+
+        //val local = object : LocalDataSource {
+        //    override fun getFavoriteTalks(): List<Talk> {
+        //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //    }
+//
+        //    override fun saveRate(rate: Rate) {
+        //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //    }
+//
+        //    override fun saveTalk(talk: Talk) {
+        //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        //    }
+//
+        //}
+//
+        //val remote: RemoteDataSource = CommonRemoteDataSource()
+//
+        //val repository: Repository = VotlinRepository(remote = remote, local = local)
     }
 
     override fun registerListeners() {

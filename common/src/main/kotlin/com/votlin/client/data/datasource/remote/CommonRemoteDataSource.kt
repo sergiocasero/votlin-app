@@ -9,9 +9,9 @@ import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.get
 import io.ktor.http.takeFrom
 
-class CommonRemoteDataSource() : RemoteDataSource {
+class CommonRemoteDataSource : RemoteDataSource {
 
-    private val endPoint: String = "sergiocasero.es"
+    private val endPoint: String = "http://sergiocasero.es:10000"
 
     private val client = HttpClient {
         install(JsonFeature) {
@@ -27,9 +27,9 @@ class CommonRemoteDataSource() : RemoteDataSource {
 
     override suspend fun getTalks(): List<Talk> = client.get<List<TalkDto>> { apiUrl("talk") }.map { it.toModel() }
 
-    override fun getTalk(talkId: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override suspend fun getTalk(talkId: Int): Talk = client.get<TalkDto> {
+        apiUrl("talk/$talkId")
+    }.toModel()
 
     override fun getTrackTalks(track: Track): List<Talk> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.

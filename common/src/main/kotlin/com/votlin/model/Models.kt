@@ -13,6 +13,7 @@ data class Talk(val id: Int,
                 val track: Track,
                 val time: Time)
 
+@Serializable
 data class TalksResponse(val talks: List<Talk>)
 
 enum class Track {
@@ -29,7 +30,6 @@ data class Speaker(
 
 @Serializable
 data class Rate(val id: Int, val value: Int)
-
 
 @Serializable
 internal data class TalkDto(

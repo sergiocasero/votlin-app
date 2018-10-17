@@ -13,7 +13,7 @@ interface Repository {
 
     fun rateTalk(rate: Rate)
 
-    fun getTalk(talkId: Int)
+    suspend fun getTalk(talkId: Int): Talk
 
     fun getFavoriteTalks(): List<Talk>
 }

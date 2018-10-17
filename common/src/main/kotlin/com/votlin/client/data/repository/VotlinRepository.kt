@@ -11,7 +11,7 @@ class VotlinRepository(private val local: LocalDataSource,
 
     override suspend fun getTalks(): List<Talk> = remote.getTalks()
 
-    override fun getTalk(talkId: Int) = remote.getTalk(talkId = talkId)
+    override suspend fun getTalk(talkId: Int): Talk = remote.getTalk(talkId = talkId)
 
     override fun getFavoriteTalks(): List<Talk> = local.getFavoriteTalks()
 
