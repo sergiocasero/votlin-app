@@ -9,13 +9,13 @@
 import UIKit
 import ios
 
-class TalksListViewController: UIViewController, TalksListView {
+class TalksListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, TalksListView {
     
     private lazy var presenter : TalksListPresenter = TalksListPresenter(view: self, errorHandler: IosErrorHandler())
     
     var track: Track = Track.all
     
-    @IBOutlet weak var test: UITextView!
+    var talks: [Talk] = [Talk(id: 1, name: "Hi", description: "Test", speakers: [], track: Track.business, time: Time(start: 12312, end: 12313)), Talk(id: 2, name: "Hi 2", description: "Test", speakers: [], track: Track.business, time: Time(start: 12312, end: 12313)), Talk(id: 3, name: "Hi 3", description: "Test", speakers: [], track: Track.business, time: Time(start: 12312, end: 12313))]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,20 @@ class TalksListViewController: UIViewController, TalksListView {
     
     func setTrack(track: Track){
         self.track = track
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return talks.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TalkCollectionViewCell
+        
+        let talk = self.talks[indexPath.row]
+        cell.talkName.text = talk.name
+        cell.talkDescription.text = ""
+        
+        return cell
     }
     
     func showProgress() {
@@ -52,11 +66,7 @@ class TalksListViewController: UIViewController, TalksListView {
     }
     
     func showTalks(talks: [Talk]) {
-        var talkInfo = track.name + "\n"
-        for talk in talks {
-            talkInfo += "Name: " + talk.name + "\n"
-        }
-        test.text = talkInfo
+        self.talks = talks
     }
     
     func goToTalkScreen(id: Int32) {
