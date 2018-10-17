@@ -5,13 +5,9 @@ repositories {
     mavenCentral()
 }
 
-def arrow_version = "0.7.3"
-
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
     compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
-
-    compile "io.arrow-kt:arrow-core:$arrow_version"
 
     testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
 

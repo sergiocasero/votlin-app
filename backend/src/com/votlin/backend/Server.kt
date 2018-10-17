@@ -1,9 +1,36 @@
 package com.votlin.backend
 
-import io.ktor.server.engine.*
-import io.ktor.server.netty.*
+import com.fasterxml.jackson.databind.SerializationFeature
+import io.ktor.application.install
+import io.ktor.features.CORS
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.StatusPages
+import io.ktor.jackson.jackson
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import org.jetbrains.exposed.sql.Database
 
 fun main(args: Array<String>) {
-    val server = embeddedServer(Netty, commandLineEnvironment(args))
-    server.start()
+    embeddedServer(Netty, 8080) {
+
+        // Database
+        Database.connect(url = "jdbc:mysql://localhost:3306/edd",
+                driver = "com.mysql.jdbc.Driver",
+                user = "root",
+                password = "")
+
+        // Serialize json
+        install(ContentNegotiation) {
+            jackson {
+                enable(SerializationFeature.INDENT_OUTPUT)
+            }
+        }
+
+        // Return custom errors (if needed)
+        install(StatusPages)
+        install(CORS) { anyHost() }
+
+        // Modules
+        main()
+    }.start(wait = true)
 }

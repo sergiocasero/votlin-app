@@ -8,13 +8,12 @@ data class Talk(val id: Int,
                 val description: String,
                 val speakers: List<Speaker>,
                 val track: Track,
-                val datetimeStart: Long,
-                val datetimeEnd: Long)
+                val time: Time)
 
-sealed class Track {
-    data class Business(val room: String)
-    data class Development(val room: String)
-    data class Maker(val room: String)
+data class TalksResponse(val talks: List<Talk>)
+
+enum class Track {
+    BUSINESS, DEVELOPMENT, MAKER, ALL
 }
 
 data class Speaker(
@@ -23,3 +22,5 @@ data class Speaker(
         val name: String,
         val bio: String,
         val photoUrl: String)
+
+data class Rate(val id: Int, val value: Int)
