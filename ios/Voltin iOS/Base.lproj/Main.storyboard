@@ -145,27 +145,64 @@
             </objects>
             <point key="canvasLocation" x="-377" y="-1245"/>
         </scene>
-        <!--Talks List View Controller-->
+        <!--Votlin-->
         <scene sceneID="8T6-3l-1kz">
             <objects>
-                <viewController id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Votlin" id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8oj-43-Lhp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Shared View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bEU-uA-VHc">
-                                <rect key="frame" x="16" y="20" width="359" height="514"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-Sx-c9v">
+                                <rect key="frame" x="0.0" y="20" width="375" height="534"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dye-l1-czx">
+                                    <size key="itemSize" width="343" height="94"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="BTk-W6-Yp4" customClass="TalkCollectionViewCell" customModule="Voltin_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="0.0" width="343" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="94"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-yn-3tz">
+                                                    <rect key="frame" x="20" y="20" width="323" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description  Description  Description  Description  Description  Description  Description " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3b-5O-zGa">
+                                                    <rect key="frame" x="20" y="50" width="323" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <size key="customSize" width="343" height="94"/>
+                                        <connections>
+                                            <outlet property="talkDescription" destination="h3b-5O-zGa" id="9va-JJ-rtI"/>
+                                            <outlet property="talkName" destination="TEg-yn-3tz" id="3Mv-xx-pKi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="uzk-zk-4fV" id="74M-9R-bpJ"/>
+                                    <outlet property="delegate" destination="uzk-zk-4fV" id="MB1-1Y-Dar"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="mOL-gu-Oer"/>
                     </view>
-                    <connections>
-                        <outlet property="test" destination="bEU-uA-VHc" id="d2i-Qe-ssJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llw-ff-z2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,6 +216,6 @@
         <image name="business" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qxT-hD-ufY"/>
+        <segue reference="zqa-3i-oun"/>
     </inferredMetricsTieBreakers>
 </document>

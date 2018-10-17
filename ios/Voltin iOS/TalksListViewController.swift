@@ -9,13 +9,13 @@
 import UIKit
 import ios
 
-class TalksListViewController: UIViewController, TalksListView {
+class TalksListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, TalksListView {
     
     private lazy var presenter : TalksListPresenter = TalksListPresenter(view: self, errorHandler: IosErrorHandler())
     
     var track: Track = Track.all
     
-    @IBOutlet weak var test: UITextView!
+    var talks: [Talk] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,21 @@ class TalksListViewController: UIViewController, TalksListView {
     
     func setTrack(track: Track){
         self.track = track
+    }
+   
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return talks.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TalkCollectionViewCell
+        
+        let talk = self.talks[indexPath.row]
+        cell.talkName.text = talk.name
+        let speakers = talk.speakers.map{$0.name}.joined(separator: ", ")
+        cell.talkDescription.text = speakers
+        
+        return cell
     }
     
     func showProgress() {
@@ -52,11 +67,7 @@ class TalksListViewController: UIViewController, TalksListView {
     }
     
     func showTalks(talks: [Talk]) {
-        var talkInfo = track.name + "\n"
-        for talk in talks {
-            talkInfo += "Name: " + talk.name + "\n"
-        }
-        test.text = talkInfo
+        self.talks = talks
     }
     
     func goToTalkScreen(id: Int32) {
