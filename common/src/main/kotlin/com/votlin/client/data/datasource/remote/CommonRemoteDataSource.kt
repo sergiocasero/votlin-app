@@ -38,7 +38,7 @@ class CommonRemoteDataSource : RemoteDataSource {
         body = rate
     }
 
-    private suspend fun HttpRequestBuilder.apiUrl(path: String) {
+    private fun HttpRequestBuilder.apiUrl(path: String) {
         url {
             takeFrom(endPoint)
             encodedPath = path
