@@ -1,13 +1,31 @@
 package com.votlin.client.data.datasource.remote
 
-import com.votlin.model.Rate
-import com.votlin.model.Talk
-import com.votlin.model.Track
+import com.votlin.model.*
+import io.ktor.client.HttpClient
+import io.ktor.client.features.ExpectSuccess
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
+import io.ktor.client.request.HttpRequestBuilder
+import io.ktor.client.request.get
+import io.ktor.http.takeFrom
 
 class CommonRemoteDataSource() : RemoteDataSource {
-    override fun getTalks(): List<Talk> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+    private val endPoint: String = "sergiocasero.es"
+
+    private val client = HttpClient {
+        install(JsonFeature) {
+            serializer = KotlinxSerializer().apply {
+                setMapper(TalkDto::class, TalkDto.serializer())
+                setMapper(Speaker::class, Speaker.serializer())
+                setMapper(Rate::class, Rate.serializer())
+                setMapper(Time::class, Time.serializer())
+            }
+        }
+        install(ExpectSuccess)
     }
+
+    override suspend fun getTalks(): List<Talk> = client.get<List<TalkDto>> { apiUrl("talk") }.map { it.toModel() }
 
     override fun getTalk(talkId: Int) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
@@ -19,5 +37,12 @@ class CommonRemoteDataSource() : RemoteDataSource {
 
     override fun rateTalk(rate: Rate) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    private fun HttpRequestBuilder.apiUrl(path: String) {
+        url {
+            takeFrom(endPoint)
+            encodedPath = path
+        }
     }
 }

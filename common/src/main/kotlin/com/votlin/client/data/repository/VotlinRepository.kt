@@ -9,7 +9,7 @@ import com.votlin.model.Track
 class VotlinRepository(private val local: LocalDataSource,
                        private val remote: RemoteDataSource) : Repository {
 
-    override fun getTalks(): List<Talk> = remote.getTalks()
+    override suspend fun getTalks(): List<Talk> = remote.getTalks()
 
     override fun getTalk(talkId: Int) = remote.getTalk(talkId = talkId)
 

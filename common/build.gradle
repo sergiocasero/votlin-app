@@ -6,10 +6,13 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-common:$kotlin_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
-    implementation "io.ktor:ktor-client:$ktor_version"
+    compile 'org.jetbrains.kotlin:kotlin-stdlib'
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
 
-    testImplementation "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+    compile "io.ktor:ktor-client-core:$ktor_version"
+    compile "io.ktor:ktor-client-json:$ktor_version"
+
+    testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
 
 }

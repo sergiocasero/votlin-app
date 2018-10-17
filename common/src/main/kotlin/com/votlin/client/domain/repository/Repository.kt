@@ -5,7 +5,7 @@ import com.votlin.model.Talk
 import com.votlin.model.Track
 
 interface Repository {
-    fun getTalks(): List<Talk>
+    suspend fun getTalks(): List<Talk>
 
     fun saveTalk(talk: Talk)
 
