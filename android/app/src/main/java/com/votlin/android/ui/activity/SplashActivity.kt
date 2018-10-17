@@ -9,10 +9,8 @@ import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.navigator.navigateToTalksActivity
 import com.votlin.client.presentation.SplashPresenter
+import com.votlin.client.presentation.SplashPresenter.Companion.SPLASH_MILLIS
 import com.votlin.client.presentation.SplashView
-import com.votlin.model.Talk
-import kotlinx.android.synthetic.main.activity_splash.*
-import kotlinx.coroutines.Dispatchers
 
 class SplashActivity : RootActivity<SplashView>(), SplashView {
 
@@ -24,10 +22,7 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
         bind<SplashPresenter>() with provider {
             SplashPresenter(
                     view = this@SplashActivity,
-                    errorHandler = AndroidErrorHandler(),
-                    newThread = Dispatchers.Default,
-                    mainThread = Dispatchers.Main,
-                    repository = instance())
+                    errorHandler = AndroidErrorHandler())
         }
     }
 
@@ -41,6 +36,10 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override fun initializeUI() {
         mDelayHandler = Handler()
+
+        mDelayHandler?.postDelayed({
+            presenter.onRunnableCallback()
+        }, SPLASH_MILLIS)
     }
 
     override fun registerListeners() {
@@ -62,9 +61,5 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override fun showLoadingProgress(delayMillis: Long) {
         mDelayHandler!!.postDelayed(mRunnable, delayMillis)
-    }
-
-    override fun showTalks(talks: List<Talk>) {
-        test.text = talks.toString()
     }
 }

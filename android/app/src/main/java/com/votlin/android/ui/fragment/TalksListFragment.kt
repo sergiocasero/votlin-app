@@ -41,7 +41,9 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         bind<TalksListPresenter>() with provider {
             TalksListPresenter(
                     view = this@TalksListFragment,
-                    errorHandler = AndroidErrorHandler())
+                    errorHandler = AndroidErrorHandler(),
+                    executor = instance(),
+                    repository = instance())
         }
     }
 
