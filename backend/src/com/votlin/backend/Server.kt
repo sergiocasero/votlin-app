@@ -11,13 +11,13 @@ import io.ktor.server.netty.Netty
 import org.jetbrains.exposed.sql.Database
 
 fun main(args: Array<String>) {
-    embeddedServer(Netty, 8080) {
+    embeddedServer(Netty, 10000) {
 
         // Database
         Database.connect(url = "jdbc:mysql://localhost:3306/edd",
                 driver = "com.mysql.jdbc.Driver",
-                user = "root",
-                password = "")
+                user = "edd",
+                password = "extremaduradigitalday")
 
         // Serialize json
         install(ContentNegotiation) {

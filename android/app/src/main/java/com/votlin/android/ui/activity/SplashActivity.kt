@@ -10,6 +10,9 @@ import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.navigator.navigateToTalksActivity
 import com.votlin.client.presentation.SplashPresenter
 import com.votlin.client.presentation.SplashView
+import com.votlin.model.Talk
+import kotlinx.android.synthetic.main.activity_splash.*
+import kotlinx.coroutines.Dispatchers
 
 class SplashActivity : RootActivity<SplashView>(), SplashView {
 
@@ -19,8 +22,12 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<SplashPresenter>() with provider {
-            SplashPresenter(view = this@SplashActivity,
-                    errorHandler = AndroidErrorHandler())
+            SplashPresenter(
+                    view = this@SplashActivity,
+                    errorHandler = AndroidErrorHandler(),
+                    newThread = Dispatchers.Default,
+                    mainThread = Dispatchers.Main,
+                    repository = instance())
         }
     }
 
@@ -34,25 +41,6 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override fun initializeUI() {
         mDelayHandler = Handler()
-
-        //val local = object : LocalDataSource {
-        //    override fun getFavoriteTalks(): List<Talk> {
-        //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        //    }
-//
-        //    override fun saveRate(rate: Rate) {
-        //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        //    }
-//
-        //    override fun saveTalk(talk: Talk) {
-        //        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        //    }
-//
-        //}
-//
-        //val remote: RemoteDataSource = CommonRemoteDataSource()
-//
-        //val repository: Repository = VotlinRepository(remote = remote, local = local)
     }
 
     override fun registerListeners() {
@@ -74,5 +62,9 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override fun showLoadingProgress(delayMillis: Long) {
         mDelayHandler!!.postDelayed(mRunnable, delayMillis)
+    }
+
+    override fun showTalks(talks: List<Talk>) {
+        test.text = talks.toString()
     }
 }

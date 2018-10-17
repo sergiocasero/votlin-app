@@ -1,5 +1,6 @@
 package com.votlin.backend
 
+import com.votlin.model.TalksResponse
 import com.votlin.model.Track
 import io.ktor.application.Application
 import io.ktor.application.call
@@ -19,10 +20,10 @@ fun Application.talks() {
         route("/talk") {
 
             //GET
-            get { call.respond(getTalks()) }
-            get("/business") { call.respond(getTrackTalks(Track.BUSINESS)) }
-            get("/development") { call.respond(getTrackTalks(Track.DEVELOPMENT)) }
-            get("/maker") { call.respond(getTrackTalks(Track.MAKER)) }
+            get { call.respond(TalksResponse(getTalks())) }
+            get("/business") { call.respond(TalksResponse(getTrackTalks(Track.BUSINESS))) }
+            get("/development") { call.respond(TalksResponse(getTrackTalks(Track.DEVELOPMENT))) }
+            get("/maker") { call.respond(TalksResponse(getTrackTalks(Track.MAKER))) }
             get("/{id}") {
                 call.parameters["id"]?.toIntOrNull()?.let { id -> call.respond(getTalkById(id = id)) }
             }

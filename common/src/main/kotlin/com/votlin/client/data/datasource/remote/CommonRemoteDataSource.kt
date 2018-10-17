@@ -16,7 +16,8 @@ class CommonRemoteDataSource : RemoteDataSource {
     private val client = HttpClient {
         install(JsonFeature) {
             serializer = KotlinxSerializer().apply {
-                setMapper(TalkDto::class, TalkDto.serializer())
+                setMapper(Talk::class, Talk.serializer())
+                setMapper(TalksResponse::class, TalksResponse.serializer())
                 setMapper(Speaker::class, Speaker.serializer())
                 setMapper(Rate::class, Rate.serializer())
                 setMapper(Time::class, Time.serializer())
@@ -25,7 +26,7 @@ class CommonRemoteDataSource : RemoteDataSource {
         install(ExpectSuccess)
     }
 
-    override suspend fun getTalks(): List<Talk> = client.get<List<TalkDto>> { apiUrl("talk") }.map { it.toModel() }
+    override suspend fun getTalks(): List<Talk> = client.get<TalksResponse> { apiUrl("talk") }.talks
 
     override suspend fun getTalk(talkId: Int): Talk = client.get<TalkDto> {
         apiUrl("talk/$talkId")

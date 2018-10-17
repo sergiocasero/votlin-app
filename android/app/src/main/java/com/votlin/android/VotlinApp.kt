@@ -6,30 +6,15 @@ import android.support.multidex.MultiDex
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.KodeinAware
 import com.github.salomonbrys.kodein.lazy
-import org.jetbrains.anko.AnkoLogger
-import java.util.*
 
-class VotlinApp : Application(), AnkoLogger, KodeinAware {
+class VotlinApp : Application(), KodeinAware {
 
     override val kodein by Kodein.lazy {
-        // add modules
-    }
-
-
-    override fun onCreate() {
-        super.onCreate()
-
-        Thread.setDefaultUncaughtExceptionHandler { _, throwable ->
-            println(throwable)
-            throwable.printStackTrace()
-            throwable?.cause?.printStackTrace()
-        }
+        import(app(this@VotlinApp))
     }
 
     override fun attachBaseContext(base: Context?) {
         super.attachBaseContext(base)
         MultiDex.install(this)
     }
-
-    private fun getUserId(): String = "android-" + UUID.randomUUID().toString()
 }

@@ -6,7 +6,7 @@ import com.votlin.model.Rate
 import com.votlin.model.Talk
 import com.votlin.model.Track
 
-class VotlinRepository(private val local: LocalDataSource,
+class CommonRepository(private val local: LocalDataSource,
                        private val remote: RemoteDataSource) : Repository {
 
     override suspend fun getTalks(): List<Talk> = remote.getTalks()
