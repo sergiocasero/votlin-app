@@ -31,7 +31,7 @@ class CommonRemoteDataSource : RemoteDataSource {
 
     override suspend fun getTalk(talkId: Int): Talk = client.get<TalkDto> { apiUrl("talk/$talkId") }.toModel()
 
-    override suspend fun getTalksByTrack(track: Track): List<Talk> = client.get<TalksResponse> { apiUrl("talk/${track.toString().toLowerCase()}") }.talks
+    override suspend fun getTalksByTrack(track: Track): List<Talk> = client.get<TalksResponse> { apiUrl("talk/$track") }.talks
 
     override suspend fun rateTalk(rate: Rate): Unit = client.post {
         apiUrl("talk")
