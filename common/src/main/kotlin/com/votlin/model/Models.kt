@@ -31,21 +31,3 @@ data class Speaker(
 
 @Serializable
 data class Rate(val id: Int, val value: Int)
-
-@Serializable
-internal data class TalkDto(
-        val id: Int,
-        val name: String,
-        val description: String,
-        val speakers: List<Speaker>,
-        val track: String,
-        val time: Time)
-
-internal fun TalkDto.toModel(): Talk = Talk(
-        id = id,
-        name = name,
-        speakers = speakers,
-        time = time,
-        track = Track.valueOf(track),
-        description = description
-)
