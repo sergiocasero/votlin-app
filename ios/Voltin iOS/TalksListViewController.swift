@@ -40,7 +40,8 @@ class TalksListViewController: UIViewController, UICollectionViewDataSource, UIC
         
         let talk = self.talks[indexPath.row]
         cell.talkName.text = talk.name
-        cell.talkDescription.text = ""
+        let speakers = talk.speakers.map{$0.name}.joined(separator: ", ")
+        cell.talkDescription.text = speakers
         
         return cell
     }
