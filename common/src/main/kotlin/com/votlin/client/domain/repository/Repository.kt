@@ -9,11 +9,11 @@ interface Repository {
 
     fun saveTalk(talk: Talk)
 
-    fun getTrackTalks(track: Track): List<Talk>
+    suspend fun getTrackTalks(track: Track): List<Talk>
 
-    fun rateTalk(rate: Rate)
+    suspend fun rateTalk(rate: Rate)
 
     suspend fun getTalk(talkId: Int): Talk
 
-    fun getFavoriteTalks(): List<Talk>
+    suspend fun getFavoriteTalks(): List<Talk>
 }

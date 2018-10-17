@@ -7,6 +7,7 @@ import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.get
+import io.ktor.client.request.post
 import io.ktor.http.takeFrom
 
 class CommonRemoteDataSource : RemoteDataSource {
@@ -28,19 +29,16 @@ class CommonRemoteDataSource : RemoteDataSource {
 
     override suspend fun getTalks(): List<Talk> = client.get<TalksResponse> { apiUrl("talk") }.talks
 
-    override suspend fun getTalk(talkId: Int): Talk = client.get<TalkDto> {
-        apiUrl("talk/$talkId")
-    }.toModel()
+    override suspend fun getTalk(talkId: Int): Talk = client.get<TalkDto> { apiUrl("talk/$talkId") }.toModel()
 
-    override fun getTrackTalks(track: Track): List<Talk> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override suspend fun getTrackTalks(track: Track): List<Talk> = client.get<TalksResponse> { apiUrl("talk/$track") }.talks
+
+    override suspend fun rateTalk(rate: Rate): Unit = client.post {
+        apiUrl("talk")
+        body = rate
     }
 
-    override fun rateTalk(rate: Rate) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    private fun HttpRequestBuilder.apiUrl(path: String) {
+    private suspend fun HttpRequestBuilder.apiUrl(path: String) {
         url {
             takeFrom(endPoint)
             encodedPath = path

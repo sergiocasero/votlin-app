@@ -13,11 +13,11 @@ class CommonRepository(private val local: LocalDataSource,
 
     override suspend fun getTalk(talkId: Int): Talk = remote.getTalk(talkId = talkId)
 
-    override fun getFavoriteTalks(): List<Talk> = local.getFavoriteTalks()
+    override suspend fun getFavoriteTalks(): List<Talk> = local.getFavoriteTalks()
 
-    override fun getTrackTalks(track: Track): List<Talk> = remote.getTrackTalks(track)
+    override suspend fun getTrackTalks(track: Track): List<Talk> = remote.getTrackTalks(track)
 
-    override fun rateTalk(rate: Rate) {
+    override suspend fun rateTalk(rate: Rate) {
         remote.rateTalk(rate)
         local.saveRate(rate)
     }

@@ -2,7 +2,7 @@ package com.votlin.client.presentation
 
 import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.client.domain.executor.Executor
-import com.votlin.client.domain.getTalksUseCase
+import com.votlin.client.domain.getAllTalks
 import com.votlin.client.domain.repository.Repository
 import com.votlin.model.Talk
 import com.votlin.model.Track
@@ -42,7 +42,7 @@ class TalksListPresenter(private val executor: Executor,
 
     private fun getTalks(callback: (List<Talk>) -> Unit) {
         GlobalScope.launch(executor.new) {
-            val talks = getTalksUseCase(repository)
+            val talks = getAllTalks(repository)
             withContext(executor.main) {
                 callback(talks)
             }
