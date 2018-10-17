@@ -190,4 +190,8 @@ liability.</p> ]]></string>
     <string name="privacy_policy_text"><![CDATA[To proceed please accept the <a href="https://www.jetbrains.com/company/privacy.html">Privacy Policy</a>]]></string>
     <string name="privacy_policy_accept">I accept the Privacy Policy</string>
     <string name="submit_button">Submit</string>
+    <string name="business">Business</string>
+    <string name="all">All</string>
+    <string name="development">Development</string>
+    <string name="maker">Maker</string>
 </resources>
