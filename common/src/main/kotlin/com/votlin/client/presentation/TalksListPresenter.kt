@@ -3,6 +3,7 @@ package com.votlin.client.presentation
 import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.client.domain.executor.Executor
 import com.votlin.client.domain.getAllTalks
+import com.votlin.client.domain.getTalksByTrack
 import com.votlin.client.domain.repository.Repository
 import com.votlin.model.Talk
 import com.votlin.model.Track
@@ -16,10 +17,8 @@ class TalksListPresenter(private val executor: Executor,
                          errorHandler: ErrorHandler) :
         Presenter<TalksListView>(view = view, errorHandler = errorHandler) {
 
-    var track: Track? = null
-
     override fun initialize() {
-        track = view.getTrack()
+        // Nothing to do
     }
 
     override fun destroy() {
@@ -27,22 +26,24 @@ class TalksListPresenter(private val executor: Executor,
     }
 
     fun onViewVisible() {
-        val trackValue = track
-        if (trackValue != null) {
-            view.showProgress()
+        val track = view.getTrack()
+        view.showProgress()
 
-            getTalks {
-                view.showTalks(it)
-                view.hideProgress()
-            }
+        getTalks(track) {
+            view.showTalks(it)
+            view.hideProgress()
         }
     }
 
     fun onTalkClicked(talk: Talk) = view.goToTalkScreen(talk.id)
 
-    private fun getTalks(callback: (List<Talk>) -> Unit) {
+    private fun getTalks(track: Track, callback: (List<Talk>) -> Unit) {
         GlobalScope.launch(executor.new) {
-            val talks = getAllTalks(repository)
+            val talks = when (track) {
+                Track.ALL -> getAllTalks(repository)
+                else -> getTalksByTrack(track, repository)
+            }
+
             withContext(executor.main) {
                 callback(talks)
             }

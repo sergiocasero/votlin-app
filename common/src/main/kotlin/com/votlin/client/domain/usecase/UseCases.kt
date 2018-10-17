@@ -9,7 +9,7 @@ suspend fun getAllTalks(repository: Repository): List<Talk> = repository.getTalk
 
 suspend fun getTalkDetail(id: Int, repository: Repository): Talk = repository.getTalk(talkId = id)
 
-suspend fun getTrackTalks(track: Track, repository: Repository): List<Talk> = repository.getTrackTalks(track)
+suspend fun getTalksByTrack(track: Track, repository: Repository): List<Talk> = repository.getTalksByTrack(track)
 
 suspend fun rateTalk(rate: Rate, repository: Repository): Unit = repository.rateTalk(rate)
 

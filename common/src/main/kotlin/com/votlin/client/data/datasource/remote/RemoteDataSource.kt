@@ -7,6 +7,6 @@ import com.votlin.model.Track
 interface RemoteDataSource {
     suspend fun getTalks(): List<Talk>
     suspend fun getTalk(talkId: Int): Talk
-    suspend fun getTrackTalks(track: Track): List<Talk>
+    suspend fun getTalksByTrack(track: Track): List<Talk>
     suspend fun rateTalk(rate: Rate): Unit
 }

@@ -9,7 +9,7 @@ interface Repository {
 
     fun saveTalk(talk: Talk)
 
-    suspend fun getTrackTalks(track: Track): List<Talk>
+    suspend fun getTalksByTrack(track: Track): List<Talk>
 
     suspend fun rateTalk(rate: Rate)
 
