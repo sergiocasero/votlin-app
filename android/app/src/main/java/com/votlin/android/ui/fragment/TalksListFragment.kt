@@ -50,8 +50,7 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
     private val adapter = TalksAdapter { presenter.onTalkClicked(it) }
 
     override fun initializeUI() {
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        talks.layoutManager = layoutManager
+        talks.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         talks.adapter = adapter
     }
 

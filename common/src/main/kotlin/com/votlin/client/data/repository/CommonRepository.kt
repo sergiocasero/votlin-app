@@ -1,7 +1,8 @@
-package com.votlin.client.domain.repository
+package com.votlin.client.data.repository
 
 import com.votlin.client.data.datasource.local.LocalDataSource
 import com.votlin.client.data.datasource.remote.RemoteDataSource
+import com.votlin.client.domain.repository.Repository
 import com.votlin.model.Rate
 import com.votlin.model.Talk
 import com.votlin.model.Track
