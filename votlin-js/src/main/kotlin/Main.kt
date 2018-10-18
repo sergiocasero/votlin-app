@@ -1,13 +1,12 @@
 import com.votlin.client.presentation.app.app
-import com.votlin.client.presentation.splash
-import react.dom.div
+import kotlinext.js.requireAll
 import react.dom.render
 import kotlin.browser.document
 import kotlin.browser.window
 
 fun main(args: Array<String>) {
     window.onload = {
-        render(document.getElementById("root")) {
+        render(document.getElementById("app")) {
             app()
         }
     }

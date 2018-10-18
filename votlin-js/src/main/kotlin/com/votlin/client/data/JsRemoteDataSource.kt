@@ -8,6 +8,7 @@ import com.votlin.model.TalksResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import io.ktor.http.takeFrom
+import kotlinx.serialization.json.JSON
 
 class JsRemoteDataSource : CommonRemoteDataSource() {
     override val client: HttpClient = HttpClient {}
@@ -17,6 +18,15 @@ class JsRemoteDataSource : CommonRemoteDataSource() {
             url {
                 takeFrom("http://sergiocasero.es:10000")
                 encodedPath = "talk"
+            }
+        }).talks
+    }
+
+    override suspend fun getTalksByTrack(track: String): List<Talk> {
+        return JSON.parse<TalksResponse>(client.get {
+            url {
+                takeFrom("http://sergiocasero.es:10000")
+                encodedPath = "talk/$track"
             }
         }).talks
     }

@@ -1,9 +1,14 @@
 package com.votlin.client.presentation
 
 import com.votlin.client.presentation.navigator.Screen
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.html.id
 import react.RBuilder
 import react.RProps
 import react.dom.div
+import react.dom.img
 
 class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashView {
 
@@ -13,7 +18,10 @@ class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashV
 
     override fun RBuilder.render() {
         div("splash") {
-            +"Hello from splash screen"
+            img {
+                attrs.id = "logo"
+                attrs.src = "http://sergiocasero.es/votlin_logo.png"
+            }
         }
     }
 
@@ -26,22 +34,24 @@ class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashV
     }
 
     override fun showLoadingProgress(delayMillis: Long) {
-        println("Progress!!")
-        presenter.onRunnableCallback()
+
+        GlobalScope.launch {
+            delay(2000)
+            presenter.onRunnableCallback()
+        }
     }
 
     override fun goToTalksScreen() {
-        println("Go to talks!")
-        this.props.downloadFinished(Screen.HOME)
+        this.props.onDownloadFinished(Screen.HOME)
     }
 }
 
 interface SplashState : ScreenState
 
 interface SplashProps : RProps {
-    var downloadFinished: (Screen) -> Unit
+    var onDownloadFinished: (Screen) -> Unit
 }
 
 fun RBuilder.splash(downloadFinished: (Screen) -> Unit) = child(SplashScreen::class) {
-    attrs.downloadFinished = downloadFinished
+    attrs.onDownloadFinished = downloadFinished
 }
