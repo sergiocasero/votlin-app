@@ -1,17 +1,37 @@
+import com.votlin.client.presentation.app.app
+import com.votlin.client.presentation.splash
 import react.dom.div
 import react.dom.render
 import kotlin.browser.document
 import kotlin.browser.window
 
 fun main(args: Array<String>) {
-
-    //val firstSharedClass = Shared()
-
     window.onload = {
-        render(document.getElementById("root")!!) {
-            div("container") {
-                //+"Hello from react!! ${firstSharedClass.text}"
-            }
+        render(document.getElementById("root")) {
+            app()
         }
     }
+
+
+    //val firstSharedClass = Shared()
+    // window.onload = {
+    //     render(document.getElementById("root")!!) {
+    //         div("container") {
+//
+    //             val talks = mutableListOf<Talk>()
+//
+    //             GlobalScope.launch(Dispatchers.Default) {
+    //                 // val talks = getAllTalks(CommonRepository(remote = JsRemoteDataSource(), local = JsLocalDataSource()))
+    //                 // +"Hello $talks"
+    //                 val talksResponse = getAllTalks(repository = CommonRepository(remote = JsRemoteDataSource(), local = JsLocalDataSource()))
+    //                 talksResponse.forEach {
+    //                     println(it.name)
+    //                 }
+    //             }
+//
+    //         }
+    //     }
+    // }
+
+    // requireAll(kotlinext.js.require.context("src", true, js("/\\.css$/")))
 }

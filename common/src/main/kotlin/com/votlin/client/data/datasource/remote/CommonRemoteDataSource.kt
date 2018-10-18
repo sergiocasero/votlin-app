@@ -9,7 +9,7 @@ import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.http.takeFrom
 
-abstract class CommonRemoteDataSource() : RemoteDataSource {
+abstract class CommonRemoteDataSource : RemoteDataSource {
 
     private val endPoint: String = "http://sergiocasero.es:10000"
 

@@ -18,7 +18,6 @@ fun Application.main() {
 fun Application.talks() {
     routing {
         route("/talk") {
-
             //GET
             get { call.respond(TalksResponse(getTalks())) }
             get("/business") { call.respond(TalksResponse(getTrackTalks(Track.BUSINESS))) }

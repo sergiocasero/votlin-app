@@ -1,60 +1,75 @@
 group "com.votlin"
-version "1.1"
+version "0.0.1"
+
+apply plugin: 'kotlin2js'
+apply plugin: 'kotlin-dce-js'
+apply plugin: 'org.jetbrains.kotlin.frontend'
+apply plugin: 'kotlinx-serialization'
 
 buildscript {
     repositories {
-        jcenter()
         maven {
-            url "https://dl.bintray.com/kotlin/kotlin-eap"
+            url "https://plugins.gradle.org/m2/"
         }
     }
-
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.37"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.71"
     }
 }
 
-apply plugin: 'org.jetbrains.kotlin.frontend'
-apply plugin: 'kotlin2js'
-apply plugin: 'kotlin-platform-js'
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile project(":common-js")
+
+    // compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    // compile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+//
+    // compile "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
+    // compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
+//
+    // compile "org.jetbrains:kotlin-react:16.5.2-pre.56-kotlin-1.2.71"
+    // compile "org.jetbrains:kotlin-react-dom:16.5.2-pre.56-kotlin-1.2.71"
+//
+    // compile "io.ktor:ktor-client-core-js:$ktor_version"
+    // compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+}
 
 kotlinFrontend {
-    downloadNodeJsVersion = '10.0.0'
+
+    downloadNodeJsVersion = "8.11.2"
+
+    sourceMaps = false
 
     npm {
-        dependency("webpack-cli", "v2.0.12")
-        dependency("react", "15.6.1")
-        dependency("react-dom", "15.6.1")
-        dependency("react-router-dom", "4.2.2")
-        dependency("@material-ui/core", "1.1.0")
-    }
+        replaceVersion "kotlinx-html-js", "$kotlin_version"
+        replaceVersion "kotlinx-html-shared", "$kotlin_version"
+        replaceVersion "kotlin-js-library", "$kotlin_version"
 
-    sourceMaps = true
+        dependency "react", "16.3.1"
+        dependency "react-dom", "16.3.1"
+    }
 
     webpackBundle {
         bundleName = "main"
         contentPath = file('src/main/resources')
-        proxyUrl = "http://localhost:3000"
+        proxyUrl = "http://localhost:9090"
     }
-}
-
-dependencies {
-    expectedBy project(":common")
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-    implementation("org.jetbrains.kotlinx:kotlinx-html-js:0.6.11") { force = true }
-    implementation "org.jetbrains:kotlin-react:16.5.2-pre.55-kotlin-1.2.71"
-    implementation "org.jetbrains:kotlin-react-dom:16.5.2-pre.55-kotlin-1.2.71"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
-    implementation "io.ktor:ktor-client-core-js:$ktor_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
 }
 
 compileKotlin2Js {
     kotlinOptions.metaInfo = true
     kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
     kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
     kotlinOptions.moduleKind = 'commonjs'
     kotlinOptions.main = "call"
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
 }
