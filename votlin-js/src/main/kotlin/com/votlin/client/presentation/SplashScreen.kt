@@ -1,5 +1,6 @@
 package com.votlin.client.presentation
 
+import com.votlin.client.presentation.navigator.Screen
 import react.RBuilder
 import react.RProps
 import react.dom.div
@@ -30,16 +31,17 @@ class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashV
     }
 
     override fun goToTalksScreen() {
-        this.props.downloadFinished()
+        println("Go to talks!")
+        this.props.downloadFinished(Screen.HOME)
     }
 }
 
 interface SplashState : ScreenState
 
 interface SplashProps : RProps {
-    var downloadFinished: () -> Unit
+    var downloadFinished: (Screen) -> Unit
 }
 
-fun RBuilder.splash(downloadFinished: () -> Unit) = child(SplashScreen::class) {
+fun RBuilder.splash(downloadFinished: (Screen) -> Unit) = child(SplashScreen::class) {
     attrs.downloadFinished = downloadFinished
 }
