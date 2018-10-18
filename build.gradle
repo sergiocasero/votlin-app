@@ -25,7 +25,7 @@ allprojects {
         maven { url "https://dl.bintray.com/sargunster/maven" }
         maven { url "https://dl.bintray.com/kotlin/squash" }
         maven { url "http://dl.bintray.com/kotlin/kotlin-js-wrappers" }
-        maven { url = 'https://dl.bintray.com/russhwolf/multiplatform-settings' }
+        maven { url 'https://dl.bintray.com/russhwolf/multiplatform-settings' }
 
         google()
         jcenter()
