@@ -3,6 +3,7 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .app {
@@ -56,16 +57,18 @@ html, body {
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
-    color: #424f5a;
+    color: white;
     text-align: center;
     outline: none;
     width: 25%;
     cursor: pointer;
+    background: #7B6BFF;
 }
 
 .tabs > a.active {
     font-weight: 700;
     outline: none;
+    background: white;
     color: #7B6BFF;
     border-bottom: solid 3px #7B6BFF;
 }
@@ -97,4 +100,62 @@ html, body {
     right: 0;
     width: 150px;
     margin: auto;
+}
+
+#talks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#talks .card {
+    margin: 4px;
+    width: 90%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    transition: all .2s ease-in-out;
+    border: solid 1px #BDBDBD;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+}
+
+#talks .card:hover {
+    /*box-shadow: 0 5px 22px 0 rgba(0,0,0,.25);*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card h3 {
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 2px 2px 0px 0px;
+}
+
+.all h3 {
+    background: #7B6BFF;
+}
+
+.business h3 {
+    background: #4B86EA;
+}
+
+.development h3 {
+    background: #F3C12D;
+    color: black;
+}
+
+.maker h3 {
+    background: #D9313A;
+}
+
+.card span {
+    padding: 10px;
+}
+
+.line {
+    text-align: right;
+    margin-top: 25px;
+    border-bottom: solid 1px grey;
+    width: 100%;
+    padding-right: 45px;
 }

@@ -2,16 +2,15 @@ package com.votlin.client.presentation.screen
 
 import com.votlin.client.presentation.*
 import com.votlin.model.Talk
+import com.votlin.model.Time
 import com.votlin.model.Track
 import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.RBuilder
 import react.RProps
-import react.dom.a
-import react.dom.div
-import react.dom.img
-import react.dom.span
+import react.dom.*
 import react.setState
+import kotlin.js.Date
 
 class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListView {
 
@@ -54,13 +53,26 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
             }
             div {
                 attrs.id = "talks"
+
+                var time = Time(start = 0, end = 0)
                 state.talks.forEach {
-                    span { +it.name }
+                    if (it.time != time) {
+                        time = it.time
+
+                        div("line") { +time.toFormattedDate() }
+                    }
+
+                    div(classes = "card ${it.track.toString().toLowerCase()}") {
+                        h3 { +it.name }
+
+                        if (!it.description.isBlank()) {
+                            span { +it.description }
+                        }
+                    }
                 }
             }
 
             if (state.progress) {
-
                 div("progress") {
                     img("progress") {
                         attrs.src = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
@@ -92,6 +104,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
     }
 
     private fun active(active: Boolean): String = if (active) "active" else ""
+
 
     private fun updateActiveTabAndLoadData(all: Boolean = false,
                                            development: Boolean = false,
@@ -134,3 +147,5 @@ interface HomeProps : RProps {
 fun RBuilder.home(onTalkSelected: (Talk) -> Unit) = child(HomeScreen::class) {
     attrs.onTalkSelected = onTalkSelected
 }
+
+fun Time.toFormattedDate(): String = "${Date(start).getHours()}:${Date(start).getMinutes()} - ${Date(end).getHours()}:${Date(end).getMinutes()}"
