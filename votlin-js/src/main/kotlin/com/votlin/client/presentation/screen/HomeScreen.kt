@@ -3,7 +3,6 @@ package com.votlin.client.presentation.screen
 import com.votlin.client.presentation.*
 import com.votlin.model.Talk
 import com.votlin.model.Track
-import kotlinx.html.classes
 import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.RBuilder
@@ -35,25 +34,21 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
     override fun RBuilder.render() {
         div("main") {
             div("tabs") {
-                a {
+                a(classes = active(state.all)) {
                     +"ALL"
                     attrs.onClickFunction = { updateActiveTabAndLoadData(all = true) }
-                    attrs.classes = setOf(if (state.all) "active" else "")
                 }
-                a {
+                a(classes = active(state.business)) {
                     +"Business"
                     attrs.onClickFunction = { updateActiveTabAndLoadData(business = true) }
-                    attrs.classes = setOf(if (state.business) "active" else "")
                 }
-                a {
+                a(classes = active(state.development)) {
                     +"Development"
                     attrs.onClickFunction = { updateActiveTabAndLoadData(development = true) }
-                    attrs.classes = setOf(if (state.development) "active" else "")
                 }
-                a {
+                a(classes = active(state.maker)) {
                     +"Maker"
                     attrs.onClickFunction = { updateActiveTabAndLoadData(maker = true) }
-                    attrs.classes = setOf(if (state.maker) "active" else "")
                 }
             }
             div {
@@ -86,6 +81,8 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
         }
     }
 
+    private fun active(active: Boolean): String = if (active) "active" else ""
+
     private fun updateActiveTabAndLoadData(all: Boolean = false,
                                            development: Boolean = false,
                                            business: Boolean = false,
@@ -95,8 +92,6 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
             this.development = development
             this.business = business
             this.maker = maker
-
-
         }
 
         track = when {
