@@ -22,6 +22,11 @@ class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashV
                 attrs.id = "logo"
                 attrs.src = "http://sergiocasero.es/votlin_logo.png"
             }
+            div("progress") {
+                img("progress") {
+                    attrs.src = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
+                }
+            }
         }
     }
 

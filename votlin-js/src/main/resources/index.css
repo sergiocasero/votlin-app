@@ -79,3 +79,22 @@ html, body {
     border-bottom: solid 3px #7B6BFF;
     color: #7B6BFF;
 }
+
+.main .progress img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 150px;
+    margin: auto;
+}
+
+.splash .progress img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 150px;
+    margin: auto;
+}

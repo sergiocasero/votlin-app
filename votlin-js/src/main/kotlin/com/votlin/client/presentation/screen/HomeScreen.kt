@@ -9,6 +9,7 @@ import react.RBuilder
 import react.RProps
 import react.dom.a
 import react.dom.div
+import react.dom.img
 import react.dom.span
 import react.setState
 
@@ -55,6 +56,15 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
                 attrs.id = "talks"
                 state.talks.forEach {
                     span { +it.name }
+                }
+            }
+
+            if (state.progress) {
+
+                div("progress") {
+                    img("progress") {
+                        attrs.src = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
+                    }
                 }
             }
         }
