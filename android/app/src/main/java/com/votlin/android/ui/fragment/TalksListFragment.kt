@@ -41,15 +41,16 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         bind<TalksListPresenter>() with provider {
             TalksListPresenter(
                     view = this@TalksListFragment,
-                    errorHandler = AndroidErrorHandler())
+                    errorHandler = AndroidErrorHandler(),
+                    executor = instance(),
+                    repository = instance())
         }
     }
 
     private val adapter = TalksAdapter { presenter.onTalkClicked(it) }
 
     override fun initializeUI() {
-        val layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        talks.layoutManager = layoutManager
+        talks.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
         talks.adapter = adapter
     }
 

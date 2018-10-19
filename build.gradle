@@ -5,6 +5,7 @@ allprojects {
             maven { url "http://kotlin.bintray.com/kotlin-dev" }
             maven { url "https://kotlin.bintray.com/kotlinx" }
             maven { url 'https://dl.bintray.com/jetbrains/kotlin-native-dependencies' }
+            maven { url "https://dl.bintray.com/kotlin/ktor" }
 
             google()
             jcenter()
@@ -24,7 +25,7 @@ allprojects {
         maven { url "https://dl.bintray.com/sargunster/maven" }
         maven { url "https://dl.bintray.com/kotlin/squash" }
         maven { url "http://dl.bintray.com/kotlin/kotlin-js-wrappers" }
-        maven { url = 'https://dl.bintray.com/russhwolf/multiplatform-settings' }
+        maven { url 'https://dl.bintray.com/russhwolf/multiplatform-settings' }
 
         google()
         jcenter()

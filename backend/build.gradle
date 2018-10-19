@@ -19,6 +19,9 @@ mainClassName = 'com.votlin.backend.ServerKt'
 
 sourceCompatibility = 1.8
 
+
+
+
 dependencies {
     expectedBy project(":common")
 
@@ -34,8 +37,12 @@ dependencies {
     implementation "org.jetbrains.squash:squash:$squash_version"
     implementation "org.jetbrains.squash:squash-h2:$squash_version"
     implementation "io.ktor:ktor-jackson:$ktor_version"
+    implementation "io.ktor:ktor-gson:$ktor_version"
     implementation 'com.github.salomonbrys.kotson:kotson:2.5.0'
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '2.7.2'
+
+    implementation 'org.jetbrains.exposed:exposed:0.10.5'
+    implementation "mysql:mysql-connector-java:5.1.46"
 
     implementation 'ch.qos.logback:logback-classic:1.2.3'
 

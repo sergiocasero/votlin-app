@@ -102,7 +102,7 @@
       "speakers": [
         {
           "twitter": "https://twitter.com/fersanfig",
-          "linkedin": "https://www.extremaduradigitalday.com/ponentes/fernando-figueroa/linkedin.com/in/fernando-s%C3%A1nchez-figueroa-207b808",
+          "linkedin": "https://linkedin.com/in/fernando-s%C3%A1nchez-figueroa-207b808",
           "name": "Fernando Sánchez Figueroa",
           "bio": "Fernando es Consejero Delegado de Homeria y Catedrático de Universidad del área de Lenguajes y Sistemas Informáticos en la Universidad de Extremadura. Tiene numerosas publicaciones en revistas de reconocido prestigio así como una patente en explotación. Ha participado en 3 proyectos del VII programa marco de la Unión Europea y actualmente es investigador principal en un proyecto del plan nacional de I+D. Ha sido Vicerrector de Nuevas Tecnologías de la Universidad de Extremadura en el período 2004-2007. Este año es presidente del comité de programa de las Jornadas de Ingeniería del Software y Bases de Datos a celebrar en Sevilla en septiembre.",
           "photoUrl": "https://www.extremaduradigitalday.com/wp-content/uploads/bb-plugin/cache/23dYXKxv_400x400-square.jpg"
@@ -120,8 +120,8 @@
       },
       "speakers": [
         {
-          "twitter": "https://www.linkedin.com/in/sandra-navarro-nieto/",
-          "linkedin": "",
+          "twitter": "",
+          "linkedin": "https://www.linkedin.com/in/sandra-navarro-nieto/",
           "name": "Sandra Navarro Nieto",
           "bio": "He desarrollado prácticamente toda mi carrera profesional en diversos puestos dentro de equipos de Inteligencia de Negocio, centrando mis esfuerzos y conocimientos en aquellas áreas que lo han demandado en cada momento. Desde mi comienzo he contribuido a la creación de la infraestructura de datos y su mantenimiento, a la generación tanto de cuadros de mando como de informes ad-hoc y al aseguramiento de la calidad de la información.También me encargo de toda la parte de analítica, en la que empleo los conocimientos adquiridos para ayudar en la búsqueda de patrones y hechos relevantes que apoyen decisiones para el buen rumbo de las empresas. En la actualidad, superviso equipos de trabajo dentro de todo este ámbito apoyando con mi conocimiento y experiencia para conseguir que los resultados sean lo más óptimos posibles. En una profesión con constantes avances y mi afán por estar al tanto de todas las tendencias que van surgiendo, continuamente me voy reciclando, lo que me ha permitido, además, aprovechar todo este conocimiento para impartir formaciones a nivel profesional.",
           "photoUrl": "https://www.extremaduradigitalday.com/wp-content/uploads/bb-plugin/cache/sandra-navarro-nieto-square.jpeg"
@@ -175,15 +175,7 @@
         "start": 1540629000000,
         "end": 1540631700000
       },
-      "speakers": [
-        {
-          "twitter": "",
-          "linkedin": "",
-          "name": "",
-          "bio": "",
-          "photoUrl": ""
-        }
-      ]
+      "speakers": []
     },
     {
       "name": "Break",
@@ -281,15 +273,7 @@
         "start": 1540633500000,
         "end": 1540636200000
       },
-      "speakers": [
-        {
-          "twitter": "",
-          "linkedin": "",
-          "name": "",
-          "bio": "",
-          "photoUrl": ""
-        }
-      ]
+      "speakers": []
     },
     {
       "name": "¿Y tú? ¿Tendrías una segunda cita con tu proveedor Cloud? ",
@@ -379,9 +363,9 @@
       "speakers": [
         {
           "twitter": "https://twitter.com/tonymalpar",
-          "linkedin": "Soy desarrollador en ASPgems, natural de Malpartida de Cáceres. Me encanta perderme por internet y descubrir nuevas formas de seguir aprendiendo, sin olvidar los ratos de risas con amigos y familia. Me pierde el rock. Alguna partidilla a videojuegos también gusta de vez en cuando 🙂",
+          "linkedin": "",
           "name": "Tony Montaña",
-          "bio": "",
+          "bio": "Soy desarrollador en ASPgems, natural de Malpartida de Cáceres. Me encanta perderme por internet y descubrir nuevas formas de seguir aprendiendo, sin olvidar los ratos de risas con amigos y familia. Me pierde el rock. Alguna partidilla a videojuegos también gusta de vez en cuando 🙂",
           "photoUrl": "https://www.extremaduradigitalday.com/wp-content/uploads/bb-plugin/cache/toni_montana-square.jpg"
         }
       ]

@@ -2,15 +2,17 @@ package com.votlin.client.presentation
 
 import com.votlin.client.domain.error.ErrorHandler
 
-class SplashPresenter(view: SplashView, errorHandler: ErrorHandler) :
+class SplashPresenter(view: SplashView,
+                      errorHandler: ErrorHandler) :
         Presenter<SplashView>(view = view, errorHandler = errorHandler) {
 
     companion object {
-        const val SPLASH_MILISECONDS: Long = 1000
+        const val SPLASH_MILLIS: Long = 1000
     }
 
     override fun initialize() {
-        view.showLoadingProgress(SPLASH_MILISECONDS)
+        view.showLoadingProgress(SPLASH_MILLIS)
+
     }
 
     override fun destroy() {

@@ -9,6 +9,7 @@ import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.navigator.navigateToTalksActivity
 import com.votlin.client.presentation.SplashPresenter
+import com.votlin.client.presentation.SplashPresenter.Companion.SPLASH_MILLIS
 import com.votlin.client.presentation.SplashView
 
 class SplashActivity : RootActivity<SplashView>(), SplashView {
@@ -19,7 +20,8 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<SplashPresenter>() with provider {
-            SplashPresenter(view = this@SplashActivity,
+            SplashPresenter(
+                    view = this@SplashActivity,
                     errorHandler = AndroidErrorHandler())
         }
     }
@@ -34,6 +36,10 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
 
     override fun initializeUI() {
         mDelayHandler = Handler()
+
+        mDelayHandler?.postDelayed({
+            presenter.onRunnableCallback()
+        }, SPLASH_MILLIS)
     }
 
     override fun registerListeners() {
