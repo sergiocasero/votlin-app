@@ -15,18 +15,23 @@
             <objects>
                 <viewController id="fPJ-bt-LNh" customClass="BusinessViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="axi-eT-dsn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-PV-0yn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-PV-0yn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="business" id="cOV-D8-pPk"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="leading" secondItem="gT5-AT-ZaV" secondAttribute="leading" id="8dW-JL-8ZI"/>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="bottom" secondItem="gT5-AT-ZaV" secondAttribute="bottom" id="Bj4-uC-dYR"/>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="trailing" secondItem="gT5-AT-ZaV" secondAttribute="trailing" id="WDP-Zc-kUI"/>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="top" secondItem="gT5-AT-ZaV" secondAttribute="top" id="oWR-pX-7h5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gT5-AT-ZaV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Business" image="business" id="8rV-mR-d9I"/>
@@ -43,18 +48,23 @@
             <objects>
                 <viewController id="uLD-Yv-V9z" customClass="DevelopmentViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xNQ-ct-dhl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-ms-4y2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-ms-4y2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="development" id="iw0-Pm-y5w"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="top" secondItem="PAa-gc-A7k" secondAttribute="top" id="GkJ-b7-SqB"/>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="trailing" secondItem="PAa-gc-A7k" secondAttribute="trailing" id="Sjl-7I-mvZ"/>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="leading" secondItem="PAa-gc-A7k" secondAttribute="leading" id="l7W-2H-cLN"/>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="bottom" secondItem="PAa-gc-A7k" secondAttribute="bottom" id="pvJ-ft-2Ed"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PAa-gc-A7k"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Development" image="Development" id="OEH-Z8-zbx"/>
@@ -72,18 +82,23 @@
             <objects>
                 <viewController id="iCE-xs-xvO" customClass="MakerViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eSt-zO-dAh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvm-b5-rN8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvm-b5-rN8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="maker" id="qxT-hD-ufY"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="leading" secondItem="fMX-So-Y0K" secondAttribute="leading" id="1Nv-24-LxG"/>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="trailing" secondItem="fMX-So-Y0K" secondAttribute="trailing" id="cPk-Qn-qX1"/>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="bottom" secondItem="fMX-So-Y0K" secondAttribute="bottom" id="jCm-rD-7lX"/>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="top" secondItem="fMX-So-Y0K" secondAttribute="top" id="oOv-7u-zQH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fMX-So-Y0K"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Maker" image="Maker" id="JDI-h3-nK0"/>
@@ -101,18 +116,23 @@
             <objects>
                 <viewController id="ey6-0e-w4F" customClass="AllViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l9a-eo-xH0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7l-ik-30X">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7l-ik-30X">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="all" id="zqa-3i-oun"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="bottom" secondItem="FcJ-ra-M0i" secondAttribute="bottom" id="3cp-qL-oP3"/>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="trailing" secondItem="FcJ-ra-M0i" secondAttribute="trailing" id="HTe-8y-Ply"/>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="leading" secondItem="FcJ-ra-M0i" secondAttribute="leading" id="Uhv-KJ-KmC"/>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="top" secondItem="FcJ-ra-M0i" secondAttribute="top" id="ukK-8Y-n0N"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FcJ-ra-M0i"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="all" id="sfF-0Z-XzL"/>
@@ -128,7 +148,7 @@
         <scene sceneID="EqH-KR-lcW">
             <objects>
                 <tabBarController title="Votlin" id="WGn-ci-6i1" sceneMemberID="viewController">
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3ik-Hv-cLw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -153,9 +173,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-Sx-c9v">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-Sx-c9v">
                                 <rect key="frame" x="0.0" y="20" width="375" height="534"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dye-l1-czx">
                                     <size key="itemSize" width="343" height="94"/>
@@ -201,6 +220,12 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="trailing" secondItem="mOL-gu-Oer" secondAttribute="trailing" id="MQa-nT-5YI"/>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="leading" secondItem="mOL-gu-Oer" secondAttribute="leading" id="mh5-cF-hya"/>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="top" secondItem="mOL-gu-Oer" secondAttribute="top" id="o3C-WZ-reD"/>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="bottom" secondItem="mOL-gu-Oer" secondAttribute="bottom" id="p17-Qj-wy2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="mOL-gu-Oer"/>
                     </view>
                 </viewController>
@@ -216,6 +241,6 @@
         <image name="business" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zqa-3i-oun"/>
+        <segue reference="qxT-hD-ufY"/>
     </inferredMetricsTieBreakers>
 </document>
