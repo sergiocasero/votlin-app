@@ -33,6 +33,10 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
     override fun RBuilder.render() {
         div("main") {
+            div("toolbar") {
+                img { attrs.src = "http://sergiocasero.es/votlin_logo.png" }
+                h3 { +"Votlin" }
+            }
             div("tabs") {
                 a(classes = active(state.all)) {
                     +"ALL"
@@ -56,7 +60,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
                 var time = Time(start = 0, end = 0)
                 state.talks.forEach {
-                    if (it.time != time) {
+                    if (it.time != time && time.start != 0L) {
                         time = it.time
 
                         div("line") { +time.toFormattedDate() }

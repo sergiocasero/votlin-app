@@ -40,6 +40,25 @@ html, body {
     margin: auto;
 }
 
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: #031137;
+    height: 40px;
+    padding: 8px;
+}
+
+.toolbar img {
+    height: 100%;
+}
+
+.toolbar h3 {
+    color: white;
+    margin-top: 8px;
+    margin-left: 15px;
+}
+
 .tabs {
     display: flex;
     flex-direction: row;
@@ -47,6 +66,7 @@ html, body {
     position: relative;
     padding: 0;
     border-bottom: 1px solid #e0e0e0;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
 }
 
 .tabs > a {
@@ -62,25 +82,21 @@ html, body {
     outline: none;
     width: 25%;
     cursor: pointer;
-    background: #7B6BFF;
+    background: #031137;
 }
 
 .tabs > a.active {
     font-weight: 700;
     outline: none;
-    background: white;
-    color: #7B6BFF;
-    border-bottom: solid 3px #7B6BFF;
+    border-bottom: solid 3px white;
 }
 
 .tabs > a:not(.active):hover {
-    background-color: inherit;
-    color: #7B6BFF;
+    /*color: #031137; */
 }
 
 .tabs a:hover {
-    border-bottom: solid 3px #7B6BFF;
-    color: #7B6BFF;
+    border-bottom: solid 3px white;
 }
 
 .main .progress img {
