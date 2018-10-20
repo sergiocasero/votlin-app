@@ -6,7 +6,6 @@ import kotlinx.serialization.Serializable
 data class Time(val start: Long,
                 val end: Long)
 
-@Serializable
 data class Talk(val id: Int,
                 val name: String,
                 val description: String,
@@ -14,7 +13,6 @@ data class Talk(val id: Int,
                 val track: Track,
                 val time: Time)
 
-@Serializable
 data class TalksResponse(val talks: List<Talk>)
 
 enum class Track {

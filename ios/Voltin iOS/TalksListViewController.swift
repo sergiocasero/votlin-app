@@ -11,7 +11,9 @@ import ios
 
 class TalksListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, TalksListView {
     
-    private lazy var presenter : TalksListPresenter = TalksListPresenter(view: self, errorHandler: IosErrorHandler())
+    private lazy var presenter : TalksListPresenter = TalksListPresenter(
+        view: self,
+        errorHandler: IosErrorHandler())
     
     var track: Track = Track.all
     

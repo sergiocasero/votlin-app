@@ -1,3 +1,28 @@
+buildscript {
+    ext.serializationRepo = "http://kotlin.bintray.com/kotlinx"
+
+    repositories {
+        jcenter()
+        maven { url serializationRepo }
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
+        maven { url "http://kotlin.bintray.com/kotlin-dev" }
+        maven { url "http://kotlin.bintray.com/kotlin-eap" }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
+    }
+}
+
+repositories {
+    jcenter()
+    maven { url serializationRepo }
+    maven { url "http://kotlin.bintray.com/kotlin-dev" }
+    maven { url "http://kotlin.bintray.com/kotlin-eap" }
+    mavenLocal()
+}
+
 apply plugin: 'kotlin-platform-native'
 apply plugin: 'kotlinx-serialization-native'
 
@@ -7,24 +32,33 @@ configurations {
 
 dependencies {
     expectedBy project(':common')
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"
+    compilerPlugin "org.jetbrains.kotlin:kotlin-serialization-unshaded:$serialization_plugin_version"
+
     implementation "io.ktor:ktor-client-ios:$ktor_version"
     implementation "io.ktor:ktor-client-json-ios:$ktor_version"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutines_version"
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.8.2-rc13"
-    // implementation "org.jetbrains.kotlinx:jsonparser-native:0.6.1"
-    compilerPlugin "org.jetbrains.kotlin:kotlin-serialization-unshaded:$serialization_plugin"
 }
 
 def pluginPath = configurations.compilerPlugin.files.first().canonicalPath
 def pluginArgument = '-Xplugin=' + pluginPath
+// println(pluginArgument)
 
-sourceSets {
-    main {
-        component {
-            targets = ['ios_x64', 'ios_arm64']
-            outputKinds = [FRAMEWORK]
-            extraOpts '-Xdisable=devirtualization', '-linker-options', '-iphoneos_version_min 9.0.0', pluginArgument
 
-        }
+sourceSets.main {
+    kotlin.srcDirs = ['src/']
+
+    component {
+        outputKinds = [KLIBRARY]
+//        extraOpts pluginArgument
+        target 'host'
+    }
+}
+
+sourceSets.test {
+    kotlin.srcDirs = ['test/']
+    component {
+//        extraOpts pluginArgument
+        target 'host'
     }
 }
