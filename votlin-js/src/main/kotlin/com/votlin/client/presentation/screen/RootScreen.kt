@@ -1,5 +1,6 @@
-package com.votlin.client.presentation
+package com.votlin.client.presentation.screen
 
+import com.votlin.client.presentation.Presenter
 import react.RComponent
 import react.RProps
 import react.RState

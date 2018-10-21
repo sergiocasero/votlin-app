@@ -1,6 +1,9 @@
 package com.votlin.client.presentation.screen
 
 import com.votlin.client.presentation.*
+import com.votlin.client.presentation.di.errorHandler
+import com.votlin.client.presentation.di.executor
+import com.votlin.client.presentation.di.repository
 import com.votlin.model.Talk
 import com.votlin.model.Time
 import com.votlin.model.Track

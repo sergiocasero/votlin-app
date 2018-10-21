@@ -1,5 +1,8 @@
-package com.votlin.client.presentation
+package com.votlin.client.presentation.screen
 
+import com.votlin.client.presentation.SplashPresenter
+import com.votlin.client.presentation.SplashView
+import com.votlin.client.presentation.di.errorHandler
 import com.votlin.client.presentation.navigator.Screen
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
