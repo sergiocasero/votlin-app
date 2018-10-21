@@ -60,10 +60,11 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
                 var time = Time(start = 0, end = 0)
                 state.talks.forEach {
-                    if (it.time != time && time.start != 0L) {
+                    if (it.time != time) {
                         time = it.time
 
-                        div("line") { +time.toFormattedDate() }
+                        println(time.toFormattedDate())
+                        if (time.start != 0L) div("line") { +time.toFormattedDate() }
                     }
 
                     div(classes = "card ${it.track.toString().toLowerCase()}") {
