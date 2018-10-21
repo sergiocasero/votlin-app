@@ -23,7 +23,7 @@ abstract class App : RComponent<RProps, AppState>() {
                         screen = Screen.DETAIL
                     }
                 }
-                Screen.DETAIL -> detail(state.talkId)
+                Screen.DETAIL -> detail(state.talkId) { setState { screen = it } }
             }
         }
     }

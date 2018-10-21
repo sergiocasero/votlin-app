@@ -31,9 +31,14 @@ class DetailPresenter(private val repository: Repository,
     override fun destroy() {
         // Nothing to do yet
     }
+
+    fun onBackClicked() {
+        view.navigateToList()
+    }
 }
 
 interface DetailView : Presenter.View {
     fun getTalkId(): Int
     fun showTalk(talk: Talk)
+    fun navigateToList()
 }

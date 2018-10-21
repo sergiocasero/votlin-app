@@ -1,14 +1,16 @@
 package com.votlin.client.presentation.screen
 
 import com.votlin.client.presentation.*
+import com.votlin.client.presentation.navigator.Screen
 import com.votlin.model.Talk
+import kotlinx.html.js.onClickFunction
 import react.RBuilder
 import react.RProps
 import react.dom.*
 import react.setState
 
 class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailView {
-    override val presenter: Presenter<DetailView> = DetailPresenter(
+    override val presenter: DetailPresenter = DetailPresenter(
             repository = repository,
             executor = executor,
             errorHandler = errorHandler,
@@ -19,7 +21,10 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
         div("detail") {
             if (state.talk != undefined) {
                 div("toolbar") {
-                    img { attrs.src = "https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" }
+                    img {
+                        attrs.src = "https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png"
+                        attrs.onClickFunction = { presenter.onBackClicked() }
+                    }
                     span { +state.talk.name }
                 }
 
@@ -70,6 +75,10 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
     override fun showTalk(talk: Talk) {
         setState { this.talk = talk }
     }
+
+    override fun navigateToList() {
+        props.onBack(Screen.HOME)
+    }
 }
 
 interface DetailState : ScreenState {
@@ -78,9 +87,11 @@ interface DetailState : ScreenState {
 
 interface DetailProps : RProps {
     var talkId: Int
+    var onBack: (Screen) -> Unit
 }
 
 
-fun RBuilder.detail(talkId: Int) = child(DetailScreen::class) {
+fun RBuilder.detail(talkId: Int, onBack: (Screen) -> Unit) = child(DetailScreen::class) {
     attrs.talkId = talkId
+    attrs.onBack = onBack
 }
