@@ -5,6 +5,7 @@ apply plugin: 'kotlin2js'
 apply plugin: 'kotlin-dce-js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
 apply plugin: 'kotlinx-serialization'
+apply plugin: 'kotlin-platform-js'
 
 buildscript {
     repositories {
@@ -22,19 +23,23 @@ repositories {
 }
 
 dependencies {
-    compile project(":common-js")
+    expectedBy project(":common")
 
-    // compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-    // compile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
-//
-    // compile "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
-    // compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
-//
-    // compile "org.jetbrains:kotlin-react:16.5.2-pre.56-kotlin-1.2.71"
-    // compile "org.jetbrains:kotlin-react-dom:16.5.2-pre.56-kotlin-1.2.71"
-//
-    // compile "io.ktor:ktor-client-core-js:$ktor_version"
-    // compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+
+    compile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+
+    compile "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
+
+    compile "org.jetbrains:kotlin-react:16.5.2-pre.56-kotlin-1.2.71"
+    compile "org.jetbrains:kotlin-react-dom:16.5.2-pre.56-kotlin-1.2.71"
+
+    compile "io.ktor:ktor-client-core-js:$ktor_version"
+
+
+    testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
 }
 
 kotlinFrontend {
@@ -71,5 +76,14 @@ compileKotlin2Js {
 kotlin {
     experimental {
         coroutines "enable"
+    }
+}
+
+
+[compileKotlin2Js, compileTestKotlin2Js]*.configure {
+    kotlinOptions {
+        sourceMap = true
+        sourceMapEmbedSources = "always"
+        moduleKind = 'commonjs'
     }
 }
