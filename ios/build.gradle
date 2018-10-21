@@ -35,7 +35,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"
     compilerPlugin "org.jetbrains.kotlin:kotlin-serialization-unshaded:$serialization_plugin_version"
-    implementation "io.ktor:ktor-client-core-ios:$ktor_version"
+    implementation "io.ktor:ktor-client-ios:$ktor_version"
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.0.0-RC1"
 }
