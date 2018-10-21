@@ -11,4 +11,9 @@
     <color name="appbar_buttons_scrim_end">@android:color/transparent</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
+    <color name="track_all">#7B6BFF</color>
+    <color name="track_business">#4B86EA</color>
+    <color name="track_development">#F3C12D</color>
+    <color name="track_maker">#D9313A</color>
+
 </resources>
