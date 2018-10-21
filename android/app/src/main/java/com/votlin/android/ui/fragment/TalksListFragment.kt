@@ -11,6 +11,7 @@ import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
+import com.votlin.android.navigator.navigateToTalkDetailActivity
 import com.votlin.android.ui.adapter.TalksAdapter
 import com.votlin.client.presentation.TalksListPresenter
 import com.votlin.client.presentation.TalksListView
@@ -93,7 +94,10 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
     }
 
     override fun goToTalkScreen(id: Int) {
-        // TODO: Navigate to talk detail screen
+        val listActivity = activity
+        if (listActivity != null) {
+            navigateToTalkDetailActivity(listActivity, id)
+        }
     }
 
 }

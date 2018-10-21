@@ -7,6 +7,8 @@ buildscript {
     dependencies {
         classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
     }
+
+
 }
 
 apply plugin: 'kotlin-platform-jvm'
@@ -18,9 +20,6 @@ apply plugin: 'com.github.johnrengelman.shadow'
 mainClassName = 'com.votlin.backend.ServerKt'
 
 sourceCompatibility = 1.8
-
-
-
 
 dependencies {
     expectedBy project(":common")

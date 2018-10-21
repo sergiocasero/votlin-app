@@ -1,8 +1,5 @@
 package com.votlin.model
 
-import kotlinx.serialization.Serializable
-
-@Serializable
 data class Time(val start: Long,
                 val end: Long)
 
@@ -19,7 +16,6 @@ enum class Track {
     BUSINESS, DEVELOPMENT, MAKER, ALL
 }
 
-@Serializable
 data class Speaker(
         val twitter: String,
         val linkedin: String,
@@ -27,5 +23,4 @@ data class Speaker(
         val bio: String,
         val photoUrl: String)
 
-@Serializable
 data class Rate(val id: Int, val value: Int)

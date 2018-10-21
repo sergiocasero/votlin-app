@@ -7,4 +7,5 @@ interface LocalDataSource {
     fun getFavoriteTalks(): List<Talk>
     fun saveRate(rate: Rate)
     fun saveTalk(talk: Talk)
+    fun getRate(talkId: Int): Int
 }

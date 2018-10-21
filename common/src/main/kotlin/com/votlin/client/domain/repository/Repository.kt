@@ -16,4 +16,6 @@ interface Repository {
     suspend fun getTalk(talkId: Int): Talk
 
     suspend fun getFavoriteTalks(): List<Talk>
+
+    fun getRate(talkId: Int): Int
 }

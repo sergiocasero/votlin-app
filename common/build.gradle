@@ -11,7 +11,6 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
 
     implementation "io.ktor:ktor-client-core:$ktor_version"
-    implementation "io.ktor:ktor-client-json:$ktor_version"
 
     testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
 
