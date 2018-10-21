@@ -63,8 +63,6 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
                     if (talk.time != time) {
                         time = talk.time
-
-                        println(time.toFormattedDate())
                         if (time.start != 0L) div("line") { +time.toFormattedDate() }
                     }
 

@@ -36,8 +36,11 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
                 }
                 span("description") { +state.talk.description }
 
+                println(state.rate)
+
                 div("rate") {
                     for (star in 1..5) {
+
                         img {
                             attrs.src = if (state.rate >= star) starUrl else outlineStarUrl
                             attrs.onClickFunction = { presenter.onRateChange(star) }
@@ -93,7 +96,7 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
     }
 
     override fun showRate(rate: Int) {
-        setState { state.rate = rate }
+        setState { this.rate = rate }
     }
 }
 
