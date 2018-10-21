@@ -24,4 +24,6 @@ class CommonRepository(private val local: LocalDataSource,
     }
 
     override fun saveTalk(talk: Talk) = local.saveTalk(talk)
+
+    override fun getRate(talkId: Int): Int = local.getRate(talkId)
 }

@@ -10,6 +10,7 @@ import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.http.takeFrom
 import kotlinx.serialization.json.JSON
+import kotlin.browser.localStorage
 
 class JsRemoteDataSource : CommonRemoteDataSource() {
 
@@ -57,11 +58,12 @@ class JsLocalDataSource : LocalDataSource {
     }
 
     override fun saveRate(rate: Rate) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        localStorage.setItem("rate${rate.id}", rate.value.toString())
     }
 
     override fun saveTalk(talk: Talk) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
+    override fun getRate(talkId: Int): Int = localStorage.getItem("rate$talkId")?.toIntOrNull() ?: 0
 }

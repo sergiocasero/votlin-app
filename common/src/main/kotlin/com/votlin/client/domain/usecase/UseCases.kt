@@ -1,4 +1,4 @@
-package com.votlin.client.domain
+package com.votlin.client.domain.usecase
 
 import com.votlin.client.domain.repository.Repository
 import com.votlin.model.Rate
@@ -13,6 +13,8 @@ suspend fun getTalksByTrack(track: Track, repository: Repository): List<Talk> = 
 
 suspend fun rateTalk(rate: Rate, repository: Repository): Unit = repository.rateTalk(rate)
 
-suspend fun saveTalk(talk: Talk, repository: Repository): Unit = repository.saveTalk(talk)
+fun saveTalk(talk: Talk, repository: Repository): Unit = repository.saveTalk(talk)
+
+fun getTalkRate(talkId: Int, repository: Repository): Int = repository.getRate(talkId)
 
 suspend fun getFavoriteTalks(repository: Repository): List<Talk> = repository.getFavoriteTalks()

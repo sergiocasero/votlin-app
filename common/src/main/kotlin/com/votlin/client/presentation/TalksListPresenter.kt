@@ -2,8 +2,8 @@ package com.votlin.client.presentation
 
 import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.client.domain.executor.Executor
-import com.votlin.client.domain.getAllTalks
-import com.votlin.client.domain.getTalksByTrack
+import com.votlin.client.domain.usecase.getAllTalks
+import com.votlin.client.domain.usecase.getTalksByTrack
 import com.votlin.client.domain.repository.Repository
 import com.votlin.model.Talk
 import com.votlin.model.Track

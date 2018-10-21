@@ -2,9 +2,10 @@ package com.votlin.client.presentation
 
 import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.client.domain.executor.Executor
-import com.votlin.client.domain.getTalkDetail
-import com.votlin.client.domain.rateTalk
 import com.votlin.client.domain.repository.Repository
+import com.votlin.client.domain.usecase.getTalkDetail
+import com.votlin.client.domain.usecase.getTalkRate
+import com.votlin.client.domain.usecase.rateTalk
 import com.votlin.model.Rate
 import com.votlin.model.Talk
 import kotlinx.coroutines.GlobalScope
@@ -28,6 +29,9 @@ class DetailPresenter(private val repository: Repository,
                 view.hideProgress()
             }
         }
+
+        val rate = getTalkRate(view.getTalkId(), repository)
+        view.showRate(rate)
     }
 
     override fun destroy() {
