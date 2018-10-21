@@ -4,9 +4,7 @@ import com.votlin.client.presentation.*
 import com.votlin.model.Talk
 import react.RBuilder
 import react.RProps
-import react.dom.div
-import react.dom.h3
-import react.dom.img
+import react.dom.*
 import react.setState
 
 class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailView {
@@ -18,10 +16,43 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
     )
 
     override fun RBuilder.render() {
-        if (state.talk != undefined) {
-            div("toolbar") {
-                img { attrs.src = "https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" }
-                h3 { +state.talk.name }
+        div("detail") {
+            if (state.talk != undefined) {
+                div("toolbar") {
+                    img { attrs.src = "https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" }
+                    span { +state.talk.name }
+                }
+
+                div(classes = "card ${state.talk.track.toString().toLowerCase()}") {
+                    h3 { +state.talk.track.toString().toLowerCase().capitalize() }
+                }
+                span("description") { +state.talk.description }
+
+                div("speakers") {
+                    state.talk.speakers.forEach { speaker ->
+                        div(classes = "speakerCard") {
+                            img(classes = "photo") { attrs.src = speaker.photoUrl }
+                            h3 { +speaker.name }
+                            span { +speaker.bio }
+                            div("social") {
+                                if (speaker.twitter.isNotBlank()) {
+                                    a {
+                                        attrs.href = speaker.twitter
+                                        img { attrs.src = "https://image.freepik.com/free-icon/twitter-logo_318-40459.jpg" }
+                                    }
+                                }
+                                if (speaker.linkedin.isNotBlank()) {
+                                    a {
+                                        attrs.href = speaker.linkedin
+                                        attrs.target = "_blank"
+                                        img { attrs.src = "https://png.icons8.com/metro/1600/linkedin.png" }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }

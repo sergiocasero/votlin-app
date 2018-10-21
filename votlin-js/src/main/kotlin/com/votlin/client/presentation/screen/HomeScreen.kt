@@ -35,7 +35,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
         div("main") {
             div("toolbar") {
                 img { attrs.src = "http://sergiocasero.es/votlin_logo.png" }
-                h3 { +"Votlin" }
+                span { +"Votlin" }
             }
             div("tabs") {
                 a(classes = active(state.all)) {

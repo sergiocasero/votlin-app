@@ -30,7 +30,7 @@ html, body {
     margin: auto;
 }
 
-.main {
+.main, .detail {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -41,8 +41,6 @@ html, body {
 }
 
 .toolbar {
-    display: flex;
-    flex-direction: row;
     width: 100%;
     background: #031137;
     height: 40px;
@@ -51,12 +49,17 @@ html, body {
 
 .toolbar img {
     height: 100%;
+    vertical-align: middle;
 }
 
-.toolbar h3 {
+.toolbar span {
     color: white;
-    margin-top: 8px;
     margin-left: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: bold;
+    width: 80%;
+    font-size: 1.1em;
 }
 
 .tabs {
@@ -123,18 +126,16 @@ html, body {
     align-items: center;
 }
 
-#talks .card {
+.card {
     margin: 4px;
     width: 90%;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
     transition: all .2s ease-in-out;
     border: solid 1px #BDBDBD;
-    display: flex;
-    flex-direction: column;
     border-radius: 2px;
 }
 
-#talks .card:hover {
+.card:hover {
     /*box-shadow: 0 5px 22px 0 rgba(0,0,0,.25);*/
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
@@ -183,6 +184,53 @@ html, body {
     vertical-align: middle;
 }
 
-.speaker span {
-    margin-left: 15px;
+.card span {
+    padding: 15px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speakerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    width: 90%;
+    margin-top: 15px;
+}
+
+.speakerCard h3 {
+    color: black;
+}
+
+.speakerCard img.photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.speakerCard span {
+    text-align: justify-all;
+}
+
+.detail .description {
+    width: 90%;
+}
+
+.speakerCard .social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.speakerCard .social img {
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    text-align: center;
 }
