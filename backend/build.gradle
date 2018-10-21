@@ -75,15 +75,15 @@ compileKotlin {
 }
 
 task copyFrontend(type: Copy) {
-    dependsOn(':votlin-js:build')
-    from('../votlin-js/build/resources/main')
+    dependsOn(':frontend:build')
+    from('../frontend/build/resources/main')
     into('build/resources')
 }
 
 
 task deployFrontend(type: Copy) {
     dependsOn('copyFrontend')
-    from('../votlin-js/build/bundle')
+    from('../frontend/build/bundle')
     into('build/resources')
 }
 
