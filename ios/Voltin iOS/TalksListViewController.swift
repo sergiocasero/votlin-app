@@ -12,7 +12,9 @@ import ios
 class TalksListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, TalksListView {
     
     private lazy var presenter : TalksListPresenter = TalksListPresenter(
-        view: self,
+        executor: IosExecutor(),
+        repository: CommonRepository(local: IosLocalDataSource(), remote: IosRemoteDataSource()),
+            view: self,
         errorHandler: IosErrorHandler())
     
     var track: Track = Track.all
