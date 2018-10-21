@@ -19,10 +19,15 @@ fun Application.talks() {
     routing {
         route("/talk") {
             //GET
-            get { call.respond(TalksResponse(getTalks())) }
-            get("/business") { call.respond(TalksResponse(getTrackTalks(Track.BUSINESS))) }
-            get("/development") { call.respond(TalksResponse(getTrackTalks(Track.DEVELOPMENT))) }
-            get("/maker") { call.respond(TalksResponse(getTrackTalks(Track.MAKER))) }
+            val allTalks = getTalks()
+            val businessTalks = getTrackTalks(Track.BUSINESS)
+            val devTalks = getTrackTalks(Track.DEVELOPMENT)
+            val makerTalks = getTrackTalks(Track.MAKER)
+
+            get { call.respond(TalksResponse(allTalks)) }
+            get("/business") { call.respond(TalksResponse(businessTalks)) }
+            get("/development") { call.respond(TalksResponse(devTalks)) }
+            get("/maker") { call.respond(TalksResponse(makerTalks)) }
             get("/{id}") {
                 call.parameters["id"]?.toIntOrNull()?.let { id -> call.respond(getTalkById(id = id)) }
             }

@@ -41,14 +41,13 @@ html, body {
 }
 
 .toolbar {
-    width: 100%;
     background: #031137;
-    height: 40px;
-    padding: 8px;
+    height: 50px;
 }
 
 .toolbar img {
-    height: 100%;
+    margin: 4px;
+    height: 40px;
     vertical-align: middle;
 }
 
