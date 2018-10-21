@@ -1,0 +1,248 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.app {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+}
+
+.splash {
+    width: 100%;
+    position: relative;
+}
+
+.splash #logo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    margin: auto;
+}
+
+.main, .detail {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+}
+
+.toolbar {
+    background: #031137;
+    height: 50px;
+    width: 100%;
+}
+
+.toolbar img {
+    margin: 4px;
+    height: 40px;
+    vertical-align: middle;
+}
+
+.toolbar span {
+    color: white;
+    margin-left: 15px;
+    vertical-align: middle;
+    display: inline-block;
+    font-weight: bold;
+    width: 80%;
+    font-size: 1.1em;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    box-shadow: 1px 1px 0px rgba(0, 0, 0, 0.5);
+    background: #031137;
+}
+
+.tabs > a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding: 22px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    outline: none;
+    width: 25%;
+    cursor: pointer;
+    background: #031137;
+}
+
+.tabs > a.active {
+    font-weight: 700;
+    outline: none;
+    border-bottom: solid 3px white;
+}
+
+.tabs > a:not(.active):hover {
+    /*color: #031137; */
+}
+
+.tabs a:hover {
+    border-bottom: solid 3px white;
+}
+
+.main .progress img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 150px;
+    margin: auto;
+}
+
+.splash .progress img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 150px;
+    margin: auto;
+}
+
+#talks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    margin: 4px;
+    width: 90%;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    transition: all .2s ease-in-out;
+    border: solid 1px #BDBDBD;
+    border-radius: 2px;
+}
+
+.card:hover {
+    /*box-shadow: 0 5px 22px 0 rgba(0,0,0,.25);*/
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.card h3 {
+    color: white;
+    padding: 10px;
+    margin: 0px;
+    border-radius: 1px;
+}
+
+.all h3 {
+    background: #7B6BFF;
+}
+
+.business h3 {
+    background: #4B86EA;
+}
+
+.development h3 {
+    background: #F3C12D;
+    color: black;
+}
+
+.maker h3 {
+    background: #D9313A;
+}
+
+.line {
+    text-align: right;
+    margin-top: 25px;
+    border-bottom: solid 1px grey;
+    width: 100%;
+    padding-right: 45px;
+}
+
+.speaker {
+    padding: 10px;
+    display: inline-block;
+}
+
+.speaker img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    vertical-align: middle;
+}
+
+.card span {
+    padding: 15px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.speakerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 15px;
+}
+
+.speakerCard h3 {
+    color: black;
+}
+
+.speakerCard img.photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.speakerCard span {
+    text-align: justify-all;
+}
+
+.detail .description {
+    width: 90%;
+}
+
+.speakerCard .social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.speakerCard .social img {
+    width: 40px;
+    height: 40px;
+    margin: 20px;
+    text-align: center;
+}
+
+.rate {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 25px auto 0;
+}
+
+.rate img {
+    width: 30px;
+    height: 30px;
+}
