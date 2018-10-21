@@ -11,25 +11,38 @@ import io.ktor.http.takeFrom
 import kotlinx.serialization.json.JSON
 
 class JsRemoteDataSource : CommonRemoteDataSource() {
+
+    companion object {
+        const val ENDPOINT = "http://sergiocasero.es:10000"
+    }
+
     override val client: HttpClient = HttpClient {}
 
     override suspend fun getTalks(): List<Talk> {
         return JSON.parse<TalksResponse>(client.get {
             url {
-                takeFrom("http://sergiocasero.es:10000")
+                takeFrom(ENDPOINT)
                 encodedPath = "talk"
             }
         }).talks
     }
 
-    override suspend fun getTalksByTrack(track: String): List<Talk> {
-        return JSON.parse<TalksResponse>(client.get {
-            url {
-                takeFrom("http://sergiocasero.es:10000")
-                encodedPath = "talk/$track"
-            }
-        }).talks
-    }
+    override suspend fun getTalksByTrack(track: String): List<Talk> =
+            JSON.parse<TalksResponse>(client.get {
+                url {
+                    takeFrom(ENDPOINT)
+                    encodedPath = "talk/$track"
+                }
+            }).talks
+
+
+    override suspend fun getTalk(talkId: Int): Talk =
+            JSON.parse(client.get {
+                url {
+                    takeFrom(ENDPOINT)
+                    encodedPath = "talk/$talkId"
+                }
+            })
 }
 
 class JsLocalDataSource : LocalDataSource {

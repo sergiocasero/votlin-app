@@ -60,6 +60,8 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
                 var time = Time(start = 0, end = 0)
                 state.talks.forEach { talk ->
+                    attrs.onClickFunction = { presenter.onTalkClicked(talk) }
+
                     if (talk.time != time) {
                         time = talk.time
 
@@ -103,7 +105,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
     }
 
     override fun goToTalkScreen(id: Int) {
-        // Nothing to do yet
+        props.onTalkSelected(id)
     }
 
     override fun showTalks(talks: List<Talk>) {
@@ -151,10 +153,10 @@ class HomeState : ScreenState {
 }
 
 interface HomeProps : RProps {
-    var onTalkSelected: (Talk) -> Unit
+    var onTalkSelected: (Int) -> Unit
 }
 
-fun RBuilder.home(onTalkSelected: (Talk) -> Unit) = child(HomeScreen::class) {
+fun RBuilder.home(onTalkSelected: (Int) -> Unit) = child(HomeScreen::class) {
     attrs.onTalkSelected = onTalkSelected
 }
 

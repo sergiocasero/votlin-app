@@ -1,6 +1,7 @@
 package com.votlin.client.presentation.app
 
 import com.votlin.client.presentation.navigator.Screen
+import com.votlin.client.presentation.screen.detail
 import com.votlin.client.presentation.screen.home
 import com.votlin.client.presentation.splash
 import react.*
@@ -17,21 +18,20 @@ abstract class App : RComponent<RProps, AppState>() {
             when (state.screen) {
                 Screen.SPLASH -> splash { setState { screen = it } }
                 Screen.HOME -> home {
-                    println(it)
+                    setState {
+                        talkId = it
+                        screen = Screen.DETAIL
+                    }
                 }
+                Screen.DETAIL -> detail(state.talkId)
             }
         }
-        // when (state.track) {
-        //     Track.BUSINESS -> trackList(Track.BUSINESS)
-        //     Track.DEVELOPMENT -> trackList(Track.DEVELOPMENT)
-        //     Track.MAKER -> trackList(Track.MAKER)
-        //     Track.ALL -> trackList(Track.ALL)
-        // }
     }
 }
 
 class AppState : RState {
     var screen: Screen = Screen.SPLASH
+    var talkId: Int = 0
 }
 
 fun RBuilder.app() = child(App::class) {}
