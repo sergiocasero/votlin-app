@@ -30,7 +30,7 @@ class CommonRemoteDataSource : RemoteDataSource {
         body = JSON.stringify(rate)
     }
 
-    protected fun HttpRequestBuilder.apiUrl(path: String) {
+    private fun HttpRequestBuilder.apiUrl(path: String) {
         url {
             takeFrom(endPoint)
             encodedPath = path
