@@ -7,6 +7,7 @@ import com.votlin.model.Talk
 import com.votlin.model.TalksResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
+import io.ktor.client.request.post
 import io.ktor.http.takeFrom
 import kotlinx.serialization.json.JSON
 
@@ -43,6 +44,11 @@ class JsRemoteDataSource : CommonRemoteDataSource() {
                     encodedPath = "talk/$talkId"
                 }
             })
+
+    override suspend fun rateTalk(rate: Rate): Unit = client.post {
+        apiUrl("talk/rate")
+        body = JSON.stringify(rate)
+    }
 }
 
 class JsLocalDataSource : LocalDataSource {

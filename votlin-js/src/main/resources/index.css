@@ -199,7 +199,6 @@ html, body {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    width: 90%;
     margin-top: 15px;
 }
 
@@ -233,4 +232,16 @@ html, body {
     height: 40px;
     margin: 20px;
     text-align: center;
+}
+
+.rate {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 25px auto 0;
+}
+
+.rate img {
+    width: 30px;
+    height: 30px;
 }

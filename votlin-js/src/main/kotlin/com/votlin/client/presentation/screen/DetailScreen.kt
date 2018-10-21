@@ -1,5 +1,6 @@
 package com.votlin.client.presentation.screen
 
+import com.votlin.client.constants.*
 import com.votlin.client.presentation.*
 import com.votlin.client.presentation.navigator.Screen
 import com.votlin.model.Talk
@@ -10,6 +11,8 @@ import react.dom.*
 import react.setState
 
 class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailView {
+
+
     override val presenter: DetailPresenter = DetailPresenter(
             repository = repository,
             executor = executor,
@@ -22,7 +25,7 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
             if (state.talk != undefined) {
                 div("toolbar") {
                     img {
-                        attrs.src = "https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png"
+                        attrs.src = backUrl
                         attrs.onClickFunction = { presenter.onBackClicked() }
                     }
                     span { +state.talk.name }
@@ -32,6 +35,15 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
                     h3 { +state.talk.track.toString().toLowerCase().capitalize() }
                 }
                 span("description") { +state.talk.description }
+
+                div("rate") {
+                    for (star in 1..5) {
+                        img {
+                            attrs.src = if (state.rate >= star) starUrl else outlineStarUrl
+                            attrs.onClickFunction = { presenter.onRateChange(star) }
+                        }
+                    }
+                }
 
                 div("speakers") {
                     state.talk.speakers.forEach { speaker ->
@@ -43,14 +55,14 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
                                 if (speaker.twitter.isNotBlank()) {
                                     a {
                                         attrs.href = speaker.twitter
-                                        img { attrs.src = "https://image.freepik.com/free-icon/twitter-logo_318-40459.jpg" }
+                                        img { attrs.src = twitterUrl }
                                     }
                                 }
                                 if (speaker.linkedin.isNotBlank()) {
                                     a {
                                         attrs.href = speaker.linkedin
                                         attrs.target = "_blank"
-                                        img { attrs.src = "https://png.icons8.com/metro/1600/linkedin.png" }
+                                        img { attrs.src = linkedinUrl }
                                     }
                                 }
                             }
@@ -79,10 +91,15 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
     override fun navigateToList() {
         props.onBack(Screen.HOME)
     }
+
+    override fun showRate(rate: Int) {
+        setState { state.rate = rate }
+    }
 }
 
 interface DetailState : ScreenState {
     var talk: Talk
+    var rate: Int
 }
 
 interface DetailProps : RProps {

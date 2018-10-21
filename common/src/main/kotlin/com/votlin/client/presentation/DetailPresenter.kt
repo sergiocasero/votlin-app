@@ -3,7 +3,9 @@ package com.votlin.client.presentation
 import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.client.domain.executor.Executor
 import com.votlin.client.domain.getTalkDetail
+import com.votlin.client.domain.rateTalk
 import com.votlin.client.domain.repository.Repository
+import com.votlin.model.Rate
 import com.votlin.model.Talk
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -35,10 +37,18 @@ class DetailPresenter(private val repository: Repository,
     fun onBackClicked() {
         view.navigateToList()
     }
+
+    fun onRateChange(rate: Int) {
+        GlobalScope.launch(executor.new) {
+            rateTalk(Rate(id = view.getTalkId(), value = rate), repository)
+        }
+        view.showRate(rate)
+    }
 }
 
 interface DetailView : Presenter.View {
     fun getTalkId(): Int
     fun showTalk(talk: Talk)
     fun navigateToList()
+    fun showRate(rate: Int)
 }
