@@ -59,19 +59,24 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
                 attrs.id = "talks"
 
                 var time = Time(start = 0, end = 0)
-                state.talks.forEach {
-                    if (it.time != time) {
-                        time = it.time
+                state.talks.forEach { talk ->
+                    if (talk.time != time) {
+                        time = talk.time
 
                         println(time.toFormattedDate())
                         if (time.start != 0L) div("line") { +time.toFormattedDate() }
                     }
 
-                    div(classes = "card ${it.track.toString().toLowerCase()}") {
-                        h3 { +it.name }
+                    div(classes = "card ${talk.track.toString().toLowerCase()}") {
+                        h3 { +talk.name }
 
-                        if (!it.description.isBlank()) {
-                            span { +it.description }
+                        if (talk.speakers.isNotEmpty()) {
+                            talk.speakers.forEach { speaker ->
+                                div("speaker") {
+                                    img { attrs.src = speaker.photoUrl }
+                                    span { +speaker.name }
+                                }
+                            }
                         }
                     }
                 }
