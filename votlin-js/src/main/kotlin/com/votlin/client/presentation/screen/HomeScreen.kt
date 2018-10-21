@@ -60,7 +60,6 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
                 var time = Time(start = 0, end = 0)
                 state.talks.forEach { talk ->
-                    attrs.onClickFunction = { presenter.onTalkClicked(talk) }
 
                     if (talk.time != time) {
                         time = talk.time
@@ -70,6 +69,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
                     }
 
                     div(classes = "card ${talk.track.toString().toLowerCase()}") {
+                        attrs.onClickFunction = { presenter.onTalkClicked(talk) }
                         h3 { +talk.name }
 
                         if (talk.speakers.isNotEmpty()) {
@@ -105,6 +105,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
     }
 
     override fun goToTalkScreen(id: Int) {
+        println(id)
         props.onTalkSelected(id)
     }
 

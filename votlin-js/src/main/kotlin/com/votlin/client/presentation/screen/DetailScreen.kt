@@ -5,6 +5,8 @@ import com.votlin.model.Talk
 import react.RBuilder
 import react.RProps
 import react.dom.div
+import react.dom.h3
+import react.dom.img
 import react.setState
 
 class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailView {
@@ -17,7 +19,10 @@ class DetailScreen : RootScreen<DetailProps, DetailState, DetailView>(), DetailV
 
     override fun RBuilder.render() {
         if (state.talk != undefined) {
-            div { +state.talk.name }
+            div("toolbar") {
+                img { attrs.src = "https://www.materialui.co/materialIcons/navigation/arrow_back_white_192x192.png" }
+                h3 { +state.talk.name }
+            }
         }
     }
 
