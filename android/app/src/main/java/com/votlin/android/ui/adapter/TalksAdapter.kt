@@ -48,7 +48,7 @@ class TalksAdapter(onItemClick: (Talk) -> Unit) : RootAdapter<Talk>(onItemClickL
                 model.speakers.forEach { speaker ->
                     val view = LayoutInflater.from(itemView.context).inflate(R.layout.view_speaker, null, false)
                     view.name.text = speaker.name
-                    view.image.load(speaker.photoUrl)
+                    view.image.load(url = speaker.photoUrl, circleCrop = true)
                     itemView.speakers.addView(view)
                 }
             }

@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.support.v4.content.ContextCompat
+import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
@@ -13,6 +14,7 @@ import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
+import com.votlin.android.ui.adapter.SpeakersAdapter
 import com.votlin.client.presentation.DetailPresenter
 import com.votlin.client.presentation.DetailView
 import com.votlin.model.Talk
@@ -46,6 +48,11 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         }
     }
 
+    val adapter = SpeakersAdapter(
+            onLinkedInClicked = { showMessage(it) },
+            onTwitterClicked = { showMessage(it) }
+    )
+
     override fun showProgress() {
         progressView.showMe()
     }
@@ -60,6 +67,10 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+
+
+        speakers.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        speakers.adapter = adapter
     }
 
     override fun registerListeners() {
@@ -96,6 +107,8 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         supportActionBar?.subtitle = talk.name
         supportActionBar?.setBackgroundDrawable(ColorDrawable(compatColor))
         description.text = talk.description
+
+        adapter.replace(talk.speakers.toMutableList())
     }
 
     override fun onSupportNavigateUp(): Boolean {
