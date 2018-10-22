@@ -14,6 +14,7 @@ import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
+import com.votlin.android.navigator.openUri
 import com.votlin.android.ui.adapter.SpeakersAdapter
 import com.votlin.client.presentation.DetailPresenter
 import com.votlin.client.presentation.DetailView
@@ -49,8 +50,8 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
     }
 
     val adapter = SpeakersAdapter(
-            onLinkedInClicked = { showMessage(it) },
-            onTwitterClicked = { showMessage(it) }
+            onLinkedInClicked = { openUri(context = this, url = it) },
+            onTwitterClicked = { openUri(context = this, url = it) }
     )
 
     override fun showProgress() {

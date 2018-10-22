@@ -32,18 +32,24 @@ class SpeakersAdapter(val onLinkedInClicked: (String) -> Unit = {}, val onTwitte
             itemView.description.text = model.bio
             itemView.image.load(url = model.photoUrl, circleCrop = true)
 
-            if (model.linkedin.isEmpty()) {
-                itemView.linkedin.hideMe()
-            } else {
+            if (model.linkedin.isNotEmpty() and model.twitter.isNotEmpty()) {
                 itemView.linkedin.showMe()
-            }
-
-            if (model.twitter.isEmpty()) {
-                itemView.twitter.hideMe()
-            } else {
                 itemView.twitter.showMe()
-            }
+                itemView.space.showMe()
+            } else {
+                itemView.space.hideMe()
+                if (model.linkedin.isEmpty()) {
+                    itemView.linkedin.hideMe()
+                } else {
+                    itemView.linkedin.showMe()
+                }
 
+                if (model.twitter.isEmpty()) {
+                    itemView.twitter.hideMe()
+                } else {
+                    itemView.twitter.showMe()
+                }
+            }
 
         }
     }

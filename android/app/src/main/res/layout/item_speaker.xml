@@ -20,7 +20,7 @@
         <TextView
             android:id="@+id/name"
             android:layout_marginTop="8dp"
-            android:layout_gravity="center"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:textStyle="bold"
             android:layout_height="wrap_content" />
@@ -28,6 +28,7 @@
         <TextView
             android:id="@+id/description"
             android:layout_marginTop="8dp"
+            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -44,6 +45,12 @@
                 android:background="@drawable/ic_linkedin"
                 android:layout_width="24dp"
                 android:layout_height="24dp" />
+
+            <View
+                android:id="@+id/space"
+                android:layout_width="30dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"/>
 
             <ImageButton
                 android:id="@+id/twitter"
