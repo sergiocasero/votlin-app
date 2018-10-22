@@ -1,0 +1,90 @@
+group "com.votlin"
+version "0.0.1"
+
+apply plugin: 'kotlin2js'
+apply plugin: 'kotlin-dce-js'
+apply plugin: 'org.jetbrains.kotlin.frontend'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'kotlin-platform-js'
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.71"
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    expectedBy project(":common")
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
+    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+
+    compile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+
+    compile "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
+    compile "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
+
+    compile "org.jetbrains:kotlin-react:16.5.2-pre.56-kotlin-1.2.71"
+    compile "org.jetbrains:kotlin-react-dom:16.5.2-pre.56-kotlin-1.2.71"
+
+    compile "io.ktor:ktor-client-core-js:$ktor_version"
+    compile "io.ktor:ktor-client-json:$ktor_version"
+
+
+    testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+}
+
+kotlinFrontend {
+
+    downloadNodeJsVersion = "8.11.2"
+
+    sourceMaps = false
+
+    npm {
+        replaceVersion "kotlinx-html-js", "$kotlin_version"
+        replaceVersion "kotlinx-html-shared", "$kotlin_version"
+        replaceVersion "kotlin-js-library", "$kotlin_version"
+
+        dependency "react", "16.3.1"
+        dependency "react-dom", "16.3.1"
+    }
+
+    webpackBundle {
+        bundleName = "main"
+        contentPath = file('src/main/resources')
+        proxyUrl = "http://localhost:9090"
+    }
+}
+
+compileKotlin2Js {
+    kotlinOptions.metaInfo = true
+    kotlinOptions.outputFile = "$project.buildDir.path/js/${project.name}.js"
+    kotlinOptions.sourceMap = true
+    kotlinOptions.sourceMapEmbedSources = "always"
+    kotlinOptions.moduleKind = 'commonjs'
+    kotlinOptions.main = "call"
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+
+[compileKotlin2Js, compileTestKotlin2Js]*.configure {
+    kotlinOptions {
+        sourceMap = true
+        sourceMapEmbedSources = "always"
+        moduleKind = 'commonjs'
+    }
+}
