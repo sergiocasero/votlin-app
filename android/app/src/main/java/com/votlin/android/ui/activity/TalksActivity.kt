@@ -3,6 +3,7 @@ package com.votlin.android.ui.activity
 import android.content.Context
 import android.content.Intent
 import android.support.design.widget.TabLayout
+import android.support.v7.widget.Toolbar
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -34,6 +35,10 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
     }
 
     override fun initializeUI() {
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.title = getString(R.string.app_name)
+        setSupportActionBar(toolbar)
+
         val viewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
         viewPagerAdapter.addFragment(getString(R.string.all), TalksListFragment.newInstance(Track.ALL))
         viewPagerAdapter.addFragment(getString(R.string.business), TalksListFragment.newInstance(Track.BUSINESS))
@@ -41,7 +46,9 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
         viewPagerAdapter.addFragment(getString(R.string.maker), TalksListFragment.newInstance(Track.MAKER))
         viewPager.adapter = viewPagerAdapter
         tab.setupWithViewPager(viewPager)
+    }
 
+    override fun registerListeners() {
         tab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabReselected(tab: TabLayout.Tab?) {
                 // nothing to do
@@ -61,10 +68,6 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
             }
 
         })
-    }
-
-    override fun registerListeners() {
-        // Nothing to do yet.
     }
 
     override fun showProgress() {

@@ -2,6 +2,9 @@ package com.votlin.android.ui.activity
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.ColorDrawable
+import android.support.v4.content.ContextCompat
+import android.support.v7.widget.Toolbar
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -12,7 +15,7 @@ import com.votlin.android.extensions.showMe
 import com.votlin.client.presentation.DetailPresenter
 import com.votlin.client.presentation.DetailView
 import com.votlin.model.Talk
-
+import com.votlin.model.Track
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : RootActivity<DetailView>(), DetailView {
@@ -51,7 +54,11 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
     }
 
     override fun initializeUI() {
-        // Do nothing
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        toolbar.title = getString(R.string.app_name)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     override fun registerListeners() {
@@ -71,7 +78,19 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
     }
 
     override fun showTalk(talk: Talk) {
+        val color = when (talk.track) {
+            Track.BUSINESS -> R.color.track_business
+            Track.DEVELOPMENT -> R.color.track_development
+            Track.MAKER -> R.color.track_maker
+            Track.ALL -> R.color.track_all
+        }
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, color)))
         name.text = talk.name
         description.text = talk.description
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
