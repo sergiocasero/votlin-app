@@ -2,6 +2,7 @@ package com.votlin.android.ui.activity
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.Toolbar
@@ -81,17 +82,19 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         val color = when (talk.track) {
             Track.BUSINESS -> R.color.track_business
             Track.DEVELOPMENT -> {
+                val darkColor = ContextCompat.getColor(this, R.color.dark_title)
+                toolbar.setTitleTextColor(darkColor)
+                toolbar.navigationIcon?.setColorFilter(darkColor, PorterDuff.Mode.MULTIPLY)
+                toolbar.setSubtitleTextColor(ContextCompat.getColor(this, R.color.dark_subtitle))
                 R.color.track_development
             }
             Track.MAKER -> R.color.track_maker
             Track.ALL -> R.color.track_all
         }
+        val compatColor = ContextCompat.getColor(this, color)
         supportActionBar?.title = talk.track.toString().toLowerCase().capitalize()
         supportActionBar?.subtitle = talk.name
-        val compatColor = ContextCompat.getColor(this, color)
         supportActionBar?.setBackgroundDrawable(ColorDrawable(compatColor))
-        name.text = talk.name
-        name.setBackgroundColor(compatColor)
         description.text = talk.description
     }
 

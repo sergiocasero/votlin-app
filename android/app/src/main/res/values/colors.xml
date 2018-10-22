@@ -15,5 +15,7 @@
     <color name="track_business">#4B86EA</color>
     <color name="track_development">#F3C12D</color>
     <color name="track_maker">#D9313A</color>
+    <color name="dark_title">#000000</color>
+    <color name="dark_subtitle">#404040</color>
 
 </resources>

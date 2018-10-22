@@ -1,5 +1,6 @@
 package com.votlin.android.ui.adapter
 
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
 import com.votlin.android.R
@@ -27,7 +28,10 @@ class TalksAdapter(onItemClick: (Talk) -> Unit) : RootAdapter<Talk>(onItemClickL
 
             val color = when (model.track) {
                 Track.BUSINESS -> R.color.track_business
-                Track.DEVELOPMENT -> R.color.track_development
+                Track.DEVELOPMENT -> {
+                    itemView.title.setTextColor(ContextCompat.getColor(itemView.context, R.color.dark_title))
+                    R.color.track_development
+                }
                 Track.MAKER -> R.color.track_maker
                 Track.ALL -> {
                     itemView.setOnClickListener {}
