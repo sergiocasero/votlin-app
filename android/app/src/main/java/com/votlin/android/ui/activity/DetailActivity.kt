@@ -80,12 +80,18 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
     override fun showTalk(talk: Talk) {
         val color = when (talk.track) {
             Track.BUSINESS -> R.color.track_business
-            Track.DEVELOPMENT -> R.color.track_development
+            Track.DEVELOPMENT -> {
+                R.color.track_development
+            }
             Track.MAKER -> R.color.track_maker
             Track.ALL -> R.color.track_all
         }
-        supportActionBar?.setBackgroundDrawable(ColorDrawable(ContextCompat.getColor(this, color)))
+        supportActionBar?.title = talk.track.toString().toLowerCase().capitalize()
+        supportActionBar?.subtitle = talk.name
+        val compatColor = ContextCompat.getColor(this, color)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(compatColor))
         name.text = talk.name
+        name.setBackgroundColor(compatColor)
         description.text = talk.description
     }
 
