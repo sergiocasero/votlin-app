@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="talks_list_margin">10dp</dimen>
+    <dimen name="circle_size">24dp</dimen>
+    <dimen name="item_talk_padding">10dp</dimen>
+</resources>

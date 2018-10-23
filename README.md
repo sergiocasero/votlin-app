@@ -44,7 +44,7 @@ the contents should be `sdk.dir=/Users/<your username>/Library/Android/sdk`. On 
 ## Running the Web client
 
  * Make sure the backend is running on localhost:8080
- * Run `gradlew votlin-js:run` in the 'web' directory to run webpack development server
+ * Run `gradlew :frontend:run` in the 'web' directory to run webpack development server
  
  ## Running iOS
  
