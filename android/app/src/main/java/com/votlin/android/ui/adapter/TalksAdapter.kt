@@ -1,15 +1,13 @@
 package com.votlin.android.ui.adapter
 
 import android.support.v4.content.ContextCompat
-import android.view.LayoutInflater
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.votlin.android.R
 import com.votlin.android.extensions.hideMe
-import com.votlin.android.extensions.load
 import com.votlin.model.Talk
 import com.votlin.model.Track
 import kotlinx.android.synthetic.main.item_talk.view.*
-import kotlinx.android.synthetic.main.view_speaker.view.*
 
 class TalksAdapter(onItemClick: (Talk) -> Unit) : RootAdapter<Talk>(onItemClickListener = onItemClick) {
 
@@ -45,12 +43,11 @@ class TalksAdapter(onItemClick: (Talk) -> Unit) : RootAdapter<Talk>(onItemClickL
             if (model.speakers.isEmpty()) {
                 itemView.speakers.hideMe()
             } else {
-                model.speakers.forEach { speaker ->
-                    val view = LayoutInflater.from(itemView.context).inflate(R.layout.view_speaker, null, false)
-                    view.name.text = speaker.name
-                    view.image.load(url = speaker.photoUrl, circleCrop = true)
-                    itemView.speakers.addView(view)
-                }
+                val speakersAdapter = MiniSpeakersAdapter()
+                speakersAdapter.addAll(model.speakers.toMutableList())
+
+                itemView.speakers.adapter = speakersAdapter
+                itemView.speakers.layoutManager = LinearLayoutManager(itemView.context)
             }
         }
     }

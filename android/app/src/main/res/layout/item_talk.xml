@@ -24,16 +24,11 @@
             android:textColor="@color/white"
             tools:text="Kotlin. Un lenguaje para dominarlos a todos" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:paddingTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingStart="10dp"
-            android:paddingEnd="10dp"
-            android:paddingRight="10dp"
-            android:id="@+id/speakers"
+        <android.support.v7.widget.RecyclerView
+            android:padding="@dimen/item_talk_padding"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:id="@+id/speakers" />
 
     </LinearLayout>
 
