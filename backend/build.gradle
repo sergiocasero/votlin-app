@@ -73,19 +73,3 @@ compileKotlin {
         languageVersion = "1.3"
     }
 }
-
-task copyFrontend(type: Copy) {
-    dependsOn(':frontend:build')
-    from('../frontend/build/resources/main')
-    into('build/resources')
-}
-
-
-task deployFrontend(type: Copy) {
-    dependsOn('copyFrontend')
-    from('../frontend/build/bundle')
-    into('build/resources')
-}
-
-run.dependsOn deployFrontend
-shadowJar.dependsOn deployFrontend

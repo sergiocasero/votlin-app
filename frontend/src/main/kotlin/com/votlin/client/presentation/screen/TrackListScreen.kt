@@ -1,6 +1,7 @@
 package com.votlin.client.presentation.screen
 
-import com.votlin.client.presentation.*
+import com.votlin.client.presentation.TalksListPresenter
+import com.votlin.client.presentation.TalksListView
 import com.votlin.client.presentation.di.errorHandler
 import com.votlin.client.presentation.di.executor
 import com.votlin.client.presentation.di.repository
@@ -26,13 +27,13 @@ class TrackListScreen : RootScreen<TrackProps, TrackListState, TalksListView>(),
 
     override fun componentDidMount() {
         super.componentDidMount()
-        presenter.onTrackChanged()
+        presenter.onTrackChanged(Track.ALL)
     }
 
     override fun componentWillReceiveProps(nextProps: TrackProps) {
         super.componentWillReceiveProps(nextProps)
         if (nextProps.track != props.track) {
-            presenter.onTrackChanged()
+            presenter.onTrackChanged(props.track)
         }
     }
 
@@ -61,8 +62,6 @@ class TrackListScreen : RootScreen<TrackProps, TrackListState, TalksListView>(),
     override fun showMessage(message: String) {
         println("Message")
     }
-
-    override fun getTrack(): Track = props.track
 
     override fun goToTalkScreen(id: Int) {
         // Not implemented yet

@@ -29,10 +29,10 @@ class MainView : View("Hello Votlin from TornadoFX! :)"), TalksListView {
 
     private var track = Track.ALL
 
-    override fun getTrack(): Track = track
-
     override fun showTalks(talks: List<Talk>) {
         println(talks.toString())
+        this.talks.clear()
+        this.talks.addAll(talks)
     }
 
     override fun goToTalkScreen(id: Int) {
@@ -61,33 +61,23 @@ class MainView : View("Hello Votlin from TornadoFX! :)"), TalksListView {
         tabClosingPolicy = TabPane.TabClosingPolicy.UNAVAILABLE
 
         tab("All") {
-            setOnMouseClicked {
-                track = Track.ALL
-                presenter.onViewVisible()
-            }
+            setOnMouseClicked { presenter.onTrackChanged(Track.ALL) }
             progressbar { removeWhen(progressProperty.not()) }
             listview(talks) {
                 enableWhen(progressProperty.not())
-                
+                cellFormat {
+                    label(it.name) {}
+                }
             }
         }
         tab("Business") {
-            setOnMouseClicked {
-                track = Track.BUSINESS
-                presenter.onViewVisible()
-            }
+            setOnMouseClicked { presenter.onTrackChanged(Track.BUSINESS) }
         }
         tab("Development") {
-            setOnMouseClicked {
-                track = Track.DEVELOPMENT
-                presenter.onViewVisible()
-            }
+            setOnMouseClicked { presenter.onTrackChanged(Track.DEVELOPMENT) }
         }
         tab("Maker") {
-            setOnMouseClicked {
-                track = Track.MAKER
-                presenter.onViewVisible()
-            }
+            setOnMouseClicked { presenter.onTrackChanged(Track.MAKER) }
         }
     }
 
