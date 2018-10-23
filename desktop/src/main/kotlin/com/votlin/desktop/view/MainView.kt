@@ -1,20 +1,18 @@
 package com.votlin.desktop.view
 
-import com.votlin.client.presentation.TalksListPresenter
-import com.votlin.client.presentation.TalksListView
+import com.votlin.client.presentation.DetailPresenter
+import com.votlin.client.presentation.DetailView
+import com.votlin.desktop.app.Styles
 import com.votlin.desktop.di.errorHandler
 import com.votlin.desktop.di.executor
 import com.votlin.desktop.di.repository
 import com.votlin.model.Talk
-import com.votlin.model.Track
 import javafx.beans.property.SimpleBooleanProperty
-import javafx.collections.FXCollections.observableArrayList
-import javafx.scene.control.TabPane
 import tornadofx.*
 
-class MainView : View("Hello Votlin from TornadoFX! :)"), TalksListView {
+class MainView : View("Votlin"), DetailView {
 
-    private val presenter = TalksListPresenter(
+    private val presenter = DetailPresenter(
             executor = executor,
             errorHandler = errorHandler,
             repository = repository,
@@ -23,20 +21,23 @@ class MainView : View("Hello Votlin from TornadoFX! :)"), TalksListView {
 
     private val progressProperty = SimpleBooleanProperty()
 
-    private val talks = observableArrayList<Talk>()
-
     private var progress by progressProperty
 
-    private var track = Track.ALL
+    private val talk: TalkModel by inject()
 
-    override fun showTalks(talks: List<Talk>) {
-        println(talks.toString())
-        this.talks.clear()
-        this.talks.addAll(talks)
+    override fun getTalkId(): Int = 100
+
+    override fun showTalk(talk: Talk) {
+        this.talk.name.value = talk.name
+        this.talk.description.value = talk.description
     }
 
-    override fun goToTalkScreen(id: Int) {
+    override fun navigateToList() {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun showRate(rate: Int) {
+        // TODO
     }
 
     override fun showProgress() {
@@ -57,27 +58,12 @@ class MainView : View("Hello Votlin from TornadoFX! :)"), TalksListView {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override val root = tabpane {
-        tabClosingPolicy = TabPane.TabClosingPolicy.UNAVAILABLE
-
-        tab("All") {
-            setOnMouseClicked { presenter.onTrackChanged(Track.ALL) }
-            progressbar { removeWhen(progressProperty.not()) }
-            listview(talks) {
-                enableWhen(progressProperty.not())
-                cellFormat {
-                    label(it.name) {}
-                }
-            }
+    override val root = vbox {
+        text(talk.name) {
+            addClass(Styles.heading)
         }
-        tab("Business") {
-            setOnMouseClicked { presenter.onTrackChanged(Track.BUSINESS) }
-        }
-        tab("Development") {
-            setOnMouseClicked { presenter.onTrackChanged(Track.DEVELOPMENT) }
-        }
-        tab("Maker") {
-            setOnMouseClicked { presenter.onTrackChanged(Track.MAKER) }
+        text(talk.description) {
+            addClass(Styles.label)
         }
     }
 
@@ -85,4 +71,9 @@ class MainView : View("Hello Votlin from TornadoFX! :)"), TalksListView {
         presenter.initialize()
         println("Hello tornado!")
     }
+}
+
+class TalkModel2 : ItemViewModel<Talk>() {
+    val name = bind(Talk::name)
+    val description = bind(Talk::description)
 }
