@@ -1,6 +1,7 @@
 package com.votlin.client.presentation.screen
 
-import com.votlin.client.presentation.*
+import com.votlin.client.presentation.TalksListPresenter
+import com.votlin.client.presentation.TalksListView
 import com.votlin.client.presentation.di.errorHandler
 import com.votlin.client.presentation.di.executor
 import com.votlin.client.presentation.di.repository
@@ -25,7 +26,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
 
     override fun componentDidMount() {
         super.componentDidMount()
-        presenter.onViewVisible()
+        presenter.onTrackChanged(track)
     }
 
     override val presenter: TalksListPresenter = TalksListPresenter(
@@ -95,8 +96,6 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
         }
     }
 
-    override fun getTrack(): Track = track
-
     override fun showError(error: String) {
         println(error)
     }
@@ -139,7 +138,7 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
             else -> Track.ALL
         }
 
-        presenter.onViewVisible()
+        presenter.onTrackChanged(track)
     }
 }
 
