@@ -6,5 +6,5 @@ import kotlinx.coroutines.Dispatchers
 
 class DesktopExecutor : Executor {
     override val new: CoroutineDispatcher = Dispatchers.IO
-    override val main: CoroutineDispatcher = Dispatchers.Main
+    override val main: CoroutineDispatcher = Dispatchers.Unconfined
 }
