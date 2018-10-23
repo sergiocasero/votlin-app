@@ -48,6 +48,7 @@ class DetailPresenter(private val repository: Repository,
         }
         view.showRate(rate)
     }
+
 }
 
 interface DetailView : Presenter.View {

@@ -61,7 +61,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
 
-    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
+    implementation "io.ktor:ktor-client-android:$ktor_version"
     implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
 
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"

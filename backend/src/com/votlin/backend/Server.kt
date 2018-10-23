@@ -8,6 +8,7 @@ import io.ktor.http.ContentType
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import org.jetbrains.exposed.sql.Database
+import org.slf4j.event.Level
 
 fun main(args: Array<String>) {
     embeddedServer(Netty, 10000) {
@@ -21,6 +22,8 @@ fun main(args: Array<String>) {
         // Serialize json
         install(ContentNegotiation) {
             register(ContentType("[*", "*]"), GsonConverter())
+            register(ContentType("*", "*"), GsonConverter())
+            register(ContentType("text", "plain"), GsonConverter())
             gson {}
         }
 
@@ -29,6 +32,10 @@ fun main(args: Array<String>) {
         install(CORS) { anyHost() }
         install(DefaultHeaders)
         install(ConditionalHeaders)
+
+        install(CallLogging) {
+            level = Level.TRACE
+        }
 
         // Modules
         main()
