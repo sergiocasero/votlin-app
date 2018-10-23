@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.item_speaker.view.*
 class SpeakersAdapter(val onLinkedInClicked: (String) -> Unit = {}, val onTwitterClicked: (String) -> Unit = {}) :
         RootAdapter<Speaker>() {
 
-    override val itemLayoutId: Int = R.layout.item_speaker_mini
+    override val itemLayoutId: Int = R.layout.item_speaker
 
     override fun viewHolder(view: View): RootViewHolder<Speaker> =
             SpeakerViewHolder(itemView = view,
