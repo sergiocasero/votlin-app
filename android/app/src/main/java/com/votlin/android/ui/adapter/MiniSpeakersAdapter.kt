@@ -6,7 +6,7 @@ import com.votlin.android.extensions.load
 import com.votlin.model.Speaker
 import kotlinx.android.synthetic.main.item_speaker_mini.view.*
 
-class MiniSpeakersAdapter : RootAdapter<Speaker>() {
+class MiniSpeakersAdapter(onItemClickListener: (Speaker) -> Unit) : RootAdapter<Speaker>(onItemClickListener = onItemClickListener) {
 
     override val itemLayoutId: Int = R.layout.item_speaker_mini
 

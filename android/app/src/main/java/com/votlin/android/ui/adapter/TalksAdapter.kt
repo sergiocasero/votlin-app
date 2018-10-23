@@ -43,7 +43,7 @@ class TalksAdapter(onItemClick: (Talk) -> Unit) : RootAdapter<Talk>(onItemClickL
             if (model.speakers.isEmpty()) {
                 itemView.speakers.hideMe()
             } else {
-                val speakersAdapter = MiniSpeakersAdapter()
+                val speakersAdapter = MiniSpeakersAdapter { onItemClickListener(adapterPosition) }
                 speakersAdapter.addAll(model.speakers.toMutableList())
 
                 itemView.speakers.adapter = speakersAdapter
