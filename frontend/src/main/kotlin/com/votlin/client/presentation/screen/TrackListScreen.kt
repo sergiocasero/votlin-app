@@ -26,13 +26,13 @@ class TrackListScreen : RootScreen<TrackProps, TrackListState, TalksListView>(),
 
     override fun componentDidMount() {
         super.componentDidMount()
-        presenter.onViewVisible()
+        presenter.onTrackChanged()
     }
 
     override fun componentWillReceiveProps(nextProps: TrackProps) {
         super.componentWillReceiveProps(nextProps)
         if (nextProps.track != props.track) {
-            presenter.onViewVisible()
+            presenter.onTrackChanged()
         }
     }
 
