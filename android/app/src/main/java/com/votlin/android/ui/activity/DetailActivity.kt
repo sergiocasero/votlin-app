@@ -4,9 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.PorterDuff
 import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.Toolbar
+import android.view.WindowManager
 import com.github.salomonbrys.kodein.Kodein
 import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
@@ -21,6 +23,7 @@ import com.votlin.client.presentation.DetailView
 import com.votlin.model.Talk
 import com.votlin.model.Track
 import kotlinx.android.synthetic.main.activity_detail.*
+
 
 class DetailActivity : RootActivity<DetailView>(), DetailView {
 
@@ -110,6 +113,13 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         supportActionBar?.subtitle = talk.name
         supportActionBar?.setBackgroundDrawable(ColorDrawable(compatColor))
         description.text = talk.description
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = ContextCompat.getColor(this, color)
+        }
 
         adapter.replace(talk.speakers.toMutableList())
     }
