@@ -49,7 +49,7 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         }
     }
 
-    val adapter = SpeakersAdapter(
+    private val adapter = SpeakersAdapter(
             onLinkedInClicked = { openUri(context = this, url = it) },
             onTwitterClicked = { openUri(context = this, url = it) }
     )
@@ -75,7 +75,9 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
     }
 
     override fun registerListeners() {
-        // Do nothing
+        rate.setOnRatingBarChangeListener { _, rate, _ ->
+            presenter.onRateChange(rate = rate.toInt())
+        }
     }
 
     override fun getTalkId(): Int {
@@ -86,8 +88,8 @@ class DetailActivity : RootActivity<DetailView>(), DetailView {
         finish()
     }
 
-    override fun showRate(rate: Int) {
-        // TODO, implement this!
+    override fun showRate(value: Int) {
+        rate.rating = value.toFloat()
     }
 
     override fun showTalk(talk: Talk) {

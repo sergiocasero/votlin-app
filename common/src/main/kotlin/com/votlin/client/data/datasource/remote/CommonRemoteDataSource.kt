@@ -26,7 +26,7 @@ class CommonRemoteDataSource : RemoteDataSource {
             JSON.parse<TalksResponse>(client.get { apiUrl("talk/$track") }).talks
 
     override suspend fun rateTalk(rate: Rate): Unit = client.post {
-        apiUrl("talk")
+        apiUrl("talk/rate")
         body = JSON.stringify(rate)
     }
 
