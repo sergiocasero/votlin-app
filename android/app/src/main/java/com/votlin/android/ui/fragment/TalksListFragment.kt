@@ -67,18 +67,18 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         super.onViewCreated(view, savedInstanceState)
 
         if (userVisibleHint) {
-            presenter.onViewVisible()
+            presenter.onTrackChanged(getTrack())
         }
     }
 
     override fun setUserVisibleHint(isVisibleToUser: Boolean) {
         super.setUserVisibleHint(isVisibleToUser)
         if (isVisibleToUser && isResumed) {
-            presenter.onViewVisible()
+            presenter.onTrackChanged(getTrack())
         }
     }
 
-    override fun getTrack(): Track {
+    private fun getTrack(): Track {
         val bundle = arguments
         val track = bundle?.getString(TRACK)
 

@@ -2,9 +2,9 @@ package com.votlin.client.presentation
 
 import com.votlin.client.domain.error.ErrorHandler
 import com.votlin.client.domain.executor.Executor
+import com.votlin.client.domain.repository.Repository
 import com.votlin.client.domain.usecase.getAllTalks
 import com.votlin.client.domain.usecase.getTalksByTrack
-import com.votlin.client.domain.repository.Repository
 import com.votlin.model.Talk
 import com.votlin.model.Track
 import kotlinx.coroutines.GlobalScope
@@ -25,8 +25,7 @@ class TalksListPresenter(private val executor: Executor,
         // Nothing to do yet
     }
 
-    fun onViewVisible() {
-        val track = view.getTrack()
+    fun onTrackChanged(track: Track) {
         view.showProgress()
 
         getTalks(track) {
@@ -53,7 +52,6 @@ class TalksListPresenter(private val executor: Executor,
 }
 
 interface TalksListView : Presenter.View {
-    fun getTrack(): Track
     fun showTalks(talks: List<Talk>)
     fun goToTalkScreen(id: Int)
 }
