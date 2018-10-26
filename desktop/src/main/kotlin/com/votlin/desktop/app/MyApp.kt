@@ -1,6 +1,5 @@
 package com.votlin.desktop.app
 
-import com.votlin.client.presentation.DetailView
 import com.votlin.desktop.view.DesktopDetailView
 import javafx.stage.Stage
 import tornadofx.*

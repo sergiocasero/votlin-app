@@ -12,25 +12,30 @@ import tornadofx.*
 
 class DesktopDetailView : View("Votlin"), DetailView {
 
-    private val presenter = DetailPresenter(
-            executor = executor,
-            repository = repository,
-            view = this,
-            errorHandler = errorHandler
-    )
-
     private val talkModel: TalkModel by inject()
 
-    override val root: Parent = vbox {
-        text(talkModel.name) { addClass(Styles.heading) }
-        text(talkModel.description) { addClass(Styles.label) }
+    private val presenter = DetailPresenter(
+            executor = executor,
+            errorHandler = errorHandler,
+            repository = repository,
+            view = this
+    )
+
+    override fun onDock() {
+        super.onDock()
+        presenter.initialize()
     }
 
-    override fun getTalkId(): Int = 101
+    override val root: Parent = vbox {
+        label(talkModel.name) { addClass(Styles.heading) }
+        label(talkModel.description) { addClass(Styles.label) }
+    }
+
+    override fun getTalkId(): Int = 107
 
     override fun showTalk(talk: Talk) {
-        talkModel.name.value = talk.name
-        talkModel.description.value = talk.description
+        this.talkModel.name.value = talk.name
+        this.talkModel.description.value = talk.description
     }
 
     override fun navigateToList() {
@@ -57,10 +62,6 @@ class DesktopDetailView : View("Votlin"), DetailView {
         println("showMessage $message")
     }
 
-    override fun onDock() {
-        super.onDock()
-        presenter.initialize()
-    }
 }
 
 class TalkModel : ItemViewModel<Talk>() {

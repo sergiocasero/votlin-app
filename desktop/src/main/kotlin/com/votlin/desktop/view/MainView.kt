@@ -23,7 +23,7 @@ class MainView : View("Votlin"), DetailView {
 
     private var progress by progressProperty
 
-    private val talk: TalkModel by inject()
+    private val talk: TalkModel2 by inject()
 
     override fun getTalkId(): Int = 100
 
