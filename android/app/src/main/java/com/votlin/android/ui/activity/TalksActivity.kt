@@ -29,8 +29,10 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
 
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<TalksPresenter>() with provider {
-            TalksPresenter(errorHandler = AndroidErrorHandler(),
-                    view = this@TalksActivity)
+            TalksPresenter(
+                errorHandler = AndroidErrorHandler(),
+                view = this@TalksActivity
+            )
         }
     }
 
@@ -44,7 +46,10 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
         viewPagerAdapter.addFragment(getString(R.string.business), TalksListFragment.newInstance(Track.BUSINESS))
         viewPagerAdapter.addFragment(getString(R.string.development), TalksListFragment.newInstance(Track.DEVELOPMENT))
         viewPagerAdapter.addFragment(getString(R.string.maker), TalksListFragment.newInstance(Track.MAKER))
-        viewPager.adapter = viewPagerAdapter
+        viewPager.apply {
+            adapter = viewPagerAdapter
+            offscreenPageLimit = 4
+        }
         tab.setupWithViewPager(viewPager)
     }
 
