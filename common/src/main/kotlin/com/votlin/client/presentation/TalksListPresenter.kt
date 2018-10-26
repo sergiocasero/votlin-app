@@ -9,7 +9,6 @@ import com.votlin.model.Talk
 import com.votlin.model.Track
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class TalksListPresenter(private val executor: Executor,
                          private val repository: Repository,
@@ -28,24 +27,20 @@ class TalksListPresenter(private val executor: Executor,
     fun onTrackChanged(track: Track) {
         view.showProgress()
 
-        getTalks(track) {
-            view.showTalks(it)
-            view.hideProgress()
-        }
+        getTalks(track)
     }
 
     fun onTalkClicked(talk: Talk) = view.goToTalkScreen(talk.id)
 
-    private fun getTalks(track: Track, callback: (List<Talk>) -> Unit) {
-        GlobalScope.launch(executor.new) {
+    private fun getTalks(track: Track) {
+        GlobalScope.launch(context = executor.main) {
             val talks = when (track) {
                 Track.ALL -> getAllTalks(repository)
                 else -> getTalksByTrack(track, repository)
             }
 
-            withContext(executor.main) {
-                callback(talks)
-            }
+            view.showTalks(talks)
+            view.hideProgress()
         }
     }
 

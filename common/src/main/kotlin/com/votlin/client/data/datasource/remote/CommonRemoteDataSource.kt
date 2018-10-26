@@ -14,7 +14,7 @@ class CommonRemoteDataSource : RemoteDataSource {
 
     private val endPoint: String = "http://sergiocasero.es:10000"
 
-    private val client: HttpClient = HttpClient()
+    private val client: HttpClient = HttpClient {}
 
     override suspend fun getTalks(): List<Talk> =
             JSON.parse<TalksResponse>(client.get { apiUrl("talk") }).talks
@@ -26,11 +26,11 @@ class CommonRemoteDataSource : RemoteDataSource {
             JSON.parse<TalksResponse>(client.get { apiUrl("talk/$track") }).talks
 
     override suspend fun rateTalk(rate: Rate): Unit = client.post {
-        apiUrl("talk")
+        apiUrl("talk/rate")
         body = JSON.stringify(rate)
     }
 
-    protected fun HttpRequestBuilder.apiUrl(path: String) {
+    private fun HttpRequestBuilder.apiUrl(path: String) {
         url {
             takeFrom(endPoint)
             encodedPath = path

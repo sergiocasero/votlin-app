@@ -8,19 +8,19 @@ import io.ktor.http.ContentType
 import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 import org.jetbrains.exposed.sql.Database
+import org.slf4j.event.Level
 
 fun main(args: Array<String>) {
     embeddedServer(Netty, 10000) {
 
         // Database
-        Database.connect(url = "jdbc:mysql://localhost:3306/edd",
-                driver = "com.mysql.jdbc.Driver",
-                user = "edd",
-                password = "extremaduradigitalday")
+        Database.connect(url = "jdbc:mysql://localhost:3306/edd", driver = "com.mysql.jdbc.Driver", user = "edd", password = "extremaduradigitalday")
 
         // Serialize json
         install(ContentNegotiation) {
             register(ContentType("[*", "*]"), GsonConverter())
+            register(ContentType("*", "*"), GsonConverter())
+            register(ContentType("text", "plain"), GsonConverter())
             gson {}
         }
 
@@ -29,6 +29,10 @@ fun main(args: Array<String>) {
         install(CORS) { anyHost() }
         install(DefaultHeaders)
         install(ConditionalHeaders)
+
+        install(CallLogging) {
+            level = Level.TRACE
+        }
 
         // Modules
         main()

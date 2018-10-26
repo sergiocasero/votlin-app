@@ -6,6 +6,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/talks"
+        android:layout_marginTop="@dimen/talks_list_margin"
         android:layout_marginLeft="@dimen/talks_list_margin"
         android:layout_marginStart="@dimen/talks_list_margin"
         android:layout_marginRight="@dimen/talks_list_margin"
