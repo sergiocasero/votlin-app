@@ -57,6 +57,12 @@ the contents should be `sdk.dir=/Users/<your username>/Library/Android/sdk`. On 
  - Thanks to @wiyarmir, he has also a multiplatform project that could help you -> https://github.com/wiyarmir
  - Thanks to @victorfriasv for the Votlin logo! Looks really nice! :) -> https://www.linkedin.com/in/victorfriasv
  
+ ### TODO
+ - iOS, improve the presenter <-> view contract
+ - TornadoFX, do the UI
+ - Tests
+ - Error handling, maybe with Arrow datatypes?
+ 
  ### License
  
  ```
