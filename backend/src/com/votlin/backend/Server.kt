@@ -14,10 +14,7 @@ fun main(args: Array<String>) {
     embeddedServer(Netty, 10000) {
 
         // Database
-        Database.connect(url = "jdbc:mysql://localhost:3306/edd",
-                driver = "com.mysql.jdbc.Driver",
-                user = "edd",
-                password = "extremaduradigitalday")
+        Database.connect(url = "jdbc:mysql://localhost:3306/edd", driver = "com.mysql.jdbc.Driver", user = "edd", password = "extremaduradigitalday")
 
         // Serialize json
         install(ContentNegotiation) {

@@ -10,24 +10,18 @@ import com.votlin.model.Rate
 import com.votlin.model.Talk
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 
-class DetailPresenter(private val repository: Repository,
-                      private val executor: Executor,
-                      errorHandler: ErrorHandler,
-                      view: DetailView)
+class DetailPresenter(private val repository: Repository, private val executor: Executor, errorHandler: ErrorHandler, view: DetailView)
     : Presenter<DetailView>(errorHandler, view) {
 
     override fun initialize() {
         view.showProgress()
-        GlobalScope.launch(executor.new) {
+        GlobalScope.launch(executor.main) {
             val talk = getTalkDetail(view.getTalkId(), repository)
 
-            withContext(executor.main) {
-                view.showTalk(talk)
-                view.hideProgress()
-            }
+            view.showTalk(talk)
+            view.hideProgress()
         }
 
         val rate = getTalkRate(view.getTalkId(), repository)
@@ -43,10 +37,10 @@ class DetailPresenter(private val repository: Repository,
     }
 
     fun onRateChange(rate: Int) {
-        GlobalScope.launch(executor.new) {
+        GlobalScope.launch(executor.main) {
             rateTalk(Rate(id = view.getTalkId(), value = rate), repository)
+            view.showRate(rate)
         }
-        view.showRate(rate)
     }
 
 }
