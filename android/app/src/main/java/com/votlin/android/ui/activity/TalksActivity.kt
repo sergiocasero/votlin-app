@@ -48,7 +48,7 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
         viewPagerAdapter.addFragment(getString(R.string.maker), TalksListFragment.newInstance(Track.MAKER))
         viewPager.apply {
             adapter = viewPagerAdapter
-            offscreenPageLimit = 4
+            offscreenPageLimit = viewPagerAdapter.count
         }
         tab.setupWithViewPager(viewPager)
     }

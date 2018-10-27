@@ -25,7 +25,7 @@ class TalksListPresenter(
         // Nothing to do yet
     }
 
-    fun onViewCreated(track: Track) {
+    fun viewLoaded(track: Track) {
         getTalks(track)
     }
 

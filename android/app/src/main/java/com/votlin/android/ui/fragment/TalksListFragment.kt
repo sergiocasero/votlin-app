@@ -42,17 +42,16 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         bind<TalksListPresenter>() with provider {
             TalksListPresenter(
                 view = this@TalksListFragment,
-                errorHandler = AndroidErrorHandler(),
+                errorHandler = instance(),
                 executor = instance(),
                 repository = instance()
             )
         }
     }
 
-    private lateinit var talksAdapter: TalksAdapter
+    private val talksAdapter = TalksAdapter { presenter.onTalkClicked(it) }
 
     override fun initializeUI() {
-        talksAdapter = TalksAdapter { presenter.onTalkClicked(it) }
         talks.apply {
             layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
             adapter = talksAdapter
@@ -63,17 +62,13 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
         // Nothing to do here
     }
 
-    override fun showProgress() {
-        progressView.showMe()
-    }
+    override fun showProgress() = progressView.showMe()
 
-    override fun hideProgress() {
-        progressView.hideMe()
-    }
+    override fun hideProgress() = progressView.hideMe()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.onViewCreated(getTrack())
+        presenter.viewLoaded(getTrack())
     }
 
     private fun getTrack(): Track {
