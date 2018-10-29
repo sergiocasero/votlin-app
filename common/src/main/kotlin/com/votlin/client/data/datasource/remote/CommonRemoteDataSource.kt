@@ -21,7 +21,7 @@ class CommonRemoteDataSource : RemoteDataSource {
                 setMapper(Speaker::class, Speaker.serializer())
                 setMapper(Time::class, Time.serializer())
                 setMapper(Rate::class, Rate.serializer())
-                setMapper(Track::class, Track.serializer())
+                setMapper(Track::class, TrackSerializer)
             }
         }
     }
