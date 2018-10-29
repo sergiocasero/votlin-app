@@ -17,6 +17,7 @@ data class Talk(val id: Int,
 @Serializable
 data class TalksResponse(val talks: List<Talk>)
 
+@Serializable
 enum class Track {
     BUSINESS, DEVELOPMENT, MAKER, ALL
 }
