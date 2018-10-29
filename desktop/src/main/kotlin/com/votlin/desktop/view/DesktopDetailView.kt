@@ -31,11 +31,11 @@ class DesktopDetailView : View("Votlin"), DetailView {
         label(talkModel.description) { addClass(Styles.label) }
     }
 
-    override fun getTalkId(): Int = 107
+    override fun getTalkId(): Int = 101
 
     override fun showTalk(talk: Talk) {
-        this.talkModel.name.value = talk.name
-        this.talkModel.description.value = talk.description
+        talkModel.name.value = talk.name
+        talkModel.description.value = talk.description
     }
 
     override fun navigateToList() {
@@ -59,9 +59,8 @@ class DesktopDetailView : View("Votlin"), DetailView {
     }
 
     override fun showMessage(message: String) {
-        println("showMessage $message")
+        println("showMessgae $message")
     }
-
 }
 
 class TalkModel : ItemViewModel<Talk>() {

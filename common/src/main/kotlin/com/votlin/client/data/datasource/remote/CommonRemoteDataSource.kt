@@ -17,17 +17,17 @@ class CommonRemoteDataSource : RemoteDataSource {
     private val client: HttpClient = HttpClient {}
 
     override suspend fun getTalks(): List<Talk> =
-            JSON.parse<TalksResponse>(client.get { apiUrl("talk") }).talks
+            JSON.parse(TalksResponse.serializer(), client.get { apiUrl("talk") }).talks
 
     override suspend fun getTalk(talkId: Int): Talk =
-            JSON.parse(client.get { apiUrl("talk/$talkId") })
+            JSON.parse(Talk.serializer(), client.get { apiUrl("talk/$talkId") })
 
     override suspend fun getTalksByTrack(track: String): List<Talk> =
-            JSON.parse<TalksResponse>(client.get { apiUrl("talk/$track") }).talks
+            JSON.parse(TalksResponse.serializer(), client.get { apiUrl("talk/$track") }).talks
 
     override suspend fun rateTalk(rate: Rate): Unit = client.post {
         apiUrl("talk/rate")
-        body = JSON.stringify(rate)
+        body = JSON.stringify(Rate.serializer(), rate)
     }
 
     private fun HttpRequestBuilder.apiUrl(path: String) {
