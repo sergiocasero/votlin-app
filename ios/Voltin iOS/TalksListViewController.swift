@@ -11,7 +11,12 @@ import ios
 
 class TalksListViewController: UIViewController, TalksListView {
     
-    private lazy var presenter : TalksListPresenter = TalksListPresenter(view: self, errorHandler: IosErrorHandler())
+    private lazy var presenter : TalksListPresenter = TalksListPresenter(
+        executor: IosExecutor(),
+        repository: CommonRepository(local: IosLocalDataSource(), remote: CommonRemoteDataSource()),
+        view: self,
+        errorHandler: IosErrorHandler())
+    
     
     var track: Track = Track.all
     
@@ -20,7 +25,7 @@ class TalksListViewController: UIViewController, TalksListView {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.initialize()
-        presenter.onViewVisible()
+        presenter.onTrackChanged(track: track)
     }
 
     override func didReceiveMemoryWarning() {

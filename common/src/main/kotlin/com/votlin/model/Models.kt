@@ -12,7 +12,7 @@ data class Talk(val id: Int,
                 val name: String,
                 val description: String,
                 val speakers: List<Speaker>,
-                val track: Track,
+                @Serializable(TrackSerializer::class) val track: Track,
                 val time: Time)
 
 @Serializable
@@ -34,7 +34,6 @@ object TrackSerializer : KSerializer<Track> {
 
 }
 
-@Serializable(with = TrackSerializer::class)
 enum class Track {
     BUSINESS, DEVELOPMENT, MAKER, ALL
 }
