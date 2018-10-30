@@ -11,6 +11,8 @@ import ios
 
 class TalksListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, TalksListView {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     private lazy var presenter : TalksListPresenter = TalksListPresenter(
         executor: IosExecutor(),
         repository: CommonRepository(local: IosLocalDataSource(), remote: CommonRemoteDataSource()),
@@ -101,6 +103,7 @@ class TalksListViewController: UIViewController, UICollectionViewDataSource, UIC
             talkInfo += "Name: " + talk.name + "\n"
         }
         print(talkInfo)
+        collectionView.reloadData()
     }
     
     func goToTalkScreen(id: Int32) {
