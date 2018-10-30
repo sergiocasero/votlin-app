@@ -96,6 +96,11 @@ class TalksListViewController: UIViewController, UICollectionViewDataSource, UIC
     
     func showTalks(talks: [Talk]) {
         self.talks = talks
+        var talkInfo = track.name + "\n"
+        for talk in talks {
+            talkInfo += "Name: " + talk.name + "\n"
+        }
+        print(talkInfo)
     }
     
     func goToTalkScreen(id: Int32) {
