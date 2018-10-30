@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,15 +19,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-PV-0yn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNs-PV-0yn">
+                                <rect key="frame" x="8" y="64" width="367" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="business" id="cOV-D8-pPk"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="bottom" secondItem="gT5-AT-ZaV" secondAttribute="bottom" id="FcQ-VS-W0C"/>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="top" secondItem="gT5-AT-ZaV" secondAttribute="top" id="LbH-Pv-hjV"/>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="leading" secondItem="gT5-AT-ZaV" secondAttribute="leading" constant="8" id="QbS-d8-hOF"/>
+                            <constraint firstItem="nNs-PV-0yn" firstAttribute="trailing" secondItem="gT5-AT-ZaV" secondAttribute="trailing" id="tBO-hQ-rEw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gT5-AT-ZaV"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Business" image="business" id="8rV-mR-d9I"/>
@@ -46,15 +52,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-ms-4y2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVF-ms-4y2">
+                                <rect key="frame" x="8" y="64" width="367" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="development" id="iw0-Pm-y5w"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="bottom" secondItem="PAa-gc-A7k" secondAttribute="bottom" id="4KC-DA-BIK"/>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="top" secondItem="PAa-gc-A7k" secondAttribute="top" id="Z5b-U3-qmE"/>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="leading" secondItem="PAa-gc-A7k" secondAttribute="leading" constant="8" id="vT5-yw-qUp"/>
+                            <constraint firstItem="NVF-ms-4y2" firstAttribute="trailing" secondItem="PAa-gc-A7k" secondAttribute="trailing" id="xrK-J1-9Z2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PAa-gc-A7k"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Development" image="Development" id="OEH-Z8-zbx"/>
@@ -75,15 +86,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvm-b5-rN8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvm-b5-rN8">
+                                <rect key="frame" x="8" y="64" width="367" height="554"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="maker" id="qxT-hD-ufY"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="top" secondItem="fMX-So-Y0K" secondAttribute="top" id="9sn-XI-jcG"/>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="bottom" secondItem="fMX-So-Y0K" secondAttribute="bottom" id="MxI-ze-U5E"/>
+                            <constraint firstAttribute="trailing" secondItem="gvm-b5-rN8" secondAttribute="trailing" id="Voq-OT-6mg"/>
+                            <constraint firstItem="gvm-b5-rN8" firstAttribute="leading" secondItem="fMX-So-Y0K" secondAttribute="leading" constant="8" id="ozc-VE-FTK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fMX-So-Y0K"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Maker" image="Maker" id="JDI-h3-nK0"/>
@@ -104,15 +120,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G7l-ik-30X">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7l-ik-30X">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="uzk-zk-4fV" kind="embed" identifier="all" id="zqa-3i-oun"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="leading" secondItem="FcJ-ra-M0i" secondAttribute="leading" id="Mi5-nM-pQW"/>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="top" secondItem="FcJ-ra-M0i" secondAttribute="top" id="ce9-Lt-VdC"/>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="trailing" secondItem="FcJ-ra-M0i" secondAttribute="trailing" id="ggv-Fx-RSK"/>
+                            <constraint firstItem="G7l-ik-30X" firstAttribute="bottom" secondItem="FcJ-ra-M0i" secondAttribute="bottom" id="rAf-ao-KPv"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FcJ-ra-M0i"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="all" id="sfF-0Z-XzL"/>
@@ -145,27 +166,76 @@
             </objects>
             <point key="canvasLocation" x="-377" y="-1245"/>
         </scene>
-        <!--Talks List View Controller-->
+        <!--Votlin-->
         <scene sceneID="8T6-3l-1kz">
             <objects>
-                <viewController id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Votlin" id="uzk-zk-4fV" customClass="TalksListViewController" customModule="Voltin_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8oj-43-Lhp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="367" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Shared View" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bEU-uA-VHc">
-                                <rect key="frame" x="16" y="20" width="359" height="514"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-Sx-c9v">
+                                <rect key="frame" x="0.0" y="36" width="367" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Dye-l1-czx">
+                                    <size key="itemSize" width="343" height="94"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="BTk-W6-Yp4" customClass="TalkCollectionViewCell" customModule="Voltin_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="0.0" width="343" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="94"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-yn-3tz">
+                                                    <rect key="frame" x="20" y="16" width="303" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="CnF-o0-iC6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description  Description  Description  Description  Description  Description  Description " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3b-5O-zGa">
+                                                    <rect key="frame" x="20" y="50" width="323" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="TEg-yn-3tz" firstAttribute="top" secondItem="BTk-W6-Yp4" secondAttribute="topMargin" constant="8" id="DwP-BK-NFd"/>
+                                            <constraint firstItem="TEg-yn-3tz" firstAttribute="leading" secondItem="BTk-W6-Yp4" secondAttribute="leadingMargin" constant="12" id="KrT-4e-a2Y"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="TEg-yn-3tz" secondAttribute="trailing" constant="12" id="mg4-ec-2Et"/>
+                                        </constraints>
+                                        <size key="customSize" width="343" height="94"/>
+                                        <connections>
+                                            <outlet property="talkDescription" destination="h3b-5O-zGa" id="9va-JJ-rtI"/>
+                                            <outlet property="talkName" destination="TEg-yn-3tz" id="3Mv-xx-pKi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="uzk-zk-4fV" id="74M-9R-bpJ"/>
+                                    <outlet property="delegate" destination="uzk-zk-4fV" id="MB1-1Y-Dar"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="bottom" secondItem="mOL-gu-Oer" secondAttribute="bottom" id="MCE-44-oJl"/>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="trailing" secondItem="mOL-gu-Oer" secondAttribute="trailing" id="NdP-H7-o5O"/>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="top" secondItem="mOL-gu-Oer" secondAttribute="top" constant="16" id="oi4-du-fYq"/>
+                            <constraint firstItem="iaE-Sx-c9v" firstAttribute="leading" secondItem="mOL-gu-Oer" secondAttribute="leading" id="vBi-mb-sQK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mOL-gu-Oer"/>
                     </view>
-                    <connections>
-                        <outlet property="test" destination="bEU-uA-VHc" id="d2i-Qe-ssJ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llw-ff-z2I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
