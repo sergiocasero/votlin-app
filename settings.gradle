@@ -1,13 +1,26 @@
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "kotlin-multiplatform") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+        }
+    }
+
+    repositories {
+        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap' }
+        mavenCentral()
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+}
+
 rootProject.name = 'votlin-app'
+
 
 enableFeaturePreview('GRADLE_METADATA')
 
 include 'backend'
 include 'common'
 include 'frontend'
-include 'ios'
-
-if (INCLUDE_ANDROID == "true") {
-    include 'android', 'android:app'
-}
+include 'android', 'android:app'
 

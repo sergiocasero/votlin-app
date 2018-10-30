@@ -5,7 +5,6 @@ apply plugin: 'kotlin2js'
 apply plugin: 'kotlin-dce-js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
 apply plugin: 'kotlinx-serialization'
-apply plugin: 'kotlin-platform-js'
 
 buildscript {
     repositories {
@@ -14,7 +13,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.71"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -23,10 +22,7 @@ repositories {
 }
 
 dependencies {
-    expectedBy project(":common")
-
-    compile "org.jetbrains.kotlin:kotlin-stdlib-js:$kotlin_version"
-    compile "org.jetbrains.kotlinx:kotlinx-serialization-runtime-js:$serialization_version"
+    compile project(":common")
 
     compile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
 
@@ -36,11 +32,12 @@ dependencies {
     compile "org.jetbrains:kotlin-react:16.5.2-pre.56-kotlin-1.2.71"
     compile "org.jetbrains:kotlin-react-dom:16.5.2-pre.56-kotlin-1.2.71"
 
-    compile "io.ktor:ktor-client-js:$ktor_version"
-    compile "io.ktor:ktor-client-json-js:$ktor_version"
-
 
     testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
+}
+
+sourceSets {
+    main.kotlin.srcDirs += 'src/main/kotlin'
 }
 
 kotlinFrontend {
@@ -79,7 +76,6 @@ kotlin {
         coroutines "enable"
     }
 }
-
 
 [compileKotlin2Js, compileTestKotlin2Js]*.configure {
     kotlinOptions {

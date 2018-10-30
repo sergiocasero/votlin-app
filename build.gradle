@@ -6,6 +6,7 @@ allprojects {
             maven { url "https://kotlin.bintray.com/kotlinx" }
             maven { url 'https://dl.bintray.com/jetbrains/kotlin-native-dependencies' }
             maven { url "https://dl.bintray.com/kotlin/ktor" }
+            maven { url "https://plugins.gradle.org/m2/" }
 
             google()
             jcenter()
@@ -15,6 +16,7 @@ allprojects {
             classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
             classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.37"
             classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:$kotlin_native_version"
+            classpath "com.github.jengelman.gradle.plugins:shadow:4.0.2"
         }
     }
     repositories {
@@ -26,6 +28,7 @@ allprojects {
         maven { url "https://dl.bintray.com/kotlin/squash" }
         maven { url "http://dl.bintray.com/kotlin/kotlin-js-wrappers" }
         maven { url 'https://dl.bintray.com/russhwolf/multiplatform-settings' }
+        maven { url "https://plugins.gradle.org/m2/" }
 
         google()
         jcenter()

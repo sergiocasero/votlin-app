@@ -41,10 +41,11 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
     override val fragmentModule: Kodein.Module = Kodein.Module {
         bind<TalksListPresenter>() with provider {
             TalksListPresenter(
-                    view = this@TalksListFragment,
-                    errorHandler = AndroidErrorHandler(),
-                    executor = instance(),
-                    repository = instance())
+                view = this@TalksListFragment,
+                errorHandler = AndroidErrorHandler(),
+                executor = instance(),
+                repository = instance()
+            )
         }
     }
 

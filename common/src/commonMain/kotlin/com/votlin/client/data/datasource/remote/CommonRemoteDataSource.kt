@@ -1,6 +1,8 @@
 package com.votlin.client.data.datasource.remote
 
-import com.votlin.model.*
+import com.votlin.model.Rate
+import com.votlin.model.Talk
+import com.votlin.model.TalksResponse
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
@@ -16,12 +18,11 @@ class CommonRemoteDataSource : RemoteDataSource {
     private val client: HttpClient = HttpClient {
         install(JsonFeature) {
             serializer = KotlinxSerializer().apply {
-                setMapper(Talk::class, Talk.serializer())
-                setMapper(TalksResponse::class, TalksResponse.serializer())
-                setMapper(Speaker::class, Speaker.serializer())
-                setMapper(Time::class, Time.serializer())
-                setMapper(Rate::class, Rate.serializer())
-                setMapper(Track::class, Track.serializer())
+                // setMapper(Talk::class, Talk.serializer())
+                // setMapper(TalksResponse::class, TalksResponse.serializer())
+                // setMapper(Speaker::class, Speaker.serializer())
+                // setMapper(Time::class, Time.serializer())
+                // setMapper(Rate::class, Rate.serializer())
             }
         }
     }
@@ -31,7 +32,7 @@ class CommonRemoteDataSource : RemoteDataSource {
     override suspend fun getTalk(talkId: Int): Talk = client.get { apiUrl("talk/$talkId") }
 
     override suspend fun getTalksByTrack(track: String): List<Talk> =
-            client.get<TalksResponse> { apiUrl("talk/$track") }.talks
+        client.get<TalksResponse> { apiUrl("talk/$track") }.talks
 
     override suspend fun rateTalk(rate: Rate): Unit = client.post {
         apiUrl("talk/rate")
