@@ -8,9 +8,10 @@ import android.view.ViewGroup
 /**
  * RootAdapter
  */
-abstract class RootAdapter<T>(protected val items: MutableList<T> = mutableListOf(),
-                              private val onItemClickListener: (T) -> Unit = {},
-                              private val onLongClickListener: (T) -> Unit = {}
+abstract class RootAdapter<T>(
+    protected val items: MutableList<T> = mutableListOf(),
+    private val onItemClickListener: (T) -> Unit = {},
+    private val onLongClickListener: (T) -> Unit = {}
 ) : RecyclerView.Adapter<RootAdapter.RootViewHolder<T>>() {
 
     abstract val itemLayoutId: Int
@@ -63,16 +64,19 @@ abstract class RootAdapter<T>(protected val items: MutableList<T> = mutableListO
         notifyDataSetChanged()
     }
 
-    fun replace(newItems: MutableList<T>) {
-        clear()
-        addAll(newItems)
+    fun replace(newItems: List<T>) {
+        items.clear()
+        items.addAll(newItems)
+        notifyDataSetChanged()
     }
 
     fun indexOf(item: T) = items.indexOf(item)
 
-    abstract class RootViewHolder<in T>(itemView: View,
-                                        var onItemClickListener: (Int) -> Unit = {},
-                                        var onLongClickListener: (Int) -> Unit = {}) : RecyclerView.ViewHolder(itemView) {
+    abstract class RootViewHolder<in T>(
+        itemView: View,
+        var onItemClickListener: (Int) -> Unit = {},
+        var onLongClickListener: (Int) -> Unit = {}
+    ) : RecyclerView.ViewHolder(itemView) {
 
         init {
             itemView.setOnClickListener { onItemClickListener(adapterPosition) }
