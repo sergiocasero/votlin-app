@@ -13,6 +13,8 @@ dependencies {
     implementation "io.ktor:ktor-client-core:$ktor_version"
     implementation "io.ktor:ktor-client-json:$ktor_version"
 
-    testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
+    implementation "io.arrow-kt:arrow-core:$arrow_version"
+    implementation "io.arrow-kt:arrow-data:$arrow_version"
 
+    testCompile "org.jetbrains.kotlin:kotlin-test-common:$kotlin_version"
 }
