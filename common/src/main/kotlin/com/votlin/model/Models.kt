@@ -1,6 +1,7 @@
 package com.votlin.model
 
-import kotlinx.serialization.Serializable
+import kotlinx.serialization.*
+import kotlinx.serialization.internal.StringDescriptor
 
 @Serializable
 data class Time(val start: Long,
@@ -11,13 +12,28 @@ data class Talk(val id: Int,
                 val name: String,
                 val description: String,
                 val speakers: List<Speaker>,
-                val track: Track,
+                @Serializable(TrackSerializer::class) val track: Track,
                 val time: Time)
 
 @Serializable
 data class TalksResponse(val talks: List<Talk>)
 
-@Serializable
+@Serializer(forClass = Track::class)
+object TrackSerializer : KSerializer<Track> {
+
+    override val descriptor: SerialDescriptor
+        get() = StringDescriptor
+
+    override fun deserialize(input: Decoder): Track {
+        return Track.valueOf(input.decodeString())
+    }
+
+    override fun serialize(output: Encoder, obj: Track) {
+        output.encodeString(value = obj.toString())
+    }
+
+}
+
 enum class Track {
     BUSINESS, DEVELOPMENT, MAKER, ALL
 }
