@@ -10,9 +10,9 @@ import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.selectAll
 import org.jetbrains.exposed.sql.transactions.transaction
 
-fun getTalkById(id: Int): Talk {
-    return transaction { TalkVo.select { TalkVo.id eq id }.first() }.toTalk(getTalkSpeakers(talkId = id))
-}
+fun getTalkById(id: Int): Talk
+    = transaction { TalkVo.select { TalkVo.id eq id }.first() }.toTalk(getTalkSpeakers(talkId = id))
+
 
 fun getTalks(): List<Talk> = transaction { TalkVo.selectAll().toList() }.map {
     it.toTalk(getTalkSpeakers(it[TalkVo.id]))

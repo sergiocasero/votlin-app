@@ -41,18 +41,21 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
     override val fragmentModule: Kodein.Module = Kodein.Module {
         bind<TalksListPresenter>() with provider {
             TalksListPresenter(
-                    view = this@TalksListFragment,
-                    errorHandler = AndroidErrorHandler(),
-                    executor = instance(),
-                    repository = instance())
+                view = this@TalksListFragment,
+                errorHandler = instance(),
+                executor = instance(),
+                repository = instance()
+            )
         }
     }
 
-    private val adapter = TalksAdapter { presenter.onTalkClicked(it) }
+    private val talksAdapter = TalksAdapter { presenter.onTalkClicked(it) }
 
     override fun initializeUI() {
-        talks.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        talks.adapter = adapter
+        talks.apply {
+            layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+            adapter = talksAdapter
+        }
     }
 
     override fun registerListeners() {
@@ -65,32 +68,20 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        if (userVisibleHint) {
-            presenter.onTrackChanged(getTrack())
-        }
-    }
-
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        if (isVisibleToUser && isResumed) {
-            presenter.onTrackChanged(getTrack())
-        }
+        presenter.viewLoaded(getTrack())
     }
 
     private fun getTrack(): Track {
         val bundle = arguments
         val track = bundle?.getString(TRACK)
 
-        try {
-            return Track.valueOf(track!!)
-        } catch (e: IllegalArgumentException) {
-            throw IllegalArgumentException("This fragment only can works if you pass the track")
-        }
+        track?.let {
+            return Track.valueOf(it)
+        } ?: throw IllegalArgumentException("This fragment only can works if you pass the track")
     }
 
     override fun showTalks(talks: List<Talk>) {
-        adapter.replace(talks.toMutableList())
+        talksAdapter.replace(talks)
     }
 
     override fun goToTalkScreen(id: Int) {

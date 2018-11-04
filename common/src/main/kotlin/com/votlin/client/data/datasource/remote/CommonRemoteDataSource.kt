@@ -1,33 +1,41 @@
 package com.votlin.client.data.datasource.remote
 
-import com.votlin.model.Rate
-import com.votlin.model.Talk
-import com.votlin.model.TalksResponse
+import com.votlin.model.*
 import io.ktor.client.HttpClient
+import io.ktor.client.features.json.JsonFeature
+import io.ktor.client.features.json.serializer.KotlinxSerializer
 import io.ktor.client.request.HttpRequestBuilder
 import io.ktor.client.request.get
 import io.ktor.client.request.post
 import io.ktor.http.takeFrom
-import kotlinx.serialization.json.JSON
 
 class CommonRemoteDataSource : RemoteDataSource {
 
     private val endPoint: String = "http://sergiocasero.es:10000"
 
-    private val client: HttpClient = HttpClient {}
+    private val client: HttpClient = HttpClient {
+        install(JsonFeature) {
+            serializer = KotlinxSerializer().apply {
+                setMapper(Talk::class, Talk.serializer())
+                setMapper(TalksResponse::class, TalksResponse.serializer())
+                setMapper(Speaker::class, Speaker.serializer())
+                setMapper(Time::class, Time.serializer())
+                setMapper(Rate::class, Rate.serializer())
+                setMapper(Track::class, Track.serializer())
+            }
+        }
+    }
 
-    override suspend fun getTalks(): List<Talk> =
-            JSON.parse<TalksResponse>(client.get { apiUrl("talk") }).talks
+    override suspend fun getTalks(): List<Talk> = client.get<TalksResponse> { apiUrl("talk") }.talks
 
-    override suspend fun getTalk(talkId: Int): Talk =
-            JSON.parse(client.get { apiUrl("talk/$talkId") })
+    override suspend fun getTalk(talkId: Int): Talk = client.get { apiUrl("talk/$talkId") }
 
     override suspend fun getTalksByTrack(track: String): List<Talk> =
-            JSON.parse<TalksResponse>(client.get { apiUrl("talk/$track") }).talks
+            client.get<TalksResponse> { apiUrl("talk/$track") }.talks
 
     override suspend fun rateTalk(rate: Rate): Unit = client.post {
         apiUrl("talk/rate")
-        body = JSON.stringify(rate)
+        body = rate
     }
 
     private fun HttpRequestBuilder.apiUrl(path: String) {

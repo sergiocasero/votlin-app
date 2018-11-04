@@ -9,13 +9,13 @@ import com.votlin.model.Talk
 import com.votlin.model.Track
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class TalksListPresenter(private val executor: Executor,
-                         private val repository: Repository,
-                         view: TalksListView,
-                         errorHandler: ErrorHandler) :
-        Presenter<TalksListView>(view = view, errorHandler = errorHandler) {
+class TalksListPresenter(
+    private val executor: Executor,
+    private val repository: Repository,
+    view: TalksListView,
+    errorHandler: ErrorHandler
+) : Presenter<TalksListView>(view = view, errorHandler = errorHandler) {
 
     override fun initialize() {
         // Nothing to do
@@ -25,27 +25,24 @@ class TalksListPresenter(private val executor: Executor,
         // Nothing to do yet
     }
 
-    fun onTrackChanged(track: Track) {
-        view.showProgress()
-
-        getTalks(track) {
-            view.showTalks(it)
-            view.hideProgress()
-        }
+    fun viewLoaded(track: Track) {
+        getTalks(track)
     }
 
-    fun onTalkClicked(talk: Talk) = view.goToTalkScreen(talk.id)
+    fun onTalkClicked(talk: Talk) {
+        view.goToTalkScreen(talk.id)
+    }
 
-    private fun getTalks(track: Track, callback: (List<Talk>) -> Unit) {
-        GlobalScope.launch(executor.new) {
+    private fun getTalks(track: Track) {
+        view.showProgress()
+        GlobalScope.launch(context = executor.main) {
             val talks = when (track) {
                 Track.ALL -> getAllTalks(repository)
                 else -> getTalksByTrack(track, repository)
             }
 
-            withContext(executor.main) {
-                callback(talks)
-            }
+            view.showTalks(talks)
+            view.hideProgress()
         }
     }
 
