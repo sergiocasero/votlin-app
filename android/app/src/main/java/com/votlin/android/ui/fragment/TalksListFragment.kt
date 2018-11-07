@@ -8,7 +8,6 @@ import com.github.salomonbrys.kodein.bind
 import com.github.salomonbrys.kodein.instance
 import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
-import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
 import com.votlin.android.navigator.navigateToTalkDetailActivity
@@ -68,7 +67,7 @@ class TalksListFragment : RootFragment<TalksListView>(), TalksListView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        presenter.viewLoaded(getTrack())
+        presenter.onTrackChanged(getTrack())
     }
 
     private fun getTrack(): Track {

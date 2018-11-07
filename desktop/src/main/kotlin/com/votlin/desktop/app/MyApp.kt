@@ -1,14 +1,13 @@
 package com.votlin.desktop.app
 
-import com.votlin.desktop.view.DesktopDetailView
+import com.votlin.desktop.view.DesktopTalksView
 import javafx.stage.Stage
-import tornadofx.*
+import tornadofx.App
 
-class MyApp : App(DesktopDetailView::class, Styles::class) {
+class MyApp : App(DesktopTalksView::class, Styles::class) {
 
     override fun start(stage: Stage) {
         super.start(stage)
-        stage.width = 800.0
-        stage.height = 600.0
+        stage.isMaximized = true
     }
 }
