@@ -36,8 +36,8 @@ dependencies {
     compile "org.jetbrains:kotlin-react:16.5.2-pre.56-kotlin-1.2.71"
     compile "org.jetbrains:kotlin-react-dom:16.5.2-pre.56-kotlin-1.2.71"
 
-    compile "io.ktor:ktor-client-core-js:$ktor_version"
-    compile "io.ktor:ktor-client-json:$ktor_version"
+    compile "io.ktor:ktor-client-js:$ktor_version"
+    compile "io.ktor:ktor-client-json-js:$ktor_version"
 
 
     testCompile "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"

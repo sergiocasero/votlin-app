@@ -31,7 +31,7 @@ the contents should be `sdk.dir=/Users/<your username>/Library/Android/sdk`. On 
 ### Running the backend
  
  * Run `./gradlew backend:run` from the command line or from Gradle toolwindow
- * The backend will start serving on localhost:8080, with data stored in a local H2 database
+ * The backend will start serving on localhost:8080, with data stored in MySQL database
 
 
 ## Running the Android app
