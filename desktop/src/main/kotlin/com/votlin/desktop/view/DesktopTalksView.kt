@@ -14,12 +14,12 @@ class DesktopTalksView : View("Votlin"), TalksListView {
 
     private val progressProperty = SimpleBooleanProperty()
 
-    private val talksProperty = observableList<Talk>()
+    private val talksModel = observableList<Talk>()
 
     private val presenter = TalksListPresenter(
         executor = executor,
-        errorHandler = errorHandler,
         repository = repository,
+        errorHandler = errorHandler,
         view = this
     )
 
@@ -34,21 +34,20 @@ class DesktopTalksView : View("Votlin"), TalksListView {
     }
 
     override val root: Parent = stackpane {
-        fitToParentSize()
         progressbar { visibleWhen { progressProperty } }
-        tableview(talksProperty) {
-            readonlyColumn("Name", Talk::name).pctWidth(10)
-            readonlyColumn("Description", Talk::description).pctWidth(80)
-            readonlyColumn("Track", Talk::track).pctWidth(10)
-
+        tableview(talksModel) {
+            readonlyColumn("Name", Talk::name)
+            readonlyColumn("description", Talk::description)
+                .pctWidth(80)
+            readonlyColumn("track", Talk::track)
             smartResize()
 
-            onUserSelect { talk -> presenter.onTalkClicked(talk) }
+            onUserSelect { presenter.onTalkClicked(it) }
         }
     }
 
     override fun showTalks(talks: List<Talk>) {
-        talksProperty.addAll(talks)
+        talksModel.addAll(talks)
     }
 
     override fun goToTalkScreen(id: Int) {
