@@ -2,6 +2,10 @@
 
 <img src="logo.png" alt="Votlin Logo" />
 
+## Description
+
+Votlin is a small petshop with a master/detail structure. It lists the talks from Extremadura Digital Day event.
+
 ## Server
 
 The server is based on ktor
@@ -10,13 +14,18 @@ The server is based on ktor
 
 The website is based on React
 
+Visit the site [here](http://sergiocasero.es/edd)
+
 ## Android Application
 
 The Android version is developed in Kotlin/JVM
 
+You can download the app here: [Votlin in Google play](https://play.google.com/store/apps/details?id=com.votlin.android).
+
+
 ## iOS Application
 
-With kotlin/native
+With kotlin/native and Swift
 
 # How to build and run
 
@@ -58,10 +67,25 @@ the contents should be `sdk.dir=/Users/<your username>/Library/Android/sdk`. On 
  - Thanks to @victorfriasv for the Votlin logo! Looks really nice! :) -> https://www.linkedin.com/in/victorfriasv
  
  ### TODO
- - iOS, improve the presenter <-> view contract
- - TornadoFX, do the UI
+ - iOS -> Fix UI thread issue.
+ - TornadoFX -> Improve the UI
  - Tests
  - Error handling, maybe with Arrow datatypes?
+ - Wiki -> Add how import and iOS framework and configure the build phase to use Kotlin from iOS
+ 
+ ### Screenshots
+ 
+ #### Android
+<img src="https://github.com/sergiocasero/votlin-app/blob/master/art/Votlin_Android_Screenshot.png" alt="Android app" width="328" height="575" />
+
+#### iOS
+<img src="https://github.com/sergiocasero/votlin-app/blob/master/art/Votlin_iOS_Screenshot.png" alt="iOS app" width="336" height="589" />
+
+#### Web
+<img src="https://github.com/sergiocasero/votlin-app/blob/master/art/Votlin_Web_Screenshot.png" alt="Web app" width="527" height="656" />
+ 
+ #### Demo gif
+<img src="https://github.com/sergiocasero/votlin-app/blob/master/art/Votlin_demo.gif" alt="Demo GIF" width="328" height="575" />
  
  ### License
  
