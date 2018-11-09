@@ -2,7 +2,7 @@
 
 <img src="logo.png" alt="Votlin Logo" />
 
-## Description
+## Description
 
 Votlin is a small petshop with a master/detail structure. It lists the talks from Extremadura Digital Day event.
 
