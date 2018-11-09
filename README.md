@@ -6,6 +6,8 @@
 
 Votlin is a small petshop with a master/detail structure. It lists the talks from Extremadura Digital Day event.
 
+[Project slides](https://goo.gl/MjpjVo)
+
 ## Server
 
 The server is based on ktor
