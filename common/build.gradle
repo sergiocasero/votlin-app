@@ -3,8 +3,8 @@ apply plugin: 'kotlinx-serialization'
 
 kotlin {
     targets {
-        fromPreset(presets.jvm, 'jvm')
-        fromPreset(presets.js, 'js')
+        jvm()
+        js()
 
         // Change to `presets.iosArm64` to deploy the app to iPhone
         fromPreset(presets.iosX64, 'ios') {
@@ -28,7 +28,7 @@ kotlin {
                 implementation "org.jetbrains.kotlin:kotlin-test-annotations-common"
             }
         }
-        jvmMain {
+        jvm().compilations.main.defaultSourceSet {
             dependencies {
                 implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
@@ -39,13 +39,13 @@ kotlin {
                 implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
             }
         }
-        jvmTest {
+        jvm().compilations.test.defaultSourceSet {
             dependencies {
                 implementation 'org.jetbrains.kotlin:kotlin-test'
                 implementation 'org.jetbrains.kotlin:kotlin-test-junit'
             }
         }
-        jsMain {
+        js().compilations.main.defaultSourceSet {
             dependencies {
                 implementation "io.ktor:ktor-client-js:$ktor_version"
                 implementation "io.ktor:ktor-client-json-js:$ktor_version"
@@ -55,7 +55,7 @@ kotlin {
             }
 
         }
-        jsTest {
+        js().compilations.test.defaultSourceSet {
 
         }
         iosMain {
