@@ -5,6 +5,7 @@ enableFeaturePreview('GRADLE_METADATA')
 include 'backend'
 include 'common'
 include 'frontend'
+include 'desktop'
 include 'ios'
 
 if (INCLUDE_ANDROID == "true") {
