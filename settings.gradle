@@ -4,23 +4,21 @@ pluginManagement {
             if (requested.id.id == "kotlin-multiplatform") {
                 useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
             }
+            if (requested.id.id == "kotlinx-serialization") {
+                useModule("org.jetbrains.kotlin:kotlin-serialization:${requested.version}")
+            }
         }
-    }
-
-    repositories {
-        maven { url 'http://dl.bintray.com/kotlin/kotlin-eap' }
-        mavenCentral()
-        maven { url 'https://plugins.gradle.org/m2/' }
     }
 }
 
-rootProject.name = 'votlin-app'
-
-
 enableFeaturePreview('GRADLE_METADATA')
 
-include 'backend'
-include 'common'
-include 'frontend'
-include 'android', 'android:app'
+rootProject.name = 'votlin-app'
 
+include 'common'
+include 'common-client'
+include 'backend'
+include 'frontend'
+include 'desktop'
+include 'ios'
+include 'android'

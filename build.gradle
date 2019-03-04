@@ -16,7 +16,8 @@ allprojects {
             classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlin_version"
             classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.37"
             classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:$kotlin_native_version"
-            classpath "com.github.jengelman.gradle.plugins:shadow:4.0.2"
+            classpath "com.github.jengelman.gradle.plugins:shadow:4.0.4"
+            classpath 'com.android.tools.build:gradle:3.2.0'
         }
     }
     repositories {
@@ -34,3 +35,8 @@ allprojects {
         jcenter()
     }
 }
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
