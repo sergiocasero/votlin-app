@@ -1,7 +1,7 @@
 package com.votlin.desktop.data
 
-import com.votlin.client.domain.error.Error
-import com.votlin.client.domain.error.ErrorHandler
+import com.votlin.common.client.domain.error.Error
+import com.votlin.common.client.domain.error.ErrorHandler
 
 class DesktopErrorHandler: ErrorHandler {
     override fun convert(error: Error): String {

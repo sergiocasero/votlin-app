@@ -6,7 +6,7 @@ import com.votlin.desktop.app.Styles
 import com.votlin.desktop.di.errorHandler
 import com.votlin.desktop.di.executor
 import com.votlin.desktop.di.repository
-import com.votlin.model.Talk
+import com.votlin.common.model.Talk
 import javafx.scene.Parent
 import tornadofx.*
 

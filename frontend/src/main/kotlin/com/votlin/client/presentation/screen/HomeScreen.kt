@@ -5,9 +5,9 @@ import com.votlin.client.presentation.TalksListView
 import com.votlin.client.presentation.di.errorHandler
 import com.votlin.client.presentation.di.executor
 import com.votlin.client.presentation.di.repository
-import com.votlin.model.Talk
-import com.votlin.model.Time
-import com.votlin.model.Track
+import com.votlin.common.model.Talk
+import com.votlin.common.model.Time
+import com.votlin.common.model.Track
 import kotlinx.html.id
 import kotlinx.html.js.onClickFunction
 import react.RBuilder
@@ -30,10 +30,11 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
     }
 
     override val presenter: TalksListPresenter = TalksListPresenter(
-            view = this,
-            errorHandler = errorHandler,
-            repository = repository,
-            executor = executor)
+        view = this,
+        errorHandler = errorHandler,
+        repository = repository,
+        executor = executor
+    )
 
     override fun RBuilder.render() {
         div("main") {
@@ -89,7 +90,8 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
             if (state.progress) {
                 div("progress") {
                     img("progress") {
-                        attrs.src = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
+                        attrs.src =
+                            "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
                     }
                 }
             }
@@ -119,10 +121,12 @@ class HomeScreen : RootScreen<HomeProps, HomeState, TalksListView>(), TalksListV
     private fun active(active: Boolean): String = if (active) "active" else ""
 
 
-    private fun updateActiveTabAndLoadData(all: Boolean = false,
-                                           development: Boolean = false,
-                                           business: Boolean = false,
-                                           maker: Boolean = false) {
+    private fun updateActiveTabAndLoadData(
+        all: Boolean = false,
+        development: Boolean = false,
+        business: Boolean = false,
+        maker: Boolean = false
+    ) {
         setState {
             this.all = all
             this.development = development
@@ -161,4 +165,5 @@ fun RBuilder.home(onTalkSelected: (Int) -> Unit) = child(HomeScreen::class) {
     attrs.onTalkSelected = onTalkSelected
 }
 
-fun Time.toFormattedDate(): String = "${Date(start).getHours()}:${Date(start).getMinutes()} - ${Date(end).getHours()}:${Date(end).getMinutes()}"
+fun Time.toFormattedDate(): String =
+    "${Date(start).getHours()}:${Date(start).getMinutes()} - ${Date(end).getHours()}:${Date(end).getMinutes()}"

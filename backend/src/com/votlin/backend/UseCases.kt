@@ -1,9 +1,9 @@
 package com.votlin.backend
 
-import com.votlin.model.Rate
-import com.votlin.model.Speaker
-import com.votlin.model.Talk
-import com.votlin.model.Track
+import com.votlin.common.model.Rate
+import com.votlin.common.model.Speaker
+import com.votlin.common.model.Talk
+import com.votlin.common.model.Track
 import io.ktor.http.HttpStatusCode
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select

@@ -1,7 +1,7 @@
 package com.votlin.backend
 
-import com.votlin.model.TalksResponse
-import com.votlin.model.Track
+import com.votlin.common.model.TalksResponse
+import com.votlin.common.model.Track
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.request.receive

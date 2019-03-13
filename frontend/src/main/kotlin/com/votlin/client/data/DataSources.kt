@@ -1,8 +1,8 @@
 package com.votlin.client.data
 
-import com.votlin.client.data.datasource.local.LocalDataSource
-import com.votlin.model.Rate
-import com.votlin.model.Talk
+import com.votlin.common.client.data.datasource.local.LocalDataSource
+import com.votlin.common.model.Rate
+import com.votlin.common.model.Talk
 import kotlin.browser.localStorage
 
 

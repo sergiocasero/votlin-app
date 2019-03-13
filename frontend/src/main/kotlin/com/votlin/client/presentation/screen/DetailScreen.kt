@@ -1,12 +1,12 @@
 package com.votlin.client.presentation.screen
 
-import com.votlin.client.constants.*
+import com.votlin.common.client.constants.*
 import com.votlin.client.presentation.*
 import com.votlin.client.presentation.di.errorHandler
 import com.votlin.client.presentation.di.executor
 import com.votlin.client.presentation.di.repository
 import com.votlin.client.presentation.navigator.Screen
-import com.votlin.model.Talk
+import com.votlin.common.model.Talk
 import kotlinx.html.js.onClickFunction
 import react.RBuilder
 import react.RProps

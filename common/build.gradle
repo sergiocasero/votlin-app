@@ -9,12 +9,10 @@ version '0.0.1'
 apply plugin: 'maven-publish'
 
 kotlin {
-    targets {
-        jvm()
-        js()
-        iosX64("ios") {
-            compilations.main.outputKinds("framework")
-        }
+    jvm()
+    js()
+    iosX64("ios") {
+        compilations.main.outputKinds("framework")
     }
     sourceSets {
         commonMain {
@@ -40,7 +38,7 @@ kotlin {
 
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
 
-                implementation "io.ktor:ktor-client-jvm:$ktor_version"
+                implementation "io.ktor:ktor-client-core-jvm:$ktor_version"
                 implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
             }
         }

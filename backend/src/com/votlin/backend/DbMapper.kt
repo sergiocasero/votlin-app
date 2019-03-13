@@ -1,9 +1,9 @@
 package com.votlin.backend
 
-import com.votlin.model.Speaker
-import com.votlin.model.Talk
-import com.votlin.model.Time
-import com.votlin.model.Track
+import com.votlin.common.model.Speaker
+import com.votlin.common.model.Talk
+import com.votlin.common.model.Time
+import com.votlin.common.model.Track
 import org.jetbrains.exposed.sql.ResultRow
 
 fun ResultRow.toTalk(speakers: List<Speaker>): Talk = Talk(

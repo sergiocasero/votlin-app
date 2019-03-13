@@ -34,6 +34,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation project(":common")
 }
 
 group 'com.votlin.commonclient'
@@ -49,6 +51,7 @@ kotlin {
         commonMain {
             dependencies {
                 implementation kotlin('stdlib-common')
+                implementation project(":common")
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
                 implementation "io.ktor:ktor-client-core:$ktor_version"
                 implementation "io.ktor:ktor-client-json:$ktor_version"

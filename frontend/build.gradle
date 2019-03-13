@@ -6,27 +6,10 @@ apply plugin: 'kotlin-dce-js'
 apply plugin: 'org.jetbrains.kotlin.frontend'
 apply plugin: 'kotlinx-serialization'
 
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
-repositories {
-    jcenter()
-}
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation project(":common")
-
-    implementation "org.jetbrains.kotlin:kotlin-test-js:$kotlin_version"
 
     implementation "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-js:$coroutines_version"
