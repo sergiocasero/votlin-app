@@ -1,7 +1,7 @@
 package com.votlin.client.presentation.screen
 
-import com.votlin.client.presentation.TalksListPresenter
-import com.votlin.client.presentation.TalksListView
+import com.votlin.common.client.presentation.TalksListPresenter
+import com.votlin.common.client.presentation.TalksListView
 import com.votlin.client.presentation.di.errorHandler
 import com.votlin.client.presentation.di.executor
 import com.votlin.client.presentation.di.repository

@@ -1,7 +1,7 @@
 package com.votlin.desktop.view
 
-import com.votlin.client.presentation.DetailPresenter
-import com.votlin.client.presentation.DetailView
+import com.votlin.common.client.presentation.DetailPresenter
+import com.votlin.common.client.presentation.DetailView
 import com.votlin.desktop.app.Styles
 import com.votlin.desktop.di.errorHandler
 import com.votlin.desktop.di.executor

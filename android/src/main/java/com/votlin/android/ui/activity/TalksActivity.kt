@@ -12,8 +12,8 @@ import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.ui.adapter.ViewPagerAdapter
 import com.votlin.android.ui.fragment.TalksListFragment
-import com.votlin.client.presentation.TalksPresenter
-import com.votlin.client.presentation.TalksView
+import com.votlin.common.client.presentation.TalksPresenter
+import com.votlin.common.client.presentation.TalksView
 import com.votlin.common.model.Track
 import kotlinx.android.synthetic.main.activity_talks.*
 

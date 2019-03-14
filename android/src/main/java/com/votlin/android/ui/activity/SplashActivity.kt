@@ -8,9 +8,9 @@ import com.github.salomonbrys.kodein.provider
 import com.votlin.android.R
 import com.votlin.android.error.AndroidErrorHandler
 import com.votlin.android.navigator.navigateToTalksActivity
-import com.votlin.client.presentation.SplashPresenter
-import com.votlin.client.presentation.SplashPresenter.Companion.SPLASH_MILLIS
-import com.votlin.client.presentation.SplashView
+import com.votlin.common.client.presentation.SplashPresenter
+import com.votlin.common.client.presentation.SplashPresenter.Companion.SPLASH_MILLIS
+import com.votlin.common.client.presentation.SplashView
 
 class SplashActivity : RootActivity<SplashView>(), SplashView {
 

@@ -18,8 +18,8 @@ import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
 import com.votlin.android.navigator.openUri
 import com.votlin.android.ui.adapter.SpeakersAdapter
-import com.votlin.client.presentation.DetailPresenter
-import com.votlin.client.presentation.DetailView
+import com.votlin.common.client.presentation.DetailPresenter
+import com.votlin.common.client.presentation.DetailView
 import com.votlin.common.model.Talk
 import com.votlin.common.model.Track
 import kotlinx.android.synthetic.main.activity_detail.*

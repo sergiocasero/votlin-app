@@ -12,7 +12,7 @@ import com.github.salomonbrys.kodein.KodeinInjector
 import com.github.salomonbrys.kodein.lazy
 import com.votlin.android.extensions.toast
 import com.votlin.android.ui.activity.RootActivity
-import com.votlin.client.presentation.Presenter
+import com.votlin.common.client.presentation.Presenter
 
 
 /**

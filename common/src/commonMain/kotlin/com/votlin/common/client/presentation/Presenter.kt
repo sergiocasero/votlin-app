@@ -1,4 +1,4 @@
-package com.votlin.client.presentation
+package com.votlin.common.client.presentation
 
 import com.votlin.common.client.domain.error.Error
 import com.votlin.common.client.domain.error.ErrorHandler

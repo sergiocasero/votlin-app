@@ -12,8 +12,8 @@ import com.votlin.android.extensions.hideMe
 import com.votlin.android.extensions.showMe
 import com.votlin.android.navigator.navigateToTalkDetailActivity
 import com.votlin.android.ui.adapter.TalksAdapter
-import com.votlin.client.presentation.TalksListPresenter
-import com.votlin.client.presentation.TalksListView
+import com.votlin.common.client.presentation.TalksListPresenter
+import com.votlin.common.client.presentation.TalksListView
 import com.votlin.common.model.Talk
 import com.votlin.common.model.Track
 import kotlinx.android.synthetic.main.fragment_talks.*
