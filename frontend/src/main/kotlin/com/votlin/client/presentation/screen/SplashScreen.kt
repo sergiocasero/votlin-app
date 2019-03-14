@@ -1,9 +1,10 @@
 package com.votlin.client.presentation.screen
 
+import com.votlin.client.presentation.di.errorHandler
+import com.votlin.client.presentation.di.executor
+import com.votlin.client.presentation.navigator.Screen
 import com.votlin.common.client.presentation.SplashPresenter
 import com.votlin.common.client.presentation.SplashView
-import com.votlin.client.presentation.di.errorHandler
-import com.votlin.client.presentation.navigator.Screen
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -16,8 +17,10 @@ import react.dom.img
 class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashView {
 
     override val presenter: SplashPresenter = SplashPresenter(
-            view = this,
-            errorHandler = errorHandler)
+        view = this,
+        errorHandler = errorHandler,
+        executor = executor
+    )
 
     override fun RBuilder.render() {
         div("splash") {
@@ -27,7 +30,8 @@ class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashV
             }
             div("progress") {
                 img("progress") {
-                    attrs.src = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
+                    attrs.src =
+                        "https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif"
                 }
             }
         }
@@ -42,7 +46,6 @@ class SplashScreen : RootScreen<SplashProps, SplashState, SplashView>(), SplashV
     }
 
     override fun showLoadingProgress(delayMillis: Long) {
-
         GlobalScope.launch {
             delay(2000)
             presenter.onRunnableCallback()

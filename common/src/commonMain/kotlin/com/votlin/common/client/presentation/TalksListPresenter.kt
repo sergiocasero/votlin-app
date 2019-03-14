@@ -7,22 +7,17 @@ import com.votlin.common.client.domain.usecase.getAllTalks
 import com.votlin.common.client.domain.usecase.getTalksByTrack
 import com.votlin.common.model.Talk
 import com.votlin.common.model.Track
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class TalksListPresenter(
-    private val executor: Executor,
     private val repository: Repository,
+    executor: Executor,
     view: TalksListView,
     errorHandler: ErrorHandler
-) : Presenter<TalksListView>(view = view, errorHandler = errorHandler) {
+) : Presenter<TalksListView>(view = view, errorHandler = errorHandler, executor = executor) {
 
     override fun initialize() {
         getTalks(Track.ALL)
-    }
-
-    override fun destroy() {
-        // Nothing to do yet
     }
 
     fun onTrackChanged(track: Track) {
@@ -34,8 +29,8 @@ class TalksListPresenter(
     }
 
     private fun getTalks(track: Track) {
-        view.showProgress()
-        GlobalScope.launch(context = executor.main) {
+        scope.launch {
+            view.showProgress()
             val talks = when (track) {
                 Track.ALL -> getAllTalks(repository)
                 else -> getTalksByTrack(track, repository)

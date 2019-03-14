@@ -2,12 +2,23 @@ package com.votlin.common.client.presentation
 
 import com.votlin.common.client.domain.error.Error
 import com.votlin.common.client.domain.error.ErrorHandler
+import com.votlin.common.client.domain.executor.Executor
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 
-abstract class Presenter<out V : Presenter.View>(protected val errorHandler: ErrorHandler, val view: V) {
+abstract class Presenter<out V : Presenter.View>(
+    protected val errorHandler: ErrorHandler,
+    val view: V,
+    executor: Executor
+) {
+
+    private val job = SupervisorJob()
+
+    protected val scope = CoroutineScope(job + executor.main)
 
     abstract fun initialize()
 
-    abstract fun destroy()
+    fun destroy() = job.cancel()
 
     protected fun onError(callback: (String) -> Unit): (Error) -> Unit = {
         view.hideProgress()

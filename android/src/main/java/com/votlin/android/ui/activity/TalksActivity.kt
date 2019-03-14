@@ -31,7 +31,8 @@ class TalksActivity : RootActivity<TalksView>(), TalksView {
         bind<TalksPresenter>() with provider {
             TalksPresenter(
                 errorHandler = AndroidErrorHandler(),
-                view = this@TalksActivity
+                view = this@TalksActivity,
+                executor = instance()
             )
         }
     }

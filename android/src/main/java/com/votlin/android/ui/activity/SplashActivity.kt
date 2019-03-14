@@ -21,8 +21,10 @@ class SplashActivity : RootActivity<SplashView>(), SplashView {
     override val activityModule: Kodein.Module = Kodein.Module {
         bind<SplashPresenter>() with provider {
             SplashPresenter(
-                    view = this@SplashActivity,
-                    errorHandler = AndroidErrorHandler())
+                view = this@SplashActivity,
+                errorHandler = AndroidErrorHandler(),
+                executor = instance()
+            )
         }
     }
 
