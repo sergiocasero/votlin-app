@@ -18,14 +18,14 @@ class TalksListPresenter(
 ) : Presenter<TalksListView>(view = view, errorHandler = errorHandler) {
 
     override fun initialize() {
-        // Nothing to do
+        getTalks(Track.ALL)
     }
 
     override fun destroy() {
         // Nothing to do yet
     }
 
-    fun viewLoaded(track: Track) {
+    fun onTrackChanged(track: Track) {
         getTalks(track)
     }
 
